@@ -79,7 +79,6 @@
             "419005925aaeeb43",
             "3542d7dd7a4dad7b",
             "7ce18158c222a149",
-            "b0b9a13e4d3e3a89",
             "46a9af3d12c5764b",
             "dac0d2c886fd20d7",
             "5039e50244c690b4",
@@ -90,7 +89,7 @@
         "env": [
             {
                 "name": "t1",
-                "value": "1",
+                "value": "10",
                 "type": "num"
             },
             {
@@ -100,13 +99,13 @@
             },
             {
                 "name": "t3",
-                "value": "3",
+                "value": "5",
                 "type": "num"
             }
         ],
-        "x": 214,
+        "x": 274,
         "y": 379,
-        "w": 1272,
+        "w": 1212,
         "h": 282
     },
     {
@@ -155,10 +154,10 @@
             "47f169f674ded4d1",
             "c064169b008f3b1a"
         ],
-        "x": 224,
-        "y": 879,
-        "w": 1022,
-        "h": 322
+        "x": 214,
+        "y": 859,
+        "w": 1272,
+        "h": 342
     },
     {
         "id": "5039e50244c690b4",
@@ -168,9 +167,7 @@
         "x": 1160,
         "y": 620,
         "wires": [
-            [
-                "dac0d2c886fd20d7"
-            ]
+            []
         ]
     },
     {
@@ -751,7 +748,8 @@
                 "153fc215eb17f9bd"
             ],
             [
-                "7ce18158c222a149"
+                "7ce18158c222a149",
+                "153fc215eb17f9bd"
             ]
         ]
     },
@@ -846,33 +844,8 @@
                 "419005925aaeeb43"
             ],
             [
-                "46a9af3d12c5764b"
-            ]
-        ]
-    },
-    {
-        "id": "b0b9a13e4d3e3a89",
-        "type": "inject",
-        "z": "c53bc0b1cfdd92b9",
-        "g": "2f168b12af78bec1",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "true",
-        "payloadType": "bool",
-        "x": 310,
-        "y": 560,
-        "wires": [
-            [
-                "3a76474ec246a824"
+                "46a9af3d12c5764b",
+                "419005925aaeeb43"
             ]
         ]
     },
@@ -901,7 +874,8 @@
                 "3542d7dd7a4dad7b"
             ],
             [
-                "5039e50244c690b4"
+                "5039e50244c690b4",
+                "3542d7dd7a4dad7b"
             ]
         ]
     },
@@ -910,7 +884,7 @@
         "type": "inject",
         "z": "c53bc0b1cfdd92b9",
         "g": "2f168b12af78bec1",
-        "name": "",
+        "name": "Init",
         "props": [
             {
                 "p": "payload"
@@ -923,7 +897,7 @@
         "topic": "",
         "payload": "false",
         "payloadType": "bool",
-        "x": 370,
+        "x": 1170,
         "y": 420,
         "wires": [
             [
@@ -983,7 +957,7 @@
             "b323403df2cf7093",
             "905e9831497cb1b8"
         ],
-        "x": 935,
+        "x": 1285,
         "y": 420,
         "wires": []
     },
@@ -1364,8 +1338,8 @@
         "className": "",
         "value": "payload",
         "valueType": "msg",
-        "x": 1140,
-        "y": 920,
+        "x": 1380,
+        "y": 900,
         "wires": []
     },
     {
@@ -1595,8 +1569,8 @@
         "className": "",
         "value": "elapsed.human",
         "valueType": "msg",
-        "x": 1000,
-        "y": 1000,
+        "x": 980,
+        "y": 960,
         "wires": []
     },
     {
@@ -1626,7 +1600,7 @@
         "offvalueType": "bool",
         "officon": "",
         "offcolor": "",
-        "x": 470,
+        "x": 490,
         "y": 1160,
         "wires": [
             [
@@ -1664,7 +1638,7 @@
         "shape": "square",
         "showBorder": true,
         "showGlow": true,
-        "x": 990,
+        "x": 970,
         "y": 1160,
         "wires": []
     },
@@ -1687,7 +1661,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 320,
+        "x": 310,
         "y": 1060,
         "wires": [
             [
