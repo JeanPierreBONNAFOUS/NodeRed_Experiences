@@ -82,8 +82,7 @@
             "b0b9a13e4d3e3a89",
             "46a9af3d12c5764b",
             "c688b7713fabbc27",
-            "b4dcb9d117126057",
-            "6b2838704ea7ebbf"
+            "5039e50244c690b4"
         ],
         "env": [
             {
@@ -93,19 +92,34 @@
             },
             {
                 "name": "t2",
-                "value": "2",
+                "value": "5",
                 "type": "num"
             },
             {
                 "name": "t3",
-                "value": "4",
+                "value": "10",
                 "type": "num"
             }
         ],
         "x": 174,
         "y": 399,
         "w": 1312,
-        "h": 242
+        "h": 247
+    },
+    {
+        "id": "5039e50244c690b4",
+        "type": "junction",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "2f168b12af78bec1",
+        "x": 1300,
+        "y": 620,
+        "wires": [
+            [
+                "3542d7dd7a4dad7b",
+                "419005925aaeeb43",
+                "153fc215eb17f9bd"
+            ]
+        ]
     },
     {
         "id": "3c225b7898348072",
@@ -591,13 +605,15 @@
         "reset": "",
         "bytopic": "all",
         "topic": "topic",
-        "outputs": 1,
+        "outputs": 2,
         "x": 820,
         "y": 480,
         "wires": [
             [
-                "153fc215eb17f9bd",
-                "6b2838704ea7ebbf"
+                "153fc215eb17f9bd"
+            ],
+            [
+                "7ce18158c222a149"
             ]
         ]
     },
@@ -684,13 +700,15 @@
         "reset": "",
         "bytopic": "all",
         "topic": "topic",
-        "outputs": 1,
+        "outputs": 2,
         "x": 1040,
         "y": 540,
         "wires": [
             [
-                "419005925aaeeb43",
-                "b4dcb9d117126057"
+                "419005925aaeeb43"
+            ],
+            [
+                "46a9af3d12c5764b"
             ]
         ]
     },
@@ -737,12 +755,15 @@
         "reset": "",
         "bytopic": "all",
         "topic": "topic",
-        "outputs": 1,
+        "outputs": 2,
         "x": 1160,
         "y": 600,
         "wires": [
             [
                 "3542d7dd7a4dad7b"
+            ],
+            [
+                "5039e50244c690b4"
             ]
         ]
     },
@@ -771,54 +792,6 @@
                 "153fc215eb17f9bd",
                 "419005925aaeeb43",
                 "3542d7dd7a4dad7b"
-            ]
-        ]
-    },
-    {
-        "id": "b4dcb9d117126057",
-        "type": "switch",
-        "z": "c53bc0b1cfdd92b9",
-        "g": "2f168b12af78bec1",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "false"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 950,
-        "y": 600,
-        "wires": [
-            [
-                "46a9af3d12c5764b"
-            ]
-        ]
-    },
-    {
-        "id": "6b2838704ea7ebbf",
-        "type": "switch",
-        "z": "c53bc0b1cfdd92b9",
-        "g": "2f168b12af78bec1",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "false"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 830,
-        "y": 540,
-        "wires": [
-            [
-                "7ce18158c222a149"
             ]
         ]
     }
