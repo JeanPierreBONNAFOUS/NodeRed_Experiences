@@ -83,7 +83,9 @@
             "46a9af3d12c5764b",
             "dac0d2c886fd20d7",
             "5039e50244c690b4",
-            "a0556915910b080f"
+            "a0556915910b080f",
+            "86b540c6db88487a",
+            "c688b7713fabbc27"
         ],
         "env": [
             {
@@ -103,9 +105,9 @@
             }
         ],
         "x": 214,
-        "y": 439,
+        "y": 379,
         "w": 1272,
-        "h": 222
+        "h": 282
     },
     {
         "id": "3b77d6603893c054",
@@ -126,6 +128,37 @@
         "y": 699,
         "w": 652,
         "h": 142
+    },
+    {
+        "id": "25d161091e4783d3",
+        "type": "group",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "UN Chrono qu'on peut mettre en suspend",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "cd3ad862f91fdf3e",
+            "5d143ecd939638ce",
+            "5fd3c239cbd7a88f",
+            "4f553bc541491401",
+            "018cf0f19f9134f4",
+            "c3d7793156b912f6",
+            "01c12862244abe56",
+            "b3948346c86a61b5",
+            "2565502f48565106",
+            "986b9ee6a3d341e3",
+            "374c440792846301",
+            "85c34a61decc4677",
+            "41ba3af850cdbb63",
+            "c2ee92a38de18f49",
+            "47f169f674ded4d1",
+            "c064169b008f3b1a"
+        ],
+        "x": 224,
+        "y": 879,
+        "w": 1022,
+        "h": 322
     },
     {
         "id": "5039e50244c690b4",
@@ -222,6 +255,20 @@
         "page": "30c2e620df0674de",
         "width": "3",
         "height": 1,
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "true",
+        "groupType": "default"
+    },
+    {
+        "id": "7c2219fc05a32978",
+        "type": "ui-group",
+        "name": "Compteur",
+        "page": "30c2e620df0674de",
+        "width": "3",
+        "height": 1,
         "order": 3,
         "showTitle": false,
         "className": "",
@@ -230,41 +277,13 @@
         "groupType": "default"
     },
     {
-        "id": "7c2219fc05a32978",
-        "type": "ui-group",
-        "name": "Count",
-        "page": "30c2e620df0674de",
-        "width": "3",
-        "height": 1,
-        "order": 2,
-        "showTitle": false,
-        "className": "",
-        "visible": true,
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "0972f31f7195d7ff",
-        "type": "ui-group",
-        "name": "Sequence",
-        "page": "fac36d98b944e7e0",
-        "width": "3",
-        "height": 1,
-        "order": 1,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "true",
-        "groupType": "default"
-    },
-    {
         "id": "c50c22fe0ff9d805",
         "type": "ui-group",
-        "name": "Chrono",
+        "name": "Minuterie",
         "page": "30c2e620df0674de",
         "width": "6",
         "height": "2",
-        "order": 1,
+        "order": 2,
         "showTitle": false,
         "className": "",
         "visible": "true",
@@ -306,6 +325,56 @@
         "className": "",
         "visible": "true",
         "disabled": "false"
+    },
+    {
+        "id": "0972f31f7195d7ff",
+        "type": "ui-group",
+        "name": "Sequence",
+        "page": "fac36d98b944e7e0",
+        "width": "3",
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "true",
+        "groupType": "default"
+    },
+    {
+        "id": "08d202d8d9c960d1",
+        "type": "ui-group",
+        "name": "Chrono",
+        "page": "30c2e620df0674de",
+        "width": 6,
+        "height": 1,
+        "order": 4,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "a9bb881556ef5246",
+        "type": "ui-spacer",
+        "group": "08d202d8d9c960d1",
+        "name": "spacer",
+        "tooltip": "",
+        "order": 1,
+        "width": "2",
+        "height": "1",
+        "className": ""
+    },
+    {
+        "id": "023450b17695d6a4",
+        "type": "ui-spacer",
+        "group": "08d202d8d9c960d1",
+        "name": "spacer",
+        "tooltip": "",
+        "order": 4,
+        "width": "1",
+        "height": "1",
+        "className": ""
     },
     {
         "id": "6ea6e0f88371f50f",
@@ -840,6 +909,7 @@
         "id": "c688b7713fabbc27",
         "type": "inject",
         "z": "c53bc0b1cfdd92b9",
+        "g": "2f168b12af78bec1",
         "name": "",
         "props": [
             {
@@ -853,8 +923,8 @@
         "topic": "",
         "payload": "false",
         "payloadType": "bool",
-        "x": 1090,
-        "y": 400,
+        "x": 370,
+        "y": 420,
         "wires": [
             [
                 "86b540c6db88487a"
@@ -905,6 +975,7 @@
         "id": "86b540c6db88487a",
         "type": "link out",
         "z": "c53bc0b1cfdd92b9",
+        "g": "2f168b12af78bec1",
         "name": "link out 2",
         "mode": "link",
         "links": [
@@ -912,8 +983,8 @@
             "b323403df2cf7093",
             "905e9831497cb1b8"
         ],
-        "x": 1185,
-        "y": 400,
+        "x": 935,
+        "y": 420,
         "wires": []
     },
     {
@@ -988,7 +1059,7 @@
         "type": "countdown",
         "z": "c53bc0b1cfdd92b9",
         "g": "3b77d6603893c054",
-        "name": "Chrono",
+        "name": "Minuterie",
         "topic": "Vidange",
         "payloadTimerStart": "true",
         "payloadTimerStartType": "bool",
@@ -1153,6 +1224,479 @@
         "wires": [
             [
                 "37b34068bc8ad632"
+            ]
+        ]
+    },
+    {
+        "id": "cd3ad862f91fdf3e",
+        "type": "hourglass",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "25d161091e4783d3",
+        "name": "Chronometre",
+        "persistId": "",
+        "humanizeLocale": "fr",
+        "x": 810,
+        "y": 920,
+        "wires": [
+            [
+                "018cf0f19f9134f4",
+                "41ba3af850cdbb63"
+            ]
+        ]
+    },
+    {
+        "id": "5d143ecd939638ce",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "25d161091e4783d3",
+        "name": "start",
+        "props": [
+            {
+                "p": "command",
+                "v": "start",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 350,
+        "y": 920,
+        "wires": [
+            [
+                "cd3ad862f91fdf3e"
+            ]
+        ]
+    },
+    {
+        "id": "5fd3c239cbd7a88f",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "25d161091e4783d3",
+        "name": "stop",
+        "props": [
+            {
+                "p": "command",
+                "v": "stop",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 350,
+        "y": 960,
+        "wires": [
+            [
+                "cd3ad862f91fdf3e"
+            ]
+        ]
+    },
+    {
+        "id": "4f553bc541491401",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "25d161091e4783d3",
+        "name": "status",
+        "props": [
+            {
+                "p": "command",
+                "v": "status",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 350,
+        "y": 1000,
+        "wires": [
+            [
+                "cd3ad862f91fdf3e"
+            ]
+        ]
+    },
+    {
+        "id": "018cf0f19f9134f4",
+        "type": "function",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "25d161091e4783d3",
+        "name": "function 1",
+        "func": "// Input JSON\nlet input = msg.elapsed.time;\n// Extract values\nlet days = input.days;\nlet hours = input.hours;\nlet minutes = input.minutes;\nlet seconds = Math.floor(input.seconds + (input.milliseconds / 1000)); // Convert milliseconds to seconds\n\n// Format the string DD:HH:MM:SS\nlet result = `${String(days).padStart(2, '0')}:${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;\n\n// Set the result back to the msg object\nmsg.payload = result;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 920,
+        "wires": [
+            [
+                "c3d7793156b912f6"
+            ]
+        ]
+    },
+    {
+        "id": "c3d7793156b912f6",
+        "type": "ui-text",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "25d161091e4783d3",
+        "group": "08d202d8d9c960d1",
+        "order": 8,
+        "width": "3",
+        "height": "1",
+        "name": "Durée Chrono",
+        "label": "Durée",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": true,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1140,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "01c12862244abe56",
+        "type": "ui-button",
+        "z": "c53bc0b1cfdd92b9",
+        "d": true,
+        "g": "25d161091e4783d3",
+        "group": "08d202d8d9c960d1",
+        "name": "",
+        "label": "Start",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "emulateClick": true,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "chrono",
+        "payloadType": "str",
+        "topic": "start",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 490,
+        "y": 1020,
+        "wires": [
+            [
+                "b3948346c86a61b5"
+            ]
+        ]
+    },
+    {
+        "id": "b3948346c86a61b5",
+        "type": "change",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "25d161091e4783d3",
+        "name": "start",
+        "rules": [
+            {
+                "t": "set",
+                "p": "command",
+                "pt": "msg",
+                "to": "start",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 1020,
+        "wires": [
+            [
+                "cd3ad862f91fdf3e"
+            ]
+        ]
+    },
+    {
+        "id": "2565502f48565106",
+        "type": "ui-button",
+        "z": "c53bc0b1cfdd92b9",
+        "d": true,
+        "g": "25d161091e4783d3",
+        "group": "08d202d8d9c960d1",
+        "name": "",
+        "label": "Stop",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "emulateClick": true,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "chrono",
+        "payloadType": "str",
+        "topic": "start",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 490,
+        "y": 1060,
+        "wires": [
+            [
+                "986b9ee6a3d341e3"
+            ]
+        ]
+    },
+    {
+        "id": "986b9ee6a3d341e3",
+        "type": "change",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "25d161091e4783d3",
+        "name": "start",
+        "rules": [
+            {
+                "t": "set",
+                "p": "command",
+                "pt": "msg",
+                "to": "stop",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 1060,
+        "wires": [
+            [
+                "cd3ad862f91fdf3e"
+            ]
+        ]
+    },
+    {
+        "id": "374c440792846301",
+        "type": "ui-button",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "25d161091e4783d3",
+        "group": "08d202d8d9c960d1",
+        "name": "",
+        "label": "status",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "chrono",
+        "payloadType": "str",
+        "topic": "status",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 490,
+        "y": 1100,
+        "wires": [
+            [
+                "85c34a61decc4677"
+            ]
+        ]
+    },
+    {
+        "id": "85c34a61decc4677",
+        "type": "change",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "25d161091e4783d3",
+        "name": "start",
+        "rules": [
+            {
+                "t": "set",
+                "p": "command",
+                "pt": "msg",
+                "to": "status",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 1100,
+        "wires": [
+            [
+                "cd3ad862f91fdf3e"
+            ]
+        ]
+    },
+    {
+        "id": "41ba3af850cdbb63",
+        "type": "ui-text",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "25d161091e4783d3",
+        "group": "08d202d8d9c960d1",
+        "order": 9,
+        "width": "3",
+        "height": "1",
+        "name": "Durée human",
+        "label": "Humain",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": true,
+        "className": "",
+        "value": "elapsed.human",
+        "valueType": "msg",
+        "x": 1000,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "c2ee92a38de18f49",
+        "type": "ui-switch",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "25d161091e4783d3",
+        "name": "",
+        "label": "",
+        "group": "08d202d8d9c960d1",
+        "order": 2,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 470,
+        "y": 1160,
+        "wires": [
+            [
+                "47f169f674ded4d1",
+                "c064169b008f3b1a"
+            ]
+        ]
+    },
+    {
+        "id": "47f169f674ded4d1",
+        "type": "ui-led",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "25d161091e4783d3",
+        "name": "",
+        "group": "08d202d8d9c960d1",
+        "order": 3,
+        "width": "1",
+        "height": "1",
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "center",
+        "states": [
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#ff0000"
+            },
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#00ff00"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "square",
+        "showBorder": true,
+        "showGlow": true,
+        "x": 990,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "c064169b008f3b1a",
+        "type": "switch",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "25d161091e4783d3",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 320,
+        "y": 1060,
+        "wires": [
+            [
+                "01c12862244abe56",
+                "b3948346c86a61b5"
+            ],
+            [
+                "2565502f48565106",
+                "986b9ee6a3d341e3"
             ]
         ]
     }
