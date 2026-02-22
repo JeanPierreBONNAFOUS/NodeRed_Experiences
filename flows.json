@@ -1,1 +1,825 @@
-[]
+[
+    {
+        "id": "c53bc0b1cfdd92b9",
+        "type": "tab",
+        "label": "EXPE",
+        "disabled": false,
+        "info": "Une meilleure utilsation de NodeRed en suivant des Tuto\n\nUn dashboard pour maitriser la mise en page",
+        "env": []
+    },
+    {
+        "id": "143582669c18420f",
+        "type": "group",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "Clock",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "6ea6e0f88371f50f",
+            "11c827ee7d4ee251"
+        ],
+        "x": 144,
+        "y": 119,
+        "w": 282,
+        "h": 82
+    },
+    {
+        "id": "5539f321a8ebe71c",
+        "type": "group",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "Frequence",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "2fa95438cf7ec01a",
+            "7a90ef62bcef860e",
+            "ea56df877b232f1c"
+        ],
+        "x": 444,
+        "y": 119,
+        "w": 242,
+        "h": 82
+    },
+    {
+        "id": "a3fb81230cec032b",
+        "type": "group",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "Compteurs ",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "2f945b92413d8392",
+            "54bb00d6bb9f3519",
+            "95a5edbafbf794db",
+            "9e73610ff0613b18",
+            "290616064459a311",
+            "e54ec5f0a0d689f2",
+            "5f84468c00dcd131",
+            "f28c8c33399284ac"
+        ],
+        "x": 444,
+        "y": 219,
+        "w": 512,
+        "h": 142
+    },
+    {
+        "id": "2f168b12af78bec1",
+        "type": "group",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "sequence : Duré de chaque étape en VAR locale",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "153fc215eb17f9bd",
+            "3a76474ec246a824",
+            "419005925aaeeb43",
+            "3542d7dd7a4dad7b",
+            "7ce18158c222a149",
+            "b0b9a13e4d3e3a89",
+            "46a9af3d12c5764b",
+            "c688b7713fabbc27",
+            "b4dcb9d117126057",
+            "6b2838704ea7ebbf"
+        ],
+        "env": [
+            {
+                "name": "t1",
+                "value": "1",
+                "type": "num"
+            },
+            {
+                "name": "t2",
+                "value": "2",
+                "type": "num"
+            },
+            {
+                "name": "t3",
+                "value": "4",
+                "type": "num"
+            }
+        ],
+        "x": 174,
+        "y": 399,
+        "w": 1312,
+        "h": 242
+    },
+    {
+        "id": "3c225b7898348072",
+        "type": "ui-base",
+        "name": "Dashboard Expe",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "icon",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "ef720b36dd8dde7b",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "30c2e620df0674de",
+        "type": "ui-page",
+        "name": "Expérimentation",
+        "ui": "3c225b7898348072",
+        "path": "/expe",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "ef720b36dd8dde7b",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "3"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "69467c4f814a564a",
+        "type": "ui-group",
+        "name": "TICK",
+        "page": "30c2e620df0674de",
+        "width": "3",
+        "height": 1,
+        "order": 2,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "7c2219fc05a32978",
+        "type": "ui-group",
+        "name": "COUNT",
+        "page": "30c2e620df0674de",
+        "width": "3",
+        "height": 1,
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "0972f31f7195d7ff",
+        "type": "ui-group",
+        "name": "Sequence",
+        "page": "30c2e620df0674de",
+        "width": "3",
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "true",
+        "groupType": "default"
+    },
+    {
+        "id": "6ea6e0f88371f50f",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "143582669c18420f",
+        "name": "Horloge",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 250,
+        "y": 160,
+        "wires": [
+            [
+                "11c827ee7d4ee251"
+            ]
+        ]
+    },
+    {
+        "id": "11c827ee7d4ee251",
+        "type": "link out",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "143582669c18420f",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "7a90ef62bcef860e",
+            "54bb00d6bb9f3519"
+        ],
+        "x": 385,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "2fa95438cf7ec01a",
+        "type": "ui-led",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "5539f321a8ebe71c",
+        "name": "Tick",
+        "group": "69467c4f814a564a",
+        "order": 1,
+        "width": "2",
+        "height": "1",
+        "label": "tick",
+        "labelPlacement": "left",
+        "labelAlignment": "flex-end",
+        "states": [
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#ff0000"
+            },
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#00ff00"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": true,
+        "showGlow": true,
+        "x": 645,
+        "y": 160,
+        "wires": [],
+        "l": false
+    },
+    {
+        "id": "7a90ef62bcef860e",
+        "type": "link in",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "5539f321a8ebe71c",
+        "name": "link in 1",
+        "links": [
+            "11c827ee7d4ee251"
+        ],
+        "x": 485,
+        "y": 160,
+        "wires": [
+            [
+                "ea56df877b232f1c"
+            ]
+        ]
+    },
+    {
+        "id": "ea56df877b232f1c",
+        "type": "trigger",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "5539f321a8ebe71c",
+        "name": "",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "250",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 565,
+        "y": 160,
+        "wires": [
+            [
+                "2fa95438cf7ec01a"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "2f945b92413d8392",
+        "type": "cyclic counter",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "a3fb81230cec032b",
+        "name": "cyclic counter",
+        "maxCount": "60",
+        "timeoutDuration": "5",
+        "timeoutUnit": "s",
+        "outputProperty": "payload",
+        "x": 545,
+        "y": 280,
+        "wires": [
+            [
+                "9e73610ff0613b18",
+                "95a5edbafbf794db"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "54bb00d6bb9f3519",
+        "type": "link in",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "a3fb81230cec032b",
+        "name": "link in 2",
+        "links": [
+            "11c827ee7d4ee251"
+        ],
+        "x": 485,
+        "y": 280,
+        "wires": [
+            [
+                "2f945b92413d8392"
+            ]
+        ]
+    },
+    {
+        "id": "95a5edbafbf794db",
+        "type": "ui-text",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "a3fb81230cec032b",
+        "group": "7c2219fc05a32978",
+        "order": 3,
+        "width": "1",
+        "height": "1",
+        "name": "",
+        "label": "sec",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 640,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "9e73610ff0613b18",
+        "type": "switch",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "a3fb81230cec032b",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 660,
+        "y": 280,
+        "wires": [
+            [
+                "290616064459a311",
+                "5f84468c00dcd131"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "290616064459a311",
+        "type": "cyclic counter",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "a3fb81230cec032b",
+        "name": "cyclic counter",
+        "maxCount": 3,
+        "timeoutDuration": 0,
+        "timeoutUnit": "ms",
+        "outputProperty": "payload",
+        "x": 785,
+        "y": 260,
+        "wires": [
+            [
+                "e54ec5f0a0d689f2"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "e54ec5f0a0d689f2",
+        "type": "ui-text",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "a3fb81230cec032b",
+        "group": "7c2219fc05a32978",
+        "order": 2,
+        "width": "1",
+        "height": "1",
+        "name": "",
+        "label": "min",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 880,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "5f84468c00dcd131",
+        "type": "trigger",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "a3fb81230cec032b",
+        "name": "",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "250",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 785,
+        "y": 320,
+        "wires": [
+            [
+                "f28c8c33399284ac"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "f28c8c33399284ac",
+        "type": "ui-led",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "a3fb81230cec032b",
+        "name": "",
+        "group": "7c2219fc05a32978",
+        "order": 1,
+        "width": "1",
+        "height": "1",
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "states": [
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#ff0000"
+            },
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#00ff00"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": true,
+        "showGlow": true,
+        "x": 835,
+        "y": 320,
+        "wires": [],
+        "l": false
+    },
+    {
+        "id": "153fc215eb17f9bd",
+        "type": "ui-led",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "2f168b12af78bec1",
+        "name": "Premier",
+        "group": "0972f31f7195d7ff",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "states": [
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#ff0000"
+            },
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#00ff00"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": true,
+        "showGlow": true,
+        "x": 1380,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "3a76474ec246a824",
+        "type": "trigger",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "2f168b12af78bec1",
+        "name": "",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "${t1}",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 820,
+        "y": 480,
+        "wires": [
+            [
+                "153fc215eb17f9bd",
+                "6b2838704ea7ebbf"
+            ]
+        ]
+    },
+    {
+        "id": "419005925aaeeb43",
+        "type": "ui-led",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "2f168b12af78bec1",
+        "name": "Deuxieme",
+        "group": "0972f31f7195d7ff",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "states": [
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#ff0000"
+            },
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#00ff00"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": true,
+        "showGlow": true,
+        "x": 1400,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "3542d7dd7a4dad7b",
+        "type": "ui-led",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "2f168b12af78bec1",
+        "name": "Troisieme",
+        "group": "0972f31f7195d7ff",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "states": [
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#ff0000"
+            },
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#00ff00"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": true,
+        "showGlow": true,
+        "x": 1400,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "7ce18158c222a149",
+        "type": "trigger",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "2f168b12af78bec1",
+        "name": "",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "${t2}",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1040,
+        "y": 540,
+        "wires": [
+            [
+                "419005925aaeeb43",
+                "b4dcb9d117126057"
+            ]
+        ]
+    },
+    {
+        "id": "b0b9a13e4d3e3a89",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "2f168b12af78bec1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 270,
+        "y": 480,
+        "wires": [
+            [
+                "3a76474ec246a824"
+            ]
+        ]
+    },
+    {
+        "id": "46a9af3d12c5764b",
+        "type": "trigger",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "2f168b12af78bec1",
+        "name": "",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "${t3}",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1160,
+        "y": 600,
+        "wires": [
+            [
+                "3542d7dd7a4dad7b"
+            ]
+        ]
+    },
+    {
+        "id": "c688b7713fabbc27",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "2f168b12af78bec1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 1100,
+        "y": 440,
+        "wires": [
+            [
+                "153fc215eb17f9bd",
+                "419005925aaeeb43",
+                "3542d7dd7a4dad7b"
+            ]
+        ]
+    },
+    {
+        "id": "b4dcb9d117126057",
+        "type": "switch",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "2f168b12af78bec1",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 950,
+        "y": 600,
+        "wires": [
+            [
+                "46a9af3d12c5764b"
+            ]
+        ]
+    },
+    {
+        "id": "6b2838704ea7ebbf",
+        "type": "switch",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "2f168b12af78bec1",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 830,
+        "y": 540,
+        "wires": [
+            [
+                "7ce18158c222a149"
+            ]
+        ]
+    }
+]
