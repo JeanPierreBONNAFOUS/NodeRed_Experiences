@@ -276,15 +276,13 @@
             "ac204aed8cd79bd2",
             "a97bb670af7f924a",
             "eeb048be86ab6a8c",
-            "5855a18c03d33931",
-            "782feca5c6f95ef2",
             "9084438e6c378eae",
             "6ceaaf16d3460913"
         ],
         "x": 434,
-        "y": 1299,
+        "y": 1339,
         "w": 952,
-        "h": 282
+        "h": 222
     },
     {
         "id": "bdf852c716bcd0df",
@@ -2344,44 +2342,6 @@
         "l": false
     },
     {
-        "id": "5855a18c03d33931",
-        "type": "debug",
-        "z": "c53bc0b1cfdd92b9",
-        "g": "5dd1105e5844b92e",
-        "name": "INC count",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "counter",
-        "x": 775,
-        "y": 1340,
-        "wires": [],
-        "l": false
-    },
-    {
-        "id": "782feca5c6f95ef2",
-        "type": "debug",
-        "z": "c53bc0b1cfdd92b9",
-        "g": "5dd1105e5844b92e",
-        "name": "DEC count",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "counter",
-        "x": 775,
-        "y": 1540,
-        "wires": [],
-        "l": false
-    },
-    {
         "id": "9084438e6c378eae",
         "type": "debug",
         "z": "c53bc0b1cfdd92b9",
@@ -2877,7 +2837,7 @@
         "lower": null,
         "upper": null,
         "mode": "increment",
-        "outputs": "1",
+        "outputs": 1,
         "x": 1430,
         "y": 2340,
         "wires": [
