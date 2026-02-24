@@ -235,13 +235,15 @@
         "nodes": [
             "9932cf0538c61e89",
             "6056e2eeac376b57",
-            "a2d7093283f05854",
-            "c052478ba51d2da1"
+            "c052478ba51d2da1",
+            "60e77f7cbc023685",
+            "b820aefa28e46c18",
+            "cb822a36231b6af1"
         ],
-        "x": 434,
-        "y": 1239,
-        "w": 1032,
-        "h": 82
+        "x": 234,
+        "y": 1219,
+        "w": 1232,
+        "h": 122
     },
     {
         "id": "113e9ae2aa1386b9",
@@ -804,7 +806,8 @@
         "links": [
             "54bb00d6bb9f3519",
             "7a90ef62bcef860e",
-            "5e79b81db35e4713"
+            "5e79b81db35e4713",
+            "60e77f7cbc023685"
         ],
         "x": 705,
         "y": 60,
@@ -2077,7 +2080,7 @@
         "height": "2",
         "gtype": "gauge-tank",
         "gstyle": "needle",
-        "title": "gauge",
+        "title": "Jauge",
         "alwaysShowTitle": false,
         "floatingTitlePosition": "top-left",
         "units": "units",
@@ -2095,16 +2098,28 @@
                 "from": "15",
                 "color": "#55dbec",
                 "text": "",
-                "textType": "label"
+                "textType": "none"
             },
             {
                 "from": "35",
                 "color": "#53b4fd",
                 "text": "",
-                "textType": "label"
+                "textType": "none"
             },
             {
                 "from": "50",
+                "color": "#2397d1",
+                "text": "",
+                "textType": "none"
+            },
+            {
+                "from": "75",
+                "color": "#2397d1",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "90",
                 "color": "#2397d1",
                 "text": "",
                 "textType": "label"
@@ -2144,42 +2159,16 @@
         "wires": []
     },
     {
-        "id": "a2d7093283f05854",
-        "type": "inject",
-        "z": "c53bc0b1cfdd92b9",
-        "g": "8282ca811ab4a572",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "1",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 550,
-        "y": 1280,
-        "wires": [
-            [
-                "c052478ba51d2da1"
-            ]
-        ]
-    },
-    {
         "id": "c052478ba51d2da1",
         "type": "cyclic counter",
         "z": "c53bc0b1cfdd92b9",
         "g": "8282ca811ab4a572",
         "name": "cyclic counter",
-        "maxCount": "100",
+        "maxCount": "90",
         "timeoutDuration": 0,
         "timeoutUnit": "ms",
         "outputProperty": "payload",
-        "x": 740,
+        "x": 960,
         "y": 1280,
         "wires": [
             [
@@ -3867,6 +3856,73 @@
         "wires": [
             [
                 "0c44248e331257c1"
+            ]
+        ]
+    },
+    {
+        "id": "60e77f7cbc023685",
+        "type": "link in",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "8282ca811ab4a572",
+        "name": "link in 14",
+        "links": [
+            "11c827ee7d4ee251"
+        ],
+        "x": 485,
+        "y": 1300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cb822a36231b6af1",
+        "type": "trigger",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "8282ca811ab4a572",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "-50",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 680,
+        "y": 1280,
+        "wires": [
+            [
+                "c052478ba51d2da1"
+            ]
+        ]
+    },
+    {
+        "id": "b820aefa28e46c18",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "8282ca811ab4a572",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 330,
+        "y": 1260,
+        "wires": [
+            [
+                "cb822a36231b6af1"
             ]
         ]
     },
