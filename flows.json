@@ -2,7 +2,7 @@
     {
         "id": "c53bc0b1cfdd92b9",
         "type": "tab",
-        "label": "EXPE",
+        "label": "EXPE UI",
         "disabled": false,
         "info": "Une meilleure utilsation de NodeRed en suivant des Tuto\n\nUn dashboard pour maitriser la mise en page",
         "env": []
@@ -10,7 +10,7 @@
     {
         "id": "ab36a2f91b62fae8",
         "type": "tab",
-        "label": "Flux 1",
+        "label": "Template",
         "disabled": false,
         "info": "",
         "env": []
@@ -282,6 +282,28 @@
         "y": 1359,
         "w": 952,
         "h": 282
+    },
+    {
+        "id": "bdf852c716bcd0df",
+        "type": "group",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "ON / OFF",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "118ad5f41db3f2c9",
+            "cca8231fd07f0359",
+            "e85ad666d6b2ac30",
+            "612f7155715dfb7f",
+            "b1af727b9aca7f77",
+            "e260783e59486f55",
+            "dc21d0cd7ad3591a"
+        ],
+        "x": 434,
+        "y": 1659,
+        "w": 772,
+        "h": 202
     },
     {
         "id": "3c225b7898348072",
@@ -2687,10 +2709,11 @@
         "id": "cca8231fd07f0359",
         "type": "trigger",
         "z": "c53bc0b1cfdd92b9",
-        "name": "",
-        "op1": "1",
+        "g": "bdf852c716bcd0df",
+        "name": "CLOCK",
+        "op1": "true",
         "op2": "0",
-        "op1type": "str",
+        "op1type": "bool",
         "op2type": "str",
         "duration": "-1",
         "extend": false,
@@ -2700,8 +2723,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 690,
-        "y": 1800,
+        "x": 840,
+        "y": 1820,
         "wires": [
             [
                 "e85ad666d6b2ac30"
@@ -2712,7 +2735,8 @@
         "id": "e85ad666d6b2ac30",
         "type": "trigger",
         "z": "c53bc0b1cfdd92b9",
-        "name": "",
+        "g": "bdf852c716bcd0df",
+        "name": "PULSE",
         "op1": "true",
         "op2": "false",
         "op1type": "bool",
@@ -2725,8 +2749,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 930,
-        "y": 1800,
+        "x": 980,
+        "y": 1820,
         "wires": [
             [
                 "612f7155715dfb7f"
@@ -2737,6 +2761,7 @@
         "id": "612f7155715dfb7f",
         "type": "ui-led",
         "z": "c53bc0b1cfdd92b9",
+        "g": "bdf852c716bcd0df",
         "name": "",
         "group": "14492619691773e2",
         "order": 2,
@@ -2761,14 +2786,15 @@
         "shape": "square",
         "showBorder": false,
         "showGlow": false,
-        "x": 1210,
-        "y": 1800,
+        "x": 1130,
+        "y": 1760,
         "wires": []
     },
     {
         "id": "118ad5f41db3f2c9",
         "type": "ui-switch",
         "z": "c53bc0b1cfdd92b9",
+        "g": "bdf852c716bcd0df",
         "name": "",
         "label": "on / off",
         "group": "14492619691773e2",
@@ -2791,8 +2817,8 @@
         "offvalueType": "bool",
         "officon": "",
         "offcolor": "",
-        "x": 240,
-        "y": 1700,
+        "x": 520,
+        "y": 1760,
         "wires": [
             [
                 "b1af727b9aca7f77"
@@ -2803,7 +2829,8 @@
         "id": "b1af727b9aca7f77",
         "type": "switch",
         "z": "c53bc0b1cfdd92b9",
-        "name": "",
+        "g": "bdf852c716bcd0df",
+        "name": "ON",
         "property": "payload",
         "propertyType": "msg",
         "rules": [
@@ -2817,8 +2844,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 390,
-        "y": 1700,
+        "x": 650,
+        "y": 1760,
         "wires": [
             [
                 "cca8231fd07f0359"
@@ -2832,7 +2859,8 @@
         "id": "e260783e59486f55",
         "type": "change",
         "z": "c53bc0b1cfdd92b9",
-        "name": "",
+        "g": "bdf852c716bcd0df",
+        "name": "RESET",
         "rules": [
             {
                 "t": "set",
@@ -2847,8 +2875,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 430,
-        "y": 1800,
+        "x": 660,
+        "y": 1820,
         "wires": [
             [
                 "cca8231fd07f0359"
@@ -2859,48 +2887,19 @@
         "id": "dc21d0cd7ad3591a",
         "type": "link in",
         "z": "c53bc0b1cfdd92b9",
+        "g": "bdf852c716bcd0df",
         "name": "link in 10",
         "links": [
             "86b540c6db88487a"
         ],
-        "x": 1045,
-        "y": 1720,
+        "x": 475,
+        "y": 1700,
         "wires": [
             [
+                "118ad5f41db3f2c9",
                 "612f7155715dfb7f"
             ]
         ]
-    },
-    {
-        "id": "5b91c8f0a2eb273b",
-        "type": "ui-control",
-        "z": "c53bc0b1cfdd92b9",
-        "name": "",
-        "ui": "3c225b7898348072",
-        "events": "change",
-        "x": 640,
-        "y": 2040,
-        "wires": [
-            [
-                "1ee04aef94fc6aaa"
-            ]
-        ]
-    },
-    {
-        "id": "1ee04aef94fc6aaa",
-        "type": "debug",
-        "z": "c53bc0b1cfdd92b9",
-        "name": "debug 8",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 800,
-        "y": 2040,
-        "wires": []
     },
     {
         "id": "809cc8f4678767b7",
@@ -3049,7 +3048,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 580,
+        "x": 600,
         "y": 300,
         "wires": []
     },
