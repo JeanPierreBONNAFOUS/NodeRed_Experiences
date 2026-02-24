@@ -16,6 +16,59 @@
         "env": []
     },
     {
+        "id": "8682ef25eb3579aa",
+        "type": "subflow",
+        "name": "Count Up Down",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "d6e6623d888ea56c"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 800,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "65fdd2ed836ba41b",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 800,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "65fdd2ed836ba41b",
+                        "port": 1
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99",
+        "status": {
+            "x": 800,
+            "y": 60,
+            "wires": [
+                {
+                    "id": "65fdd2ed836ba41b",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
         "id": "143582669c18420f",
         "type": "group",
         "z": "c53bc0b1cfdd92b9",
@@ -112,7 +165,7 @@
         ],
         "x": 434,
         "y": 379,
-        "w": 672,
+        "w": 732,
         "h": 222
     },
     {
@@ -214,20 +267,16 @@
             "label": true
         },
         "nodes": [
-            "65fdd2ed836ba41b",
             "5e79b81db35e4713",
             "8234295d73887924",
             "e9ba5aaca0ac5efd",
             "ac204aed8cd79bd2",
-            "af6202fbf7e30c62",
-            "86cb7d242d3824a4",
-            "856c385c8a5648e4",
-            "d6e6623d888ea56c",
             "a97bb670af7f924a",
             "eeb048be86ab6a8c",
             "5855a18c03d33931",
             "782feca5c6f95ef2",
-            "9084438e6c378eae"
+            "9084438e6c378eae",
+            "6ceaaf16d3460913"
         ],
         "x": 424,
         "y": 1359,
@@ -316,7 +365,7 @@
         "page": "30c2e620df0674de",
         "width": "3",
         "height": 1,
-        "order": 3,
+        "order": 4,
         "showTitle": false,
         "className": "",
         "visible": "true",
@@ -330,7 +379,7 @@
         "page": "30c2e620df0674de",
         "width": "3",
         "height": 1,
-        "order": 5,
+        "order": 6,
         "showTitle": false,
         "className": "",
         "visible": "true",
@@ -344,7 +393,7 @@
         "page": "30c2e620df0674de",
         "width": "6",
         "height": "2",
-        "order": 4,
+        "order": 5,
         "showTitle": false,
         "className": "",
         "visible": "true",
@@ -392,8 +441,8 @@
         "type": "ui-group",
         "name": "Sequence",
         "page": "fac36d98b944e7e0",
-        "width": "3",
-        "height": 1,
+        "width": "6",
+        "height": "4",
         "order": 1,
         "showTitle": true,
         "className": "",
@@ -408,7 +457,7 @@
         "page": "30c2e620df0674de",
         "width": 6,
         "height": 1,
-        "order": 6,
+        "order": 7,
         "showTitle": true,
         "className": "",
         "visible": "true",
@@ -444,7 +493,7 @@
         "page": "30c2e620df0674de",
         "width": 6,
         "height": 1,
-        "order": 2,
+        "order": 3,
         "showTitle": true,
         "className": "",
         "visible": "true",
@@ -458,12 +507,148 @@
         "page": "30c2e620df0674de",
         "width": "3",
         "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "14492619691773e2",
+        "type": "ui-group",
+        "name": "on off",
+        "page": "30c2e620df0674de",
+        "width": 6,
+        "height": 1,
         "order": 1,
         "showTitle": true,
         "className": "",
         "visible": "true",
         "disabled": "false",
         "groupType": "default"
+    },
+    {
+        "id": "d6e6623d888ea56c",
+        "type": "function",
+        "z": "8682ef25eb3579aa",
+        "name": "set inc / dec",
+        "func": "if (msg.topic == \"up\") {\n    context.set(\"inc\",msg.payload);\n    msg.topic=msg.payload;\n} \nmsg.topic=context.get(\"inc\") || false\nnode.status({fill:\"red\",shape:\"ring\",text:\"INC : \" + context.get(\"inc\")});\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 210,
+        "y": 140,
+        "wires": [
+            [
+                "af6202fbf7e30c62"
+            ]
+        ]
+    },
+    {
+        "id": "af6202fbf7e30c62",
+        "type": "switch",
+        "z": "8682ef25eb3579aa",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 335,
+        "y": 140,
+        "wires": [
+            [
+                "86cb7d242d3824a4"
+            ],
+            [
+                "856c385c8a5648e4"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "86cb7d242d3824a4",
+        "type": "change",
+        "z": "8682ef25eb3579aa",
+        "name": "inc",
+        "rules": [
+            {
+                "t": "set",
+                "p": "increment",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 80,
+        "wires": [
+            [
+                "65fdd2ed836ba41b"
+            ]
+        ]
+    },
+    {
+        "id": "856c385c8a5648e4",
+        "type": "change",
+        "z": "8682ef25eb3579aa",
+        "name": "dec",
+        "rules": [
+            {
+                "t": "set",
+                "p": "decrement",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 200,
+        "wires": [
+            [
+                "65fdd2ed836ba41b"
+            ]
+        ]
+    },
+    {
+        "id": "65fdd2ed836ba41b",
+        "type": "counter",
+        "z": "8682ef25eb3579aa",
+        "name": "UP/DOWN",
+        "init": "0",
+        "step": "1",
+        "lower": "0",
+        "upper": "100",
+        "mode": "increment",
+        "outputs": 2,
+        "x": 650,
+        "y": 140,
+        "wires": [
+            [],
+            []
+        ]
     },
     {
         "id": "6ea6e0f88371f50f",
@@ -501,7 +686,8 @@
         "links": [
             "54bb00d6bb9f3519",
             "7a90ef62bcef860e",
-            "5e79b81db35e4713"
+            "5e79b81db35e4713",
+            "b88d4e0c3a09513f"
         ],
         "x": 675,
         "y": 60,
@@ -791,8 +977,8 @@
         "name": "Premier",
         "group": "0972f31f7195d7ff",
         "order": 2,
-        "width": 0,
-        "height": 0,
+        "width": "2",
+        "height": "1",
         "label": "${t1}",
         "labelPlacement": "right",
         "labelAlignment": "flex-start",
@@ -812,7 +998,7 @@
         "shape": "circle",
         "showBorder": true,
         "showGlow": true,
-        "x": 1000,
+        "x": 1080,
         "y": 440,
         "wires": []
     },
@@ -838,11 +1024,13 @@
         "y": 440,
         "wires": [
             [
-                "153fc215eb17f9bd"
+                "153fc215eb17f9bd",
+                "e5c66cf5d28f678b"
             ],
             [
                 "7ce18158c222a149",
-                "153fc215eb17f9bd"
+                "153fc215eb17f9bd",
+                "e5c66cf5d28f678b"
             ]
         ]
     },
@@ -854,8 +1042,8 @@
         "name": "Deuxieme",
         "group": "0972f31f7195d7ff",
         "order": 3,
-        "width": 0,
-        "height": 0,
+        "width": "2",
+        "height": "1",
         "label": "${t2}",
         "labelPlacement": "right",
         "labelAlignment": "flex-start",
@@ -887,8 +1075,8 @@
         "name": "Troisieme",
         "group": "0972f31f7195d7ff",
         "order": 4,
-        "width": 0,
-        "height": 0,
+        "width": "2",
+        "height": "1",
         "label": "${t3}",
         "labelPlacement": "right",
         "labelAlignment": "flex-start",
@@ -934,11 +1122,13 @@
         "y": 500,
         "wires": [
             [
-                "419005925aaeeb43"
+                "419005925aaeeb43",
+                "a120136f9c34aac7"
             ],
             [
                 "46a9af3d12c5764b",
-                "419005925aaeeb43"
+                "419005925aaeeb43",
+                "a120136f9c34aac7"
             ]
         ]
     },
@@ -964,10 +1154,12 @@
         "y": 560,
         "wires": [
             [
-                "3542d7dd7a4dad7b"
+                "3542d7dd7a4dad7b",
+                "c4659c8e074b7488"
             ],
             [
-                "3542d7dd7a4dad7b"
+                "3542d7dd7a4dad7b",
+                "c4659c8e074b7488"
             ]
         ]
     },
@@ -1049,7 +1241,8 @@
             "a97bb670af7f924a",
             "b323403df2cf7093",
             "ca683ba385cb01f9",
-            "e95a015ac99eccb4"
+            "e95a015ac99eccb4",
+            "dc21d0cd7ad3591a"
         ],
         "x": 1045,
         "y": 60,
@@ -1762,7 +1955,7 @@
         "g": "8282ca811ab4a572",
         "name": "Quantité",
         "group": "a2e603f3b7f50a2d",
-        "order": 1,
+        "order": 2,
         "value": "payload",
         "valueType": "msg",
         "width": "2",
@@ -1881,31 +2074,6 @@
         ]
     },
     {
-        "id": "65fdd2ed836ba41b",
-        "type": "counter",
-        "z": "c53bc0b1cfdd92b9",
-        "g": "5dd1105e5844b92e",
-        "name": "UP/DOWN",
-        "init": "0",
-        "step": "1",
-        "lower": "0",
-        "upper": "100",
-        "mode": "increment",
-        "outputs": 2,
-        "x": 1030,
-        "y": 1500,
-        "wires": [
-            [
-                "8234295d73887924",
-                "e9ba5aaca0ac5efd",
-                "6056e2eeac376b57"
-            ],
-            [
-                "9084438e6c378eae"
-            ]
-        ]
-    },
-    {
         "id": "5e79b81db35e4713",
         "type": "link in",
         "z": "c53bc0b1cfdd92b9",
@@ -1918,8 +2086,8 @@
         "y": 1500,
         "wires": [
             [
-                "d6e6623d888ea56c",
-                "eeb048be86ab6a8c"
+                "eeb048be86ab6a8c",
+                "6ceaaf16d3460913"
             ]
         ]
     },
@@ -1994,7 +2162,7 @@
         "name": "",
         "label": "up / down",
         "group": "a2e603f3b7f50a2d",
-        "order": 0,
+        "order": 1,
         "width": "2",
         "height": "1",
         "passthru": true,
@@ -2017,96 +2185,7 @@
         "y": 1580,
         "wires": [
             [
-                "d6e6623d888ea56c"
-            ]
-        ]
-    },
-    {
-        "id": "af6202fbf7e30c62",
-        "type": "switch",
-        "z": "c53bc0b1cfdd92b9",
-        "g": "5dd1105e5844b92e",
-        "name": "",
-        "property": "topic",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "true"
-            },
-            {
-                "t": "false"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 715,
-        "y": 1500,
-        "wires": [
-            [
-                "86cb7d242d3824a4",
-                "5855a18c03d33931"
-            ],
-            [
-                "856c385c8a5648e4",
-                "782feca5c6f95ef2"
-            ]
-        ],
-        "l": false
-    },
-    {
-        "id": "86cb7d242d3824a4",
-        "type": "change",
-        "z": "c53bc0b1cfdd92b9",
-        "g": "5dd1105e5844b92e",
-        "name": "inc",
-        "rules": [
-            {
-                "t": "set",
-                "p": "increment",
-                "pt": "msg",
-                "to": "1",
-                "tot": "num"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 870,
-        "y": 1440,
-        "wires": [
-            [
-                "65fdd2ed836ba41b"
-            ]
-        ]
-    },
-    {
-        "id": "856c385c8a5648e4",
-        "type": "change",
-        "z": "c53bc0b1cfdd92b9",
-        "g": "5dd1105e5844b92e",
-        "name": "dec",
-        "rules": [
-            {
-                "t": "set",
-                "p": "decrement",
-                "pt": "msg",
-                "to": "1",
-                "tot": "num"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 870,
-        "y": 1560,
-        "wires": [
-            [
-                "65fdd2ed836ba41b"
+                "6ceaaf16d3460913"
             ]
         ]
     },
@@ -2127,27 +2206,6 @@
         "wires": [
             [
                 "c3d7793156b912f6"
-            ]
-        ]
-    },
-    {
-        "id": "d6e6623d888ea56c",
-        "type": "function",
-        "z": "c53bc0b1cfdd92b9",
-        "g": "5dd1105e5844b92e",
-        "name": "set inc / dec",
-        "func": "if (msg.topic == \"up\") {\n    context.set(\"inc\",msg.payload);\n    msg.topic=msg.payload;\n} \nmsg.topic=context.get(\"inc\") || false\nnode.status({fill:\"red\",shape:\"ring\",text:\"INC : \" + context.get(\"inc\")});\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 590,
-        "y": 1500,
-        "wires": [
-            [
-                "af6202fbf7e30c62"
             ]
         ]
     },
@@ -2258,6 +2316,590 @@
         "statusType": "auto",
         "x": 1250,
         "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "6ceaaf16d3460913",
+        "type": "subflow:8682ef25eb3579aa",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "5dd1105e5844b92e",
+        "name": "Compteur UpDown",
+        "x": 655,
+        "y": 1500,
+        "wires": [
+            [
+                "8234295d73887924",
+                "e9ba5aaca0ac5efd",
+                "6056e2eeac376b57"
+            ],
+            [
+                "9084438e6c378eae"
+            ]
+        ],
+        "inputLabels": [
+            "clock"
+        ],
+        "l": false
+    },
+    {
+        "id": "35557453177b7245",
+        "type": "ui-gauge",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "Milieu",
+        "group": "0972f31f7195d7ff",
+        "order": 5,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "2",
+        "height": 3,
+        "gtype": "gauge-tank",
+        "gstyle": "needle",
+        "title": "milieu",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#a8f5ff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "15",
+                "color": "#55dbec",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "35",
+                "color": "#53b4fd",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "50",
+                "color": "#2397d1",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "70",
+                "color": "#fe4e0a",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1670,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "930350a355fd9eda",
+        "type": "ui-gauge",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "Déchet",
+        "group": "0972f31f7195d7ff",
+        "order": 7,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "2",
+        "height": 3,
+        "gtype": "gauge-tank",
+        "gstyle": "needle",
+        "title": "déchet",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#a8f5ff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "15",
+                "color": "#55dbec",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "35",
+                "color": "#53b4fd",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "50",
+                "color": "#2397d1",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "70",
+                "color": "#fe4e0a",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1680,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0d7f9d3aaf068ebb",
+        "type": "ui-gauge",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "Fermenteur",
+        "group": "0972f31f7195d7ff",
+        "order": 6,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "2",
+        "height": 3,
+        "gtype": "gauge-tank",
+        "gstyle": "needle",
+        "title": "fermenteur",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#a8f5ff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "15",
+                "color": "#55dbec",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "35",
+                "color": "#53b4fd",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "50",
+                "color": "#2397d1",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "70",
+                "color": "#fe4e0a",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1690,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7f39b37b886b9005",
+        "type": "subflow:8682ef25eb3579aa",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "",
+        "x": 1500,
+        "y": 340,
+        "wires": [
+            [
+                "35557453177b7245"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "580076d28c2c15ee",
+        "type": "subflow:8682ef25eb3579aa",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "",
+        "x": 1500,
+        "y": 480,
+        "wires": [
+            [
+                "930350a355fd9eda"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c5f9f243914bf41a",
+        "type": "subflow:8682ef25eb3579aa",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "",
+        "x": 1500,
+        "y": 580,
+        "wires": [
+            [
+                "0d7f9d3aaf068ebb"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b88d4e0c3a09513f",
+        "type": "link in",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "link in 9",
+        "links": [
+            "11c827ee7d4ee251"
+        ],
+        "x": 1335,
+        "y": 440,
+        "wires": [
+            [
+                "7f39b37b886b9005",
+                "580076d28c2c15ee",
+                "c5f9f243914bf41a"
+            ]
+        ]
+    },
+    {
+        "id": "e5c66cf5d28f678b",
+        "type": "change",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "up",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1285,
+        "y": 360,
+        "wires": [
+            [
+                "7f39b37b886b9005"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "a120136f9c34aac7",
+        "type": "change",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "up",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1285,
+        "y": 480,
+        "wires": [
+            [
+                "580076d28c2c15ee"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "c4659c8e074b7488",
+        "type": "change",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "up",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1305,
+        "y": 580,
+        "wires": [
+            [
+                "c5f9f243914bf41a"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "cca8231fd07f0359",
+        "type": "trigger",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "-1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 690,
+        "y": 1800,
+        "wires": [
+            [
+                "e85ad666d6b2ac30"
+            ]
+        ]
+    },
+    {
+        "id": "e85ad666d6b2ac30",
+        "type": "trigger",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "250",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 930,
+        "y": 1800,
+        "wires": [
+            [
+                "612f7155715dfb7f"
+            ]
+        ]
+    },
+    {
+        "id": "612f7155715dfb7f",
+        "type": "ui-led",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "",
+        "group": "14492619691773e2",
+        "order": 2,
+        "width": "3",
+        "height": "1",
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "flex-end",
+        "states": [
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#ff0000"
+            },
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#00ff00"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "square",
+        "showBorder": false,
+        "showGlow": false,
+        "x": 1210,
+        "y": 1800,
+        "wires": []
+    },
+    {
+        "id": "118ad5f41db3f2c9",
+        "type": "ui-switch",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "",
+        "label": "on / off",
+        "group": "14492619691773e2",
+        "order": 1,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-left",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 240,
+        "y": 1700,
+        "wires": [
+            [
+                "b1af727b9aca7f77"
+            ]
+        ]
+    },
+    {
+        "id": "b1af727b9aca7f77",
+        "type": "switch",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 390,
+        "y": 1700,
+        "wires": [
+            [
+                "cca8231fd07f0359"
+            ],
+            [
+                "e260783e59486f55"
+            ]
+        ]
+    },
+    {
+        "id": "e260783e59486f55",
+        "type": "change",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 1800,
+        "wires": [
+            [
+                "cca8231fd07f0359"
+            ]
+        ]
+    },
+    {
+        "id": "dc21d0cd7ad3591a",
+        "type": "link in",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "link in 10",
+        "links": [
+            "86b540c6db88487a"
+        ],
+        "x": 1045,
+        "y": 1720,
+        "wires": [
+            [
+                "612f7155715dfb7f"
+            ]
+        ]
+    },
+    {
+        "id": "5b91c8f0a2eb273b",
+        "type": "ui-control",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "",
+        "ui": "3c225b7898348072",
+        "events": "change",
+        "x": 640,
+        "y": 2040,
+        "wires": [
+            [
+                "1ee04aef94fc6aaa"
+            ]
+        ]
+    },
+    {
+        "id": "1ee04aef94fc6aaa",
+        "type": "debug",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 2040,
         "wires": []
     },
     {
