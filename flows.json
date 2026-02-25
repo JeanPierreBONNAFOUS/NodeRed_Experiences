@@ -218,9 +218,9 @@
             "e95a015ac99eccb4",
             "92e17cabd5c37008"
         ],
-        "x": 434,
+        "x": 454,
         "y": 779,
-        "w": 1032,
+        "w": 1012,
         "h": 362
     },
     {
@@ -301,9 +301,9 @@
             "e260783e59486f55",
             "dc21d0cd7ad3591a"
         ],
-        "x": 434,
+        "x": 444,
         "y": 1599,
-        "w": 792,
+        "w": 782,
         "h": 222
     },
     {
@@ -355,9 +355,9 @@
             "99a7b70404ce4f9a",
             "e76eec8550c13709"
         ],
-        "x": 434,
+        "x": 424,
         "y": 1839,
-        "w": 1252,
+        "w": 1262,
         "h": 582
     },
     {
@@ -2601,25 +2601,13 @@
         "segments": [
             {
                 "from": "0",
-                "color": "#a8f5ff",
-                "text": "",
-                "textType": "label"
-            },
-            {
-                "from": "15",
-                "color": "#55dbec",
-                "text": "",
-                "textType": "label"
-            },
-            {
-                "from": "35",
-                "color": "#53b4fd",
+                "color": "#ffcba8",
                 "text": "",
                 "textType": "label"
             },
             {
                 "from": "50",
-                "color": "#2397d1",
+                "color": "#23d138",
                 "text": "",
                 "textType": "label"
             },
@@ -2668,30 +2656,12 @@
         "segments": [
             {
                 "from": "0",
-                "color": "#a8f5ff",
+                "color": "#53878d",
                 "text": "",
                 "textType": "label"
             },
             {
-                "from": "15",
-                "color": "#55dbec",
-                "text": "",
-                "textType": "label"
-            },
-            {
-                "from": "35",
-                "color": "#53b4fd",
-                "text": "",
-                "textType": "label"
-            },
-            {
-                "from": "50",
-                "color": "#2397d1",
-                "text": "",
-                "textType": "label"
-            },
-            {
-                "from": "70",
+                "from": "90",
                 "color": "#fe4e0a",
                 "text": "",
                 "textType": "label"
@@ -2735,31 +2705,19 @@
         "segments": [
             {
                 "from": "0",
-                "color": "#a8f5ff",
+                "color": "#f9aa01",
                 "text": "",
                 "textType": "label"
             },
             {
-                "from": "15",
-                "color": "#55dbec",
+                "from": "19",
+                "color": "#4df57f",
                 "text": "",
                 "textType": "label"
             },
             {
-                "from": "35",
-                "color": "#53b4fd",
-                "text": "",
-                "textType": "label"
-            },
-            {
-                "from": "50",
-                "color": "#2397d1",
-                "text": "",
-                "textType": "label"
-            },
-            {
-                "from": "70",
-                "color": "#fe4e0a",
+                "from": "61",
+                "color": "#fd6453",
                 "text": "",
                 "textType": "label"
             }
