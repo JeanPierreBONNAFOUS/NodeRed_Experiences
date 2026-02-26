@@ -16,6 +16,14 @@
         "env": []
     },
     {
+        "id": "f9450cebd9b8d8c5",
+        "type": "tab",
+        "label": "BDD",
+        "disabled": false,
+        "info": "On travaille sur un BDD sqlite\nqui doit être créé et maj par node-red\nqui doit être lisible avec sqlitebrowser par les utilisateurs du groupe shareGroup \nqui doit être positionner dans l'espace de travail commun /opt/node-red-flows",
+        "env": []
+    },
+    {
         "id": "8682ef25eb3579aa",
         "type": "subflow",
         "name": "Count Up Down",
@@ -218,9 +226,9 @@
             "e95a015ac99eccb4",
             "92e17cabd5c37008"
         ],
-        "x": 454,
+        "x": 434,
         "y": 779,
-        "w": 1012,
+        "w": 1032,
         "h": 362
     },
     {
@@ -301,9 +309,9 @@
             "e260783e59486f55",
             "dc21d0cd7ad3591a"
         ],
-        "x": 444,
+        "x": 434,
         "y": 1599,
-        "w": 782,
+        "w": 792,
         "h": 222
     },
     {
@@ -355,10 +363,85 @@
             "99a7b70404ce4f9a",
             "e76eec8550c13709"
         ],
-        "x": 424,
+        "x": 434,
         "y": 1839,
-        "w": 1262,
+        "w": 1252,
         "h": 582
+    },
+    {
+        "id": "0c9fd96223731221",
+        "type": "group",
+        "z": "f9450cebd9b8d8c5",
+        "name": "Création BDD et Tables",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "59a3c33b9c5696cb",
+            "2d1b2cb4a2cae480",
+            "bb7a460cce982c0e",
+            "17d7bfc4812db66a",
+            "1e87fbcc53e26614",
+            "5f9b4cd1dc62cac1",
+            "8636e8a46dcbb180"
+        ],
+        "x": 314,
+        "y": 79,
+        "w": 552,
+        "h": 182
+    },
+    {
+        "id": "7762aa2310673208",
+        "type": "group",
+        "z": "f9450cebd9b8d8c5",
+        "name": "Interroger / maj la BDD",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "279061d501572b56",
+            "80b37adc53b47efa",
+            "1cfa89574bbecbbc",
+            "65bf7728a2d5d77d",
+            "31a1cbf2fa3d0605",
+            "e5489a29b606346e",
+            "86efbb344989df43",
+            "e1af9248bd3adb0c",
+            "07647ecc5b178021",
+            "d44c48998b73e8b0",
+            "75daf828f9ac0ebb",
+            "50e3b3146ea07590",
+            "7b7f3c331cc2c9f2",
+            "3540971635b3ae80",
+            "922f89199eb97a59",
+            "a4ad6841398a7452"
+        ],
+        "x": 314,
+        "y": 299,
+        "w": 872,
+        "h": 322
+    },
+    {
+        "id": "811a2d9f40c309b4",
+        "type": "group",
+        "z": "f9450cebd9b8d8c5",
+        "name": "Effacer les données de la table enregistrement",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "149063dab3285ec0",
+            "acc1eb7be86ccdea",
+            "4a46ffd5cf86c9b9",
+            "a2ede53d23306931",
+            "762f1732fcd69c53",
+            "dff16aeabd8d787c",
+            "b18d0e15b4be9740"
+        ],
+        "x": 314,
+        "y": 659,
+        "w": 852,
+        "h": 202
     },
     {
         "id": "6c5afa767ad7188a",
@@ -644,6 +727,12 @@
         "width": "2",
         "height": 1,
         "className": ""
+    },
+    {
+        "id": "43d9ae6d789c2ff1",
+        "type": "sqlitedb",
+        "db": "/opt/node-red-flows/fermentator.db",
+        "mode": "RWC"
     },
     {
         "id": "d6e6623d888ea56c",
@@ -4049,5 +4138,598 @@
         "x": 1140,
         "y": 260,
         "wires": []
+    },
+    {
+        "id": "59a3c33b9c5696cb",
+        "type": "comment",
+        "z": "f9450cebd9b8d8c5",
+        "g": "0c9fd96223731221",
+        "name": "Création",
+        "info": "Création à partir de RIEN\nDe la base\nDes tables\n",
+        "x": 400,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "279061d501572b56",
+        "type": "comment",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7762aa2310673208",
+        "name": "Injection de données",
+        "info": "Ajouter des donnés\nLire des données\nSupprimer des données\nMettre à jour des données",
+        "x": 430,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "149063dab3285ec0",
+        "type": "comment",
+        "z": "f9450cebd9b8d8c5",
+        "g": "811a2d9f40c309b4",
+        "name": "maintenance",
+        "info": " - Suppresion des tables\n - Suppression des données\n - initialisation\n - Update de donnée\n",
+        "x": 410,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "2d1b2cb4a2cae480",
+        "type": "inject",
+        "z": "f9450cebd9b8d8c5",
+        "g": "0c9fd96223731221",
+        "name": "Create",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 410,
+        "y": 160,
+        "wires": [
+            [
+                "bb7a460cce982c0e"
+            ]
+        ]
+    },
+    {
+        "id": "bb7a460cce982c0e",
+        "type": "sqlite",
+        "z": "f9450cebd9b8d8c5",
+        "g": "0c9fd96223731221",
+        "mydb": "43d9ae6d789c2ff1",
+        "sqlquery": "fixed",
+        "sql": "CREATE TABLE IF NOT EXISTS enregistrement (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    heure_mesure TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n    valeur_ph REAL NOT NULL,\n    etat_pompe INTEGER NOT NULL CHECK (etat_pompe IN (0, 1))\n);",
+        "name": "table enregistrement DB",
+        "x": 590,
+        "y": 160,
+        "wires": [
+            [
+                "17d7bfc4812db66a"
+            ]
+        ]
+    },
+    {
+        "id": "17d7bfc4812db66a",
+        "type": "debug",
+        "z": "f9450cebd9b8d8c5",
+        "g": "0c9fd96223731221",
+        "name": "OUT",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "1e87fbcc53e26614",
+        "type": "inject",
+        "z": "f9450cebd9b8d8c5",
+        "g": "0c9fd96223731221",
+        "name": "Create",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 410,
+        "y": 220,
+        "wires": [
+            [
+                "5f9b4cd1dc62cac1"
+            ]
+        ]
+    },
+    {
+        "id": "5f9b4cd1dc62cac1",
+        "type": "sqlite",
+        "z": "f9450cebd9b8d8c5",
+        "g": "0c9fd96223731221",
+        "mydb": "43d9ae6d789c2ff1",
+        "sqlquery": "fixed",
+        "sql": "CREATE TABLE IF NOT EXISTS moteur (\n    id INTEGER PRIMARY KEY,\n    compteur INTEGER,\n    start TIMESTAMP,\n    end TIMESTAMP\n    );",
+        "name": "table moteur",
+        "x": 550,
+        "y": 220,
+        "wires": [
+            [
+                "8636e8a46dcbb180"
+            ]
+        ]
+    },
+    {
+        "id": "8636e8a46dcbb180",
+        "type": "debug",
+        "z": "f9450cebd9b8d8c5",
+        "g": "0c9fd96223731221",
+        "name": "OUT",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "80b37adc53b47efa",
+        "type": "inject",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7762aa2310673208",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 430,
+        "y": 400,
+        "wires": [
+            [
+                "1cfa89574bbecbbc"
+            ]
+        ]
+    },
+    {
+        "id": "1cfa89574bbecbbc",
+        "type": "function",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7762aa2310673208",
+        "name": "Random PH ",
+        "func": "// Générer des valeurs aléatoires pour valeur_ph et etat_pompe\nconst valeur_ph = (Math.random() * 9 + 1).toFixed(1); // Valeur entre 1 et 10 avec 1 décimale\nconst etat_pompe = Math.round(Math.random()); // État aléatoire 0 ou 1\n\nmsg.topic = `\nINSERT INTO enregistrement (valeur_ph, etat_pompe) \nVALUES (${valeur_ph}, ${etat_pompe});\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 400,
+        "wires": [
+            [
+                "65bf7728a2d5d77d"
+            ]
+        ]
+    },
+    {
+        "id": "65bf7728a2d5d77d",
+        "type": "sqlite",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7762aa2310673208",
+        "mydb": "43d9ae6d789c2ff1",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "insert enregistrement",
+        "x": 900,
+        "y": 400,
+        "wires": [
+            [
+                "31a1cbf2fa3d0605"
+            ]
+        ]
+    },
+    {
+        "id": "31a1cbf2fa3d0605",
+        "type": "debug",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7762aa2310673208",
+        "name": "OUT",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "topic",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "e5489a29b606346e",
+        "type": "inject",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7762aa2310673208",
+        "name": "insert",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 430,
+        "y": 460,
+        "wires": [
+            [
+                "07647ecc5b178021"
+            ]
+        ]
+    },
+    {
+        "id": "86efbb344989df43",
+        "type": "sqlite",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7762aa2310673208",
+        "mydb": "43d9ae6d789c2ff1",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "insert enregistrement",
+        "x": 900,
+        "y": 460,
+        "wires": [
+            [
+                "e1af9248bd3adb0c"
+            ]
+        ]
+    },
+    {
+        "id": "e1af9248bd3adb0c",
+        "type": "debug",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7762aa2310673208",
+        "name": "OUT",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "topic",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "07647ecc5b178021",
+        "type": "function",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7762aa2310673208",
+        "name": "4 enregistrements moteur",
+        "func": "// Générer 4 enregistrements pour la table moteur\nconst insertQueries = [];\nfor (let i = 1; i <= 4; i++) {\n    const compteur = Math.floor(Math.random() * 100); // Valeur aléatoire pour compteur\n    const start = new Date().toISOString(); // Date actuelle pour start\n    const end = new Date(Date.now() + (i * 1000 * 60)).toISOString(); // Date future pour end\n    insertQueries.push(`(${i}, ${compteur}, '${start}', '${end}')`);\n}\n\nmsg.topic = `\nINSERT INTO moteur (id, compteur, start, end) \nVALUES ${insertQueries.join(', ')};\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 460,
+        "wires": [
+            [
+                "86efbb344989df43"
+            ]
+        ]
+    },
+    {
+        "id": "d44c48998b73e8b0",
+        "type": "inject",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7762aa2310673208",
+        "name": "Moteur 1 value",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[2,300]",
+        "payloadType": "json",
+        "x": 460,
+        "y": 520,
+        "wires": [
+            [
+                "75daf828f9ac0ebb"
+            ]
+        ]
+    },
+    {
+        "id": "75daf828f9ac0ebb",
+        "type": "function",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7762aa2310673208",
+        "name": "Update Moteur",
+        "func": "// Supposons que msg.payload est un tableau de la forme [id, compteur]\nconst [id, compteur] = msg.payload;\n\n// Préparer la requête SQL pour mettre à jour le compteur\nmsg.topic = `\nUPDATE moteur \nSET compteur = ${compteur},\nend = CURRENT_TIMESTAMP\nWHERE id = ${id};\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 520,
+        "wires": [
+            [
+                "50e3b3146ea07590"
+            ]
+        ]
+    },
+    {
+        "id": "50e3b3146ea07590",
+        "type": "sqlite",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7762aa2310673208",
+        "mydb": "43d9ae6d789c2ff1",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "update enregistrement",
+        "x": 900,
+        "y": 520,
+        "wires": [
+            [
+                "7b7f3c331cc2c9f2"
+            ]
+        ]
+    },
+    {
+        "id": "7b7f3c331cc2c9f2",
+        "type": "debug",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7762aa2310673208",
+        "name": "OUT",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "topic",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1090,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "3540971635b3ae80",
+        "type": "sqlite",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7762aa2310673208",
+        "mydb": "43d9ae6d789c2ff1",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "read enregistrement",
+        "x": 900,
+        "y": 580,
+        "wires": [
+            [
+                "922f89199eb97a59"
+            ]
+        ]
+    },
+    {
+        "id": "922f89199eb97a59",
+        "type": "debug",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7762aa2310673208",
+        "name": "OUT",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1090,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "a4ad6841398a7452",
+        "type": "inject",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7762aa2310673208",
+        "name": "select 4 PH rec",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "SELECT heure_mesure as t, valeur_ph as ph, etat_pompe as NaOH FROM enregistrement ORDER BY id DESC LIMIT 4;",
+        "x": 460,
+        "y": 580,
+        "wires": [
+            [
+                "3540971635b3ae80"
+            ]
+        ]
+    },
+    {
+        "id": "acc1eb7be86ccdea",
+        "type": "sqlite",
+        "z": "f9450cebd9b8d8c5",
+        "g": "811a2d9f40c309b4",
+        "mydb": "43d9ae6d789c2ff1",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "del enregistrement",
+        "x": 870,
+        "y": 760,
+        "wires": [
+            [
+                "4a46ffd5cf86c9b9"
+            ]
+        ]
+    },
+    {
+        "id": "4a46ffd5cf86c9b9",
+        "type": "debug",
+        "z": "f9450cebd9b8d8c5",
+        "g": "811a2d9f40c309b4",
+        "name": "OUT",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "a2ede53d23306931",
+        "type": "inject",
+        "z": "f9450cebd9b8d8c5",
+        "g": "811a2d9f40c309b4",
+        "name": "Go",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 410,
+        "y": 820,
+        "wires": [
+            [
+                "762f1732fcd69c53"
+            ]
+        ]
+    },
+    {
+        "id": "762f1732fcd69c53",
+        "type": "function",
+        "z": "f9450cebd9b8d8c5",
+        "g": "811a2d9f40c309b4",
+        "name": "delete les deux ",
+        "func": "// Préparer les requêtes SQL\nconst deleteMesures = \"DELETE FROM enregistrement;\";\nconst resetSequence = \"DELETE FROM sqlite_sequence WHERE name='enregistrement';\";\n\n// Combiner les requêtes\nmsg.topic = `${deleteMesures} ${resetSequence}`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 820,
+        "wires": [
+            [
+                "acc1eb7be86ccdea"
+            ]
+        ]
+    },
+    {
+        "id": "dff16aeabd8d787c",
+        "type": "inject",
+        "z": "f9450cebd9b8d8c5",
+        "g": "811a2d9f40c309b4",
+        "name": "Delete enregistrement",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "DELETE FROM enregistrement;",
+        "x": 460,
+        "y": 740,
+        "wires": [
+            [
+                "acc1eb7be86ccdea"
+            ]
+        ]
+    },
+    {
+        "id": "b18d0e15b4be9740",
+        "type": "inject",
+        "z": "f9450cebd9b8d8c5",
+        "g": "811a2d9f40c309b4",
+        "name": "Delete Sequence",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "DELETE FROM sqlite_sequence WHERE name='enregistrement';",
+        "x": 440,
+        "y": 780,
+        "wires": [
+            [
+                "acc1eb7be86ccdea"
+            ]
+        ]
     }
 ]
