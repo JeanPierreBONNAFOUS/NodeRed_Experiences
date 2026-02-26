@@ -414,12 +414,13 @@
             "7b7f3c331cc2c9f2",
             "3540971635b3ae80",
             "922f89199eb97a59",
-            "a4ad6841398a7452"
+            "a4ad6841398a7452",
+            "387fa88b0a54797d"
         ],
         "x": 314,
         "y": 299,
         "w": 872,
-        "h": 322
+        "h": 362
     },
     {
         "id": "811a2d9f40c309b4",
@@ -439,8 +440,8 @@
             "b18d0e15b4be9740"
         ],
         "x": 314,
-        "y": 659,
-        "w": 852,
+        "y": 699,
+        "w": 872,
         "h": 202
     },
     {
@@ -733,6 +734,20 @@
         "type": "sqlitedb",
         "db": "/opt/node-red-flows/fermentator.db",
         "mode": "RWC"
+    },
+    {
+        "id": "c553a1617e500f30",
+        "type": "ui-group",
+        "name": "Tableaux",
+        "page": "fac36d98b944e7e0",
+        "width": 6,
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
     },
     {
         "id": "d6e6623d888ea56c",
@@ -4169,7 +4184,7 @@
         "name": "maintenance",
         "info": " - Suppresion des tables\n - Suppression des données\n - initialisation\n - Update de donnée\n",
         "x": 410,
-        "y": 700,
+        "y": 740,
         "wires": []
     },
     {
@@ -4333,7 +4348,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 590,
+        "x": 670,
         "y": 400,
         "wires": [
             [
@@ -4553,7 +4568,8 @@
         "y": 580,
         "wires": [
             [
-                "922f89199eb97a59"
+                "922f89199eb97a59",
+                "af743614c07d88ac"
             ]
         ]
     },
@@ -4591,7 +4607,7 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "topic": "SELECT heure_mesure as t, valeur_ph as ph, etat_pompe as NaOH FROM enregistrement ORDER BY id DESC LIMIT 4;",
+        "topic": "SELECT heure_mesure as t, valeur_ph as ph, etat_pompe as NaOH FROM enregistrement ORDER BY id DESC LIMIT 2;",
         "x": 460,
         "y": 580,
         "wires": [
@@ -4610,7 +4626,7 @@
         "sql": "",
         "name": "del enregistrement",
         "x": 870,
-        "y": 760,
+        "y": 800,
         "wires": [
             [
                 "4a46ffd5cf86c9b9"
@@ -4631,8 +4647,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1070,
-        "y": 760,
+        "x": 1090,
+        "y": 800,
         "wires": []
     },
     {
@@ -4654,7 +4670,7 @@
         "payload": "true",
         "payloadType": "bool",
         "x": 410,
-        "y": 820,
+        "y": 860,
         "wires": [
             [
                 "762f1732fcd69c53"
@@ -4675,7 +4691,7 @@
         "finalize": "",
         "libs": [],
         "x": 560,
-        "y": 820,
+        "y": 860,
         "wires": [
             [
                 "acc1eb7be86ccdea"
@@ -4700,7 +4716,7 @@
         "onceDelay": 0.1,
         "topic": "DELETE FROM enregistrement;",
         "x": 460,
-        "y": 740,
+        "y": 780,
         "wires": [
             [
                 "acc1eb7be86ccdea"
@@ -4725,10 +4741,112 @@
         "onceDelay": 0.1,
         "topic": "DELETE FROM sqlite_sequence WHERE name='enregistrement';",
         "x": 440,
-        "y": 780,
+        "y": 820,
         "wires": [
             [
                 "acc1eb7be86ccdea"
+            ]
+        ]
+    },
+    {
+        "id": "af743614c07d88ac",
+        "type": "ui-table",
+        "z": "f9450cebd9b8d8c5",
+        "group": "c553a1617e500f30",
+        "name": "Board",
+        "label": "Les enregistrements",
+        "order": 1,
+        "width": "4",
+        "height": "1",
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": true,
+        "showSearch": true,
+        "deselect": false,
+        "selectionType": "checkbox",
+        "columns": [
+            {
+                "title": "",
+                "key": "",
+                "keyType": "key",
+                "type": "row",
+                "width": "5",
+                "align": "start"
+            },
+            {
+                "title": "Time",
+                "key": "t",
+                "keyType": "key",
+                "type": "text",
+                "width": "40",
+                "align": "start"
+            },
+            {
+                "title": "ph",
+                "key": "ph",
+                "keyType": "key",
+                "type": "text",
+                "width": "5",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "className": "",
+        "x": 1110,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3d9aca16184dff97",
+        "type": "inject",
+        "z": "f9450cebd9b8d8c5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "x": 940,
+        "y": 640,
+        "wires": [
+            [
+                "af743614c07d88ac"
+            ]
+        ]
+    },
+    {
+        "id": "387fa88b0a54797d",
+        "type": "inject",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7762aa2310673208",
+        "name": "select all PH rec",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "SELECT heure_mesure as t, valeur_ph as ph, etat_pompe as NaOH FROM enregistrement ORDER BY id DESC;",
+        "x": 460,
+        "y": 620,
+        "wires": [
+            [
+                "3540971635b3ae80"
             ]
         ]
     }
