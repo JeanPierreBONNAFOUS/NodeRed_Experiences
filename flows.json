@@ -24,6 +24,22 @@
         "env": []
     },
     {
+        "id": "279cd106c27bb38c",
+        "type": "tab",
+        "label": "mqtt",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d8be5e1f9ecfc822",
+        "type": "tab",
+        "label": "Arduino",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "8682ef25eb3579aa",
         "type": "subflow",
         "name": "Count Up Down",
@@ -104,12 +120,13 @@
         "nodes": [
             "2fa95438cf7ec01a",
             "7a90ef62bcef860e",
-            "ea56df877b232f1c"
+            "ea56df877b232f1c",
+            "90f3fa6c5c374060"
         ],
         "x": 444,
-        "y": 119,
+        "y": 79,
         "w": 242,
-        "h": 82
+        "h": 122
     },
     {
         "id": "a3fb81230cec032b",
@@ -226,9 +243,9 @@
             "e95a015ac99eccb4",
             "92e17cabd5c37008"
         ],
-        "x": 434,
+        "x": 444,
         "y": 779,
-        "w": 1032,
+        "w": 1022,
         "h": 362
     },
     {
@@ -309,9 +326,9 @@
             "e260783e59486f55",
             "dc21d0cd7ad3591a"
         ],
-        "x": 434,
+        "x": 444,
         "y": 1599,
-        "w": 792,
+        "w": 782,
         "h": 222
     },
     {
@@ -363,9 +380,9 @@
             "99a7b70404ce4f9a",
             "e76eec8550c13709"
         ],
-        "x": 434,
+        "x": 424,
         "y": 1839,
-        "w": 1252,
+        "w": 1262,
         "h": 582
     },
     {
@@ -750,6 +767,59 @@
         "groupType": "default"
     },
     {
+        "id": "84dbf471304974de",
+        "type": "mqtt-broker",
+        "name": "screen",
+        "broker": "screen.home",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "b8105c76f9328173",
+        "type": "ui-group",
+        "name": "Graph",
+        "page": "fac36d98b944e7e0",
+        "width": 6,
+        "height": 1,
+        "order": 4,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "8683c29a9a878c47",
+        "type": "arduino-board",
+        "device": "/dev/ttyACM0",
+        "name": "FirmataDuinoLeur",
+        "samplingInt": "500",
+        "log2consol": false
+    },
+    {
         "id": "d6e6623d888ea56c",
         "type": "function",
         "z": "8682ef25eb3579aa",
@@ -908,7 +978,8 @@
             "54bb00d6bb9f3519",
             "7a90ef62bcef860e",
             "5e79b81db35e4713",
-            "60e77f7cbc023685"
+            "60e77f7cbc023685",
+            "4ffa0e5de3751652"
         ],
         "x": 705,
         "y": 60,
@@ -987,7 +1058,8 @@
         "y": 160,
         "wires": [
             [
-                "2fa95438cf7ec01a"
+                "2fa95438cf7ec01a",
+                "90f3fa6c5c374060"
             ]
         ],
         "l": false
@@ -3927,6 +3999,20 @@
         ]
     },
     {
+        "id": "90f3fa6c5c374060",
+        "type": "link out",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "5539f321a8ebe71c",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "4ffa0e5de3751652"
+        ],
+        "x": 645,
+        "y": 120,
+        "wires": []
+    },
+    {
         "id": "809cc8f4678767b7",
         "type": "inject",
         "z": "ab36a2f91b62fae8",
@@ -4849,5 +4935,866 @@
                 "3540971635b3ae80"
             ]
         ]
+    },
+    {
+        "id": "dbe31c644a583ffa",
+        "type": "mqtt in",
+        "z": "279cd106c27bb38c",
+        "name": "screen",
+        "topic": "domoticz/in",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "84dbf471304974de",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 120,
+        "wires": [
+            [
+                "4cda9ce47173b7f1",
+                "d340477bd213910d"
+            ]
+        ]
+    },
+    {
+        "id": "4cda9ce47173b7f1",
+        "type": "debug",
+        "z": "279cd106c27bb38c",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "e338d7e4868d0704",
+        "type": "ui-chart",
+        "z": "279cd106c27bb38c",
+        "group": "b8105c76f9328173",
+        "name": "",
+        "label": "chart",
+        "order": 1,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "t",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "l",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "12",
+        "ymax": "14",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "false",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "smooth",
+        "x": 870,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d340477bd213910d",
+        "type": "switch",
+        "z": "279cd106c27bb38c",
+        "name": "",
+        "property": "payload.idx",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "100",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 360,
+        "y": 220,
+        "wires": [
+            [
+                "052fbe175e3f3e7d",
+                "7e7d4db3bea2b9b6"
+            ]
+        ]
+    },
+    {
+        "id": "052fbe175e3f3e7d",
+        "type": "debug",
+        "z": "279cd106c27bb38c",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "7e7d4db3bea2b9b6",
+        "type": "change",
+        "z": "279cd106c27bb38c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.svalue",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "VBat",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 220,
+        "wires": [
+            [
+                "e9397a4016f6b538",
+                "e338d7e4868d0704"
+            ]
+        ]
+    },
+    {
+        "id": "e9397a4016f6b538",
+        "type": "debug",
+        "z": "279cd106c27bb38c",
+        "name": "debug 8",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "aa051ad44cfa1ce8",
+        "type": "inject",
+        "z": "279cd106c27bb38c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "x": 720,
+        "y": 140,
+        "wires": [
+            [
+                "e338d7e4868d0704"
+            ]
+        ]
+    },
+    {
+        "id": "f48b015d956fb5b0",
+        "type": "arduino out",
+        "z": "d8be5e1f9ecfc822",
+        "name": "D2",
+        "pin": "2",
+        "state": "OUTPUT",
+        "arduino": "8683c29a9a878c47",
+        "x": 670,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "1779e865fefcf33f",
+        "type": "inject",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 270,
+        "y": 120,
+        "wires": [
+            [
+                "5d9cdd44d108213b"
+            ]
+        ]
+    },
+    {
+        "id": "5d9cdd44d108213b",
+        "type": "trigger",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 480,
+        "y": 120,
+        "wires": [
+            [
+                "f48b015d956fb5b0",
+                "52d87de00dc7ec6b"
+            ]
+        ]
+    },
+    {
+        "id": "2540e0ac55017e62",
+        "type": "arduino in",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "pin": "0",
+        "state": "ANALOG",
+        "arduino": "8683c29a9a878c47",
+        "x": 210,
+        "y": 720,
+        "wires": [
+            [
+                "457fea666f854e0a",
+                "256bf713bf6ae8cc"
+            ]
+        ]
+    },
+    {
+        "id": "2b316e7addbb02a9",
+        "type": "arduino out",
+        "z": "d8be5e1f9ecfc822",
+        "name": "D3",
+        "pin": "3",
+        "state": "OUTPUT",
+        "arduino": "8683c29a9a878c47",
+        "x": 670,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "c3ad2d0768457167",
+        "type": "arduino out",
+        "z": "d8be5e1f9ecfc822",
+        "name": "D4",
+        "pin": "4",
+        "state": "OUTPUT",
+        "arduino": "8683c29a9a878c47",
+        "x": 670,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "0f596330f5de36d7",
+        "type": "arduino out",
+        "z": "d8be5e1f9ecfc822",
+        "name": "D5",
+        "pin": "5",
+        "state": "OUTPUT",
+        "arduino": "8683c29a9a878c47",
+        "x": 670,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "b1be95b55d20eb09",
+        "type": "arduino out",
+        "z": "d8be5e1f9ecfc822",
+        "name": "D6",
+        "pin": "6",
+        "state": "OUTPUT",
+        "arduino": "8683c29a9a878c47",
+        "x": 670,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "fcb76c65c91bdad2",
+        "type": "arduino out",
+        "z": "d8be5e1f9ecfc822",
+        "name": "D7",
+        "pin": "7",
+        "state": "OUTPUT",
+        "arduino": "8683c29a9a878c47",
+        "x": 670,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "c199a9030a4317a2",
+        "type": "arduino out",
+        "z": "d8be5e1f9ecfc822",
+        "name": "D8",
+        "pin": "8",
+        "state": "OUTPUT",
+        "arduino": "8683c29a9a878c47",
+        "x": 670,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "8e7ed4d6b60f88d8",
+        "type": "arduino out",
+        "z": "d8be5e1f9ecfc822",
+        "name": "D9",
+        "pin": "9",
+        "state": "OUTPUT",
+        "arduino": "8683c29a9a878c47",
+        "x": 670,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "395c8f3d2d623b14",
+        "type": "trigger",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 495,
+        "y": 180,
+        "wires": [
+            [
+                "2b316e7addbb02a9",
+                "1253a233cce9e6f5"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "457fea666f854e0a",
+        "type": "switch",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "200",
+                "vt": "num"
+            },
+            {
+                "t": "gte",
+                "v": "400",
+                "vt": "num"
+            },
+            {
+                "t": "gte",
+                "v": "600",
+                "vt": "num"
+            },
+            {
+                "t": "gte",
+                "v": "800",
+                "vt": "num"
+            },
+            {
+                "t": "gte",
+                "v": "1000",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 220,
+        "y": 320,
+        "wires": [
+            [],
+            [],
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "256bf713bf6ae8cc",
+        "type": "ui-gauge",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "group": "b8105c76f9328173",
+        "order": 0,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "gauge",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5358ea",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "400",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "700",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "900",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "1024",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 740,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "52d87de00dc7ec6b",
+        "type": "delay",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "500",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 435,
+        "y": 180,
+        "wires": [
+            [
+                "395c8f3d2d623b14"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "736203467f84db0e",
+        "type": "trigger",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 495,
+        "y": 240,
+        "wires": [
+            [
+                "c3ad2d0768457167",
+                "11c25f65e2b65948"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "1253a233cce9e6f5",
+        "type": "delay",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "500",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 435,
+        "y": 240,
+        "wires": [
+            [
+                "736203467f84db0e"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "f25d6db5fd63ca20",
+        "type": "trigger",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 495,
+        "y": 300,
+        "wires": [
+            [
+                "0f596330f5de36d7",
+                "25d20b050e63ad2d"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "11c25f65e2b65948",
+        "type": "delay",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "500",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 435,
+        "y": 300,
+        "wires": [
+            [
+                "f25d6db5fd63ca20"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "ae958f7a518c44b5",
+        "type": "trigger",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 495,
+        "y": 360,
+        "wires": [
+            [
+                "b1be95b55d20eb09",
+                "7d236d88ed221fce"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "25d20b050e63ad2d",
+        "type": "delay",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "500",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 435,
+        "y": 360,
+        "wires": [
+            [
+                "ae958f7a518c44b5"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "3f66795757fead95",
+        "type": "trigger",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 495,
+        "y": 420,
+        "wires": [
+            [
+                "fcb76c65c91bdad2",
+                "578bef1ce57f266e"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "7d236d88ed221fce",
+        "type": "delay",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "500",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 435,
+        "y": 420,
+        "wires": [
+            [
+                "3f66795757fead95"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "161579fa69c38fae",
+        "type": "trigger",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 495,
+        "y": 480,
+        "wires": [
+            [
+                "c199a9030a4317a2",
+                "4c6c22e7bba04a61"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "578bef1ce57f266e",
+        "type": "delay",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "500",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 435,
+        "y": 480,
+        "wires": [
+            [
+                "161579fa69c38fae"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "e7f5d218ca035ada",
+        "type": "trigger",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 495,
+        "y": 540,
+        "wires": [
+            [
+                "8e7ed4d6b60f88d8"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "4c6c22e7bba04a61",
+        "type": "delay",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "500",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 435,
+        "y": 540,
+        "wires": [
+            [
+                "e7f5d218ca035ada"
+            ]
+        ],
+        "l": false
     }
 ]
