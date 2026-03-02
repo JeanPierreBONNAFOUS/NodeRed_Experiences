@@ -123,10 +123,10 @@
             "ea56df877b232f1c",
             "90f3fa6c5c374060"
         ],
-        "x": 444,
-        "y": 79,
+        "x": 1084,
+        "y": 139,
         "w": 242,
-        "h": 122
+        "h": 142
     },
     {
         "id": "a3fb81230cec032b",
@@ -146,8 +146,8 @@
             "5f84468c00dcd131",
             "f28c8c33399284ac"
         ],
-        "x": 444,
-        "y": 219,
+        "x": 454,
+        "y": 139,
         "w": 512,
         "h": 142
     },
@@ -188,8 +188,8 @@
                 "type": "num"
             }
         ],
-        "x": 434,
-        "y": 379,
+        "x": 454,
+        "y": 319,
         "w": 732,
         "h": 222
     },
@@ -209,8 +209,8 @@
             "4b646ee272cbe055",
             "25b1466557ebce78"
         ],
-        "x": 434,
-        "y": 619,
+        "x": 454,
+        "y": 579,
         "w": 652,
         "h": 142
     },
@@ -281,7 +281,7 @@
             "c688b7713fabbc27",
             "86b540c6db88487a"
         ],
-        "x": 834,
+        "x": 774,
         "y": 19,
         "w": 252,
         "h": 82
@@ -547,6 +547,35 @@
         "y": 319,
         "w": 552,
         "h": 222
+    },
+    {
+        "id": "df07a1238a55e5b5",
+        "type": "group",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "Flux on/off",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "32a156f6ac960295",
+            "669f5011d11ebf87",
+            "bad1e7f31a4c7073",
+            "c3e90e90b2cf3c5e",
+            "a5761a8a511d07c7",
+            "5791e7cfabd1e582",
+            "3ce73b93a2a5710d",
+            "bb1c1847054d7efc",
+            "645f0d54aad96fec",
+            "9a7c234b1febe5d1",
+            "6e7ed4af27ee2dd1",
+            "3f5ee88e5de9007e",
+            "3ae6e088584e08b7"
+        ],
+        "x": 1334,
+        "y": 1579,
+        "w": 942,
+        "h": 242,
+        "info": "Laisse passer les messages si le topic est true\nle topic prend la valeur du switch.\nle switch retourne un msg true|false et un topic sw\nla fonction capte les messages dont le topic == sw\net positionne dans le message d'entrée le topic à la valeur du switch"
     },
     {
         "id": "6c5afa767ad7188a",
@@ -1116,7 +1145,8 @@
             "54bb00d6bb9f3519",
             "7a90ef62bcef860e",
             "5e79b81db35e4713",
-            "60e77f7cbc023685"
+            "60e77f7cbc023685",
+            "32a156f6ac960295"
         ],
         "x": 705,
         "y": 60,
@@ -1151,8 +1181,8 @@
         "shape": "circle",
         "showBorder": true,
         "showGlow": true,
-        "x": 645,
-        "y": 160,
+        "x": 1285,
+        "y": 240,
         "wires": [],
         "l": false
     },
@@ -1165,8 +1195,8 @@
         "links": [
             "11c827ee7d4ee251"
         ],
-        "x": 485,
-        "y": 160,
+        "x": 1125,
+        "y": 240,
         "wires": [
             [
                 "ea56df877b232f1c"
@@ -1191,8 +1221,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 565,
-        "y": 160,
+        "x": 1205,
+        "y": 240,
         "wires": [
             [
                 "2fa95438cf7ec01a",
@@ -1211,8 +1241,8 @@
         "timeoutDuration": "5",
         "timeoutUnit": "s",
         "outputProperty": "payload",
-        "x": 545,
-        "y": 280,
+        "x": 555,
+        "y": 200,
         "wires": [
             [
                 "9e73610ff0613b18",
@@ -1230,8 +1260,8 @@
         "links": [
             "11c827ee7d4ee251"
         ],
-        "x": 485,
-        "y": 280,
+        "x": 495,
+        "y": 200,
         "wires": [
             [
                 "2f945b92413d8392"
@@ -1259,8 +1289,8 @@
         "className": "",
         "value": "payload",
         "valueType": "msg",
-        "x": 640,
-        "y": 320,
+        "x": 650,
+        "y": 240,
         "wires": []
     },
     {
@@ -1284,8 +1314,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 660,
-        "y": 280,
+        "x": 670,
+        "y": 200,
         "wires": [
             [
                 "290616064459a311",
@@ -1304,8 +1334,8 @@
         "timeoutDuration": 0,
         "timeoutUnit": "ms",
         "outputProperty": "payload",
-        "x": 785,
-        "y": 260,
+        "x": 795,
+        "y": 180,
         "wires": [
             [
                 "e54ec5f0a0d689f2"
@@ -1334,8 +1364,8 @@
         "className": "",
         "value": "payload",
         "valueType": "msg",
-        "x": 880,
-        "y": 260,
+        "x": 890,
+        "y": 180,
         "wires": []
     },
     {
@@ -1356,8 +1386,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 785,
-        "y": 320,
+        "x": 795,
+        "y": 240,
         "wires": [
             [
                 "f28c8c33399284ac"
@@ -1394,8 +1424,8 @@
         "shape": "circle",
         "showBorder": true,
         "showGlow": true,
-        "x": 835,
-        "y": 320,
+        "x": 845,
+        "y": 240,
         "wires": [],
         "l": false
     },
@@ -1428,8 +1458,8 @@
         "shape": "circle",
         "showBorder": true,
         "showGlow": true,
-        "x": 1080,
-        "y": 440,
+        "x": 1100,
+        "y": 380,
         "wires": []
     },
     {
@@ -1450,8 +1480,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 2,
-        "x": 700,
-        "y": 440,
+        "x": 720,
+        "y": 380,
         "wires": [
             [
                 "153fc215eb17f9bd"
@@ -1491,8 +1521,8 @@
         "shape": "circle",
         "showBorder": true,
         "showGlow": true,
-        "x": 1020,
-        "y": 500,
+        "x": 1040,
+        "y": 440,
         "wires": []
     },
     {
@@ -1524,8 +1554,8 @@
         "shape": "circle",
         "showBorder": true,
         "showGlow": true,
-        "x": 1020,
-        "y": 560,
+        "x": 1040,
+        "y": 500,
         "wires": []
     },
     {
@@ -1546,8 +1576,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 2,
-        "x": 720,
-        "y": 500,
+        "x": 740,
+        "y": 440,
         "wires": [
             [
                 "419005925aaeeb43"
@@ -1576,8 +1606,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 2,
-        "x": 740,
-        "y": 560,
+        "x": 760,
+        "y": 500,
         "wires": [
             [
                 "3542d7dd7a4dad7b"
@@ -1605,7 +1635,7 @@
         "topic": "",
         "payload": "false",
         "payloadType": "bool",
-        "x": 940,
+        "x": 880,
         "y": 60,
         "wires": [
             [
@@ -1645,8 +1675,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 510,
-        "y": 440,
+        "x": 530,
+        "y": 380,
         "wires": [
             [
                 "3a76474ec246a824"
@@ -1670,9 +1700,11 @@
             "5177f1699dca4ad7",
             "256d6c5ed7e5fe5f",
             "92e17cabd5c37008",
-            "25b1466557ebce78"
+            "25b1466557ebce78",
+            "5791e7cfabd1e582",
+            "3ae6e088584e08b7"
         ],
-        "x": 1045,
+        "x": 985,
         "y": 60,
         "wires": []
     },
@@ -1685,8 +1717,8 @@
         "links": [
             "86b540c6db88487a"
         ],
-        "x": 915,
-        "y": 420,
+        "x": 935,
+        "y": 360,
         "wires": [
             [
                 "153fc215eb17f9bd"
@@ -1702,8 +1734,8 @@
         "links": [
             "86b540c6db88487a"
         ],
-        "x": 915,
-        "y": 480,
+        "x": 935,
+        "y": 420,
         "wires": [
             [
                 "419005925aaeeb43"
@@ -1719,8 +1751,8 @@
         "links": [
             "86b540c6db88487a"
         ],
-        "x": 925,
-        "y": 540,
+        "x": 945,
+        "y": 480,
         "wires": [
             [
                 "3542d7dd7a4dad7b"
@@ -1743,8 +1775,8 @@
         "outputOnReset": true,
         "setTimeToNewWhileRunning": false,
         "startCountdownOnControlMessage": true,
-        "x": 780,
-        "y": 700,
+        "x": 800,
+        "y": 660,
         "wires": [
             [
                 "0c44248e331257c1"
@@ -1783,8 +1815,8 @@
         "shape": "circle",
         "showBorder": true,
         "showGlow": true,
-        "x": 975,
-        "y": 680,
+        "x": 995,
+        "y": 640,
         "wires": [],
         "l": false
     },
@@ -1809,8 +1841,8 @@
         "className": "",
         "value": "payload",
         "valueType": "msg",
-        "x": 1010,
-        "y": 720,
+        "x": 1030,
+        "y": 680,
         "wires": []
     },
     {
@@ -1845,8 +1877,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 550,
-        "y": 660,
+        "x": 570,
+        "y": 620,
         "wires": [
             [
                 "37b34068bc8ad632"
@@ -1892,8 +1924,8 @@
         "className": "",
         "typeIsComboBox": false,
         "msgTrigger": "onChange",
-        "x": 560,
-        "y": 720,
+        "x": 580,
+        "y": 680,
         "wires": [
             [
                 "37b34068bc8ad632"
@@ -2753,7 +2785,7 @@
         "g": "bdf852c716bcd0df",
         "name": "",
         "group": "14492619691773e2",
-        "order": 2,
+        "order": 4,
         "width": "3",
         "height": "1",
         "label": "",
@@ -2776,7 +2808,7 @@
         "showBorder": false,
         "showGlow": false,
         "x": 1150,
-        "y": 1660,
+        "y": 1640,
         "wires": []
     },
     {
@@ -2787,13 +2819,13 @@
         "name": "",
         "label": "on / off",
         "group": "14492619691773e2",
-        "order": 1,
+        "order": 3,
         "width": "3",
         "height": "1",
         "passthru": false,
         "decouple": false,
-        "topic": "topic",
-        "topicType": "msg",
+        "topic": "sw",
+        "topicType": "str",
         "style": "",
         "className": "",
         "layout": "row-left",
@@ -4060,8 +4092,8 @@
         "links": [
             "86b540c6db88487a"
         ],
-        "x": 885,
-        "y": 660,
+        "x": 905,
+        "y": 620,
         "wires": [
             [
                 "0c44248e331257c1"
@@ -4143,9 +4175,325 @@
         "name": "link out 1",
         "mode": "link",
         "links": [],
-        "x": 645,
-        "y": 120,
+        "x": 1285,
+        "y": 180,
         "wires": []
+    },
+    {
+        "id": "32a156f6ac960295",
+        "type": "link in",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "df07a1238a55e5b5",
+        "name": "link in 16",
+        "links": [
+            "11c827ee7d4ee251"
+        ],
+        "x": 1425,
+        "y": 1680,
+        "wires": [
+            [
+                "a5761a8a511d07c7"
+            ]
+        ]
+    },
+    {
+        "id": "669f5011d11ebf87",
+        "type": "debug",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "df07a1238a55e5b5",
+        "name": "debug 9",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "counter",
+        "x": 2035,
+        "y": 1640,
+        "wires": [],
+        "l": false
+    },
+    {
+        "id": "bad1e7f31a4c7073",
+        "type": "switch",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "df07a1238a55e5b5",
+        "name": "Si topic = true",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1920,
+        "y": 1680,
+        "wires": [
+            [
+                "669f5011d11ebf87",
+                "645f0d54aad96fec"
+            ],
+            [
+                "3ce73b93a2a5710d"
+            ]
+        ]
+    },
+    {
+        "id": "c3e90e90b2cf3c5e",
+        "type": "ui-switch",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "df07a1238a55e5b5",
+        "name": "",
+        "label": "switch",
+        "group": "14492619691773e2",
+        "order": 1,
+        "width": "3",
+        "height": "1",
+        "passthru": true,
+        "decouple": false,
+        "topic": "sw",
+        "topicType": "str",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 1585,
+        "y": 1760,
+        "wires": [
+            [
+                "a5761a8a511d07c7"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "a5761a8a511d07c7",
+        "type": "function",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "df07a1238a55e5b5",
+        "name": "switch",
+        "func": "// les messages avec un topic SW \n// contiennent la valeur du switch\n// et ne sont pas transmis\n// les autres messages passent et sont complétés avec la valeur du swithc\n\nlet I = context.get('I') || false\nif (msg.topic === 'sw') {\n    I = msg.payload\n    context.set('I',I)\n    return null\n}\nmsg.topic=I\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1750,
+        "y": 1680,
+        "wires": [
+            [
+                "bad1e7f31a4c7073",
+                "bb1c1847054d7efc"
+            ]
+        ]
+    },
+    {
+        "id": "5791e7cfabd1e582",
+        "type": "link in",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "df07a1238a55e5b5",
+        "name": "init sw",
+        "links": [
+            "86b540c6db88487a"
+        ],
+        "x": 1525,
+        "y": 1720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3ce73b93a2a5710d",
+        "type": "debug",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "df07a1238a55e5b5",
+        "name": "debug 18",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "counter",
+        "x": 2035,
+        "y": 1720,
+        "wires": [],
+        "l": false
+    },
+    {
+        "id": "6e7ed4af27ee2dd1",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "df07a1238a55e5b5",
+        "name": "ON",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "sw",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 1430,
+        "y": 1740,
+        "wires": [
+            [
+                "c3e90e90b2cf3c5e"
+            ]
+        ]
+    },
+    {
+        "id": "3f5ee88e5de9007e",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "df07a1238a55e5b5",
+        "name": "OFF",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "sw",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 1430,
+        "y": 1780,
+        "wires": [
+            [
+                "c3e90e90b2cf3c5e"
+            ]
+        ]
+    },
+    {
+        "id": "bb1c1847054d7efc",
+        "type": "debug",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "df07a1238a55e5b5",
+        "name": "debug 20",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "counter",
+        "x": 1875,
+        "y": 1640,
+        "wires": [],
+        "l": false
+    },
+    {
+        "id": "645f0d54aad96fec",
+        "type": "trigger",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "df07a1238a55e5b5",
+        "name": "",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "500",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 2185,
+        "y": 1680,
+        "wires": [
+            [
+                "9a7c234b1febe5d1"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "9a7c234b1febe5d1",
+        "type": "ui-led",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "df07a1238a55e5b5",
+        "name": "flux",
+        "group": "14492619691773e2",
+        "order": 2,
+        "width": "3",
+        "height": "1",
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "states": [
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#eeff00"
+            },
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#000000"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": false,
+        "showGlow": false,
+        "x": 2235,
+        "y": 1680,
+        "wires": [],
+        "l": false
+    },
+    {
+        "id": "3ae6e088584e08b7",
+        "type": "link in",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "df07a1238a55e5b5",
+        "name": "init led",
+        "links": [
+            "86b540c6db88487a"
+        ],
+        "x": 2195,
+        "y": 1620,
+        "wires": [
+            [
+                "9a7c234b1febe5d1"
+            ]
+        ]
     },
     {
         "id": "809cc8f4678767b7",
