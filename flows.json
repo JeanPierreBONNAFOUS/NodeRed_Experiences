@@ -462,6 +462,93 @@
         "h": 202
     },
     {
+        "id": "1d42c5d5c534c807",
+        "type": "group",
+        "z": "ab36a2f91b62fae8",
+        "name": "Mustache template",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "809cc8f4678767b7",
+            "b86d2d558eebbd7e",
+            "aaecc81a2de233d6",
+            "6b5a6a2ef7a64f1a",
+            "273ee743f8d1a5f1",
+            "af43cea5866e11f5",
+            "52e8913233f379eb",
+            "1d94053c790791ee",
+            "a245b322ade3a7e9",
+            "3e4b2d3644845f91"
+        ],
+        "x": 114,
+        "y": 119,
+        "w": 1132,
+        "h": 222
+    },
+    {
+        "id": "0454a2fe3a4d794a",
+        "type": "group",
+        "z": "279cd106c27bb38c",
+        "name": "Ui template",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "655dc6a8c80b5f66",
+            "b9b1c3454bad8d3b",
+            "73f0f036b30ba302",
+            "62920ae2b5ed81e5",
+            "c1afc984c34f7427",
+            "cdb9462078ca6f66"
+        ],
+        "x": 354,
+        "y": 499,
+        "w": 772,
+        "h": 122
+    },
+    {
+        "id": "4b3fdf3a1baa1fc4",
+        "type": "group",
+        "z": "f9450cebd9b8d8c5",
+        "name": "battery.db",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "991de9aae43f4619",
+            "f4c9bccc038838c5",
+            "74e952c4d22f09d8",
+            "1d9eb68ac8bdd70e",
+            "4359be9bd82cb736"
+        ],
+        "x": 1054,
+        "y": 99,
+        "w": 492,
+        "h": 162
+    },
+    {
+        "id": "7d477dfc29cb6057",
+        "type": "group",
+        "z": "f9450cebd9b8d8c5",
+        "name": "Luminosité en Mémoire",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "4b03bf58b5bf0377",
+            "d4544782d4dd789a",
+            "a71b051ffbff40b4",
+            "880829181ca42434",
+            "ed248ab971ff03e3",
+            "d63ad38d653f7b31"
+        ],
+        "x": 1214,
+        "y": 319,
+        "w": 552,
+        "h": 222
+    },
+    {
         "id": "6c5afa767ad7188a",
         "type": "junction",
         "z": "c53bc0b1cfdd92b9",
@@ -473,6 +560,20 @@
                 "e7d6ff184311f50b",
                 "99a7b70404ce4f9a",
                 "e76eec8550c13709"
+            ]
+        ]
+    },
+    {
+        "id": "62920ae2b5ed81e5",
+        "type": "junction",
+        "z": "279cd106c27bb38c",
+        "g": "0454a2fe3a4d794a",
+        "x": 740,
+        "y": 540,
+        "wires": [
+            [
+                "c1afc984c34f7427",
+                "655dc6a8c80b5f66"
             ]
         ]
     },
@@ -820,6 +921,43 @@
         "log2consol": false
     },
     {
+        "id": "70e65dde8740e563",
+        "type": "ui-group",
+        "name": "Template Advance",
+        "page": "fac36d98b944e7e0",
+        "width": 6,
+        "height": 1,
+        "order": 5,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "3fe5fb7649532109",
+        "type": "sqlitedb",
+        "db": "/opt/node-red-flows/battery.db",
+        "mode": "RWC"
+    },
+    {
+        "id": "f9bcd7b2b2faa3f8",
+        "type": "ui-spacer",
+        "group": "70e65dde8740e563",
+        "name": "spacer",
+        "tooltip": "",
+        "order": 3,
+        "width": 1,
+        "height": 1,
+        "className": ""
+    },
+    {
+        "id": "123b1dc80c4a3b60",
+        "type": "sqlitedb",
+        "db": ":memory:",
+        "mode": "RWC"
+    },
+    {
         "id": "d6e6623d888ea56c",
         "type": "function",
         "z": "8682ef25eb3579aa",
@@ -978,8 +1116,7 @@
             "54bb00d6bb9f3519",
             "7a90ef62bcef860e",
             "5e79b81db35e4713",
-            "60e77f7cbc023685",
-            "4ffa0e5de3751652"
+            "60e77f7cbc023685"
         ],
         "x": 705,
         "y": 60,
@@ -4005,9 +4142,7 @@
         "g": "5539f321a8ebe71c",
         "name": "link out 1",
         "mode": "link",
-        "links": [
-            "4ffa0e5de3751652"
-        ],
+        "links": [],
         "x": 645,
         "y": 120,
         "wires": []
@@ -4016,6 +4151,7 @@
         "id": "809cc8f4678767b7",
         "type": "inject",
         "z": "ab36a2f91b62fae8",
+        "g": "1d42c5d5c534c807",
         "name": "London",
         "props": [
             {
@@ -4051,6 +4187,7 @@
         "id": "b86d2d558eebbd7e",
         "type": "inject",
         "z": "ab36a2f91b62fae8",
+        "g": "1d42c5d5c534c807",
         "name": "Washington DC",
         "props": [
             {
@@ -4086,12 +4223,14 @@
         "id": "aaecc81a2de233d6",
         "type": "debug",
         "z": "ab36a2f91b62fae8",
+        "g": "1d42c5d5c534c807",
         "name": "debug 4",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
         "x": 920,
@@ -4102,6 +4241,7 @@
         "id": "6b5a6a2ef7a64f1a",
         "type": "change",
         "z": "ab36a2f91b62fae8",
+        "g": "1d42c5d5c534c807",
         "name": "",
         "rules": [
             {
@@ -4130,6 +4270,7 @@
         "id": "273ee743f8d1a5f1",
         "type": "template",
         "z": "ab36a2f91b62fae8",
+        "g": "1d42c5d5c534c807",
         "name": "create the URL",
         "field": "url",
         "fieldType": "msg",
@@ -4137,7 +4278,7 @@
         "syntax": "mustache",
         "template": "https://api.sunrisesunset.io/json?lat={{store.lat}}&lng={{store.lng}}",
         "output": "str",
-        "x": 620,
+        "x": 600,
         "y": 160,
         "wires": [
             [
@@ -4150,6 +4291,7 @@
         "id": "af43cea5866e11f5",
         "type": "debug",
         "z": "ab36a2f91b62fae8",
+        "g": "1d42c5d5c534c807",
         "name": "debug 5",
         "active": false,
         "tosidebar": true,
@@ -4167,6 +4309,7 @@
         "id": "52e8913233f379eb",
         "type": "http request",
         "z": "ab36a2f91b62fae8",
+        "g": "1d42c5d5c534c807",
         "name": "",
         "method": "GET",
         "ret": "obj",
@@ -4192,6 +4335,7 @@
         "id": "1d94053c790791ee",
         "type": "debug",
         "z": "ab36a2f91b62fae8",
+        "g": "1d42c5d5c534c807",
         "name": "debug 6",
         "active": false,
         "tosidebar": true,
@@ -4209,12 +4353,13 @@
         "id": "a245b322ade3a7e9",
         "type": "template",
         "z": "ab36a2f91b62fae8",
+        "g": "1d42c5d5c534c807",
         "name": "Create the sentence",
         "field": "payload",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "The sun will set at  in .",
+        "template": "The sun will set at {{payload.results.sunset}} in {{store.city}}.",
         "output": "str",
         "x": 960,
         "y": 260,
@@ -4228,6 +4373,7 @@
         "id": "3e4b2d3644845f91",
         "type": "debug",
         "z": "ab36a2f91b62fae8",
+        "g": "1d42c5d5c534c807",
         "name": "debug 7",
         "active": false,
         "tosidebar": true,
@@ -4937,6 +5083,235 @@
         ]
     },
     {
+        "id": "991de9aae43f4619",
+        "type": "inject",
+        "z": "f9450cebd9b8d8c5",
+        "g": "4b3fdf3a1baa1fc4",
+        "name": "Create",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 1150,
+        "y": 140,
+        "wires": [
+            [
+                "f4c9bccc038838c5"
+            ]
+        ]
+    },
+    {
+        "id": "f4c9bccc038838c5",
+        "type": "sqlite",
+        "z": "f9450cebd9b8d8c5",
+        "g": "4b3fdf3a1baa1fc4",
+        "mydb": "3fe5fb7649532109",
+        "sqlquery": "fixed",
+        "sql": "CREATE TABLE IF NOT EXISTS tension (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    heure_mesure TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n    volt REAL NOT NULL);",
+        "name": "Bat",
+        "x": 1290,
+        "y": 140,
+        "wires": [
+            [
+                "74e952c4d22f09d8"
+            ]
+        ]
+    },
+    {
+        "id": "74e952c4d22f09d8",
+        "type": "debug",
+        "z": "f9450cebd9b8d8c5",
+        "g": "4b3fdf3a1baa1fc4",
+        "name": "debug 14",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1440,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "1d9eb68ac8bdd70e",
+        "type": "inject",
+        "z": "f9450cebd9b8d8c5",
+        "g": "4b3fdf3a1baa1fc4",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "INSERT INTO tension (volt )  VALUES (13.23);",
+        "x": 1150,
+        "y": 220,
+        "wires": [
+            [
+                "4359be9bd82cb736"
+            ]
+        ]
+    },
+    {
+        "id": "4359be9bd82cb736",
+        "type": "sqlite",
+        "z": "f9450cebd9b8d8c5",
+        "g": "4b3fdf3a1baa1fc4",
+        "mydb": "3fe5fb7649532109",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "bat",
+        "x": 1290,
+        "y": 220,
+        "wires": [
+            [
+                "74e952c4d22f09d8"
+            ]
+        ]
+    },
+    {
+        "id": "4b03bf58b5bf0377",
+        "type": "inject",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7d477dfc29cb6057",
+        "name": "Create",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 1320,
+        "y": 360,
+        "wires": [
+            [
+                "d4544782d4dd789a"
+            ]
+        ]
+    },
+    {
+        "id": "d4544782d4dd789a",
+        "type": "sqlite",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7d477dfc29cb6057",
+        "mydb": "123b1dc80c4a3b60",
+        "sqlquery": "fixed",
+        "sql": "CREATE TABLE IF NOT EXISTS luminosite (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    heure_mesure TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,\n    lux REAL NOT NULL);",
+        "name": "luminosité",
+        "x": 1460,
+        "y": 360,
+        "wires": [
+            [
+                "a71b051ffbff40b4"
+            ]
+        ]
+    },
+    {
+        "id": "a71b051ffbff40b4",
+        "type": "debug",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7d477dfc29cb6057",
+        "name": "debug 12",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1660,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "880829181ca42434",
+        "type": "inject",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7d477dfc29cb6057",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "INSERT INTO luminosite (lux)  VALUES (13.23);",
+        "x": 1310,
+        "y": 440,
+        "wires": [
+            [
+                "ed248ab971ff03e3"
+            ]
+        ]
+    },
+    {
+        "id": "ed248ab971ff03e3",
+        "type": "sqlite",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7d477dfc29cb6057",
+        "mydb": "123b1dc80c4a3b60",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "luminosité",
+        "x": 1460,
+        "y": 440,
+        "wires": [
+            [
+                "a71b051ffbff40b4"
+            ]
+        ]
+    },
+    {
+        "id": "d63ad38d653f7b31",
+        "type": "inject",
+        "z": "f9450cebd9b8d8c5",
+        "g": "7d477dfc29cb6057",
+        "name": "select *",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "select * from luminosite;",
+        "x": 1310,
+        "y": 500,
+        "wires": [
+            [
+                "ed248ab971ff03e3"
+            ]
+        ]
+    },
+    {
         "id": "dbe31c644a583ffa",
         "type": "mqtt in",
         "z": "279cd106c27bb38c",
@@ -4949,31 +5324,14 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 230,
-        "y": 120,
+        "x": 270,
+        "y": 220,
         "wires": [
             [
-                "4cda9ce47173b7f1",
-                "d340477bd213910d"
+                "d340477bd213910d",
+                "310d9dead0ebb0dc"
             ]
         ]
-    },
-    {
-        "id": "4cda9ce47173b7f1",
-        "type": "debug",
-        "z": "279cd106c27bb38c",
-        "name": "debug 2",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 380,
-        "y": 120,
-        "wires": []
     },
     {
         "id": "e338d7e4868d0704",
@@ -4982,7 +5340,7 @@
         "group": "b8105c76f9328173",
         "name": "",
         "label": "chart",
-        "order": 1,
+        "order": 3,
         "chartType": "line",
         "category": "topic",
         "categoryType": "msg",
@@ -5031,7 +5389,7 @@
         "height": 8,
         "className": "",
         "interpolation": "smooth",
-        "x": 870,
+        "x": 1030,
         "y": 220,
         "wires": [
             []
@@ -5041,7 +5399,7 @@
         "id": "d340477bd213910d",
         "type": "switch",
         "z": "279cd106c27bb38c",
-        "name": "",
+        "name": "idx=100",
         "property": "payload.idx",
         "propertyType": "msg",
         "rules": [
@@ -5049,41 +5407,32 @@
                 "t": "eq",
                 "v": "100",
                 "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "96",
+                "vt": "num"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 1,
-        "x": 360,
+        "outputs": 2,
+        "x": 420,
         "y": 220,
         "wires": [
             [
-                "052fbe175e3f3e7d",
                 "7e7d4db3bea2b9b6"
+            ],
+            [
+                "5ec74a92935ebafb"
             ]
         ]
-    },
-    {
-        "id": "052fbe175e3f3e7d",
-        "type": "debug",
-        "z": "279cd106c27bb38c",
-        "name": "debug 3",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 510,
-        "y": 280,
-        "wires": []
     },
     {
         "id": "7e7d4db3bea2b9b6",
         "type": "change",
         "z": "279cd106c27bb38c",
-        "name": "",
+        "name": "set Vbat",
         "rules": [
             {
                 "t": "set",
@@ -5105,37 +5454,22 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 610,
-        "y": 220,
+        "x": 580,
+        "y": 200,
         "wires": [
             [
-                "e9397a4016f6b538",
-                "e338d7e4868d0704"
+                "e338d7e4868d0704",
+                "ce629674c8337414",
+                "a8494c6d1985f645",
+                "e0081f47168c5073"
             ]
         ]
-    },
-    {
-        "id": "e9397a4016f6b538",
-        "type": "debug",
-        "z": "279cd106c27bb38c",
-        "name": "debug 8",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 770,
-        "y": 300,
-        "wires": []
     },
     {
         "id": "aa051ad44cfa1ce8",
         "type": "inject",
         "z": "279cd106c27bb38c",
-        "name": "",
+        "name": "Clear",
         "props": [
             {
                 "p": "payload"
@@ -5148,11 +5482,605 @@
         "topic": "",
         "payload": "[]",
         "payloadType": "json",
-        "x": 720,
-        "y": 140,
+        "x": 910,
+        "y": 260,
         "wires": [
             [
                 "e338d7e4868d0704"
+            ]
+        ]
+    },
+    {
+        "id": "655dc6a8c80b5f66",
+        "type": "ui-template",
+        "z": "279cd106c27bb38c",
+        "g": "0454a2fe3a4d794a",
+        "group": "70e65dde8740e563",
+        "page": "",
+        "ui": "",
+        "name": "",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <div>\n        <h2>Template UI</h2>\n        <p>Rien que pour voir ce que ça fait</p>\n        <p> L'heure : {{msg.time}}</p>\n        <p> La tension de la batterie : {{msg.vbat}}  Volt</p>\n        <p> La valeur du Potentiometre en {{Math.floor(msg.vout)}} %</p>\n        <p class=\"my-class\">Mister Bi</p>\n        <v-icon color=\"info\" icon=\"mdi-alert\" size=\"large\"></v-icon>\n</template>\n\n<style>\n    /* define any styles here - supports raw CSS */\n    .my-class {\n        color: green;\n    }\n</style>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 880,
+        "y": 540,
+        "wires": [
+            [
+                "cdb9462078ca6f66"
+            ]
+        ]
+    },
+    {
+        "id": "b9b1c3454bad8d3b",
+        "type": "inject",
+        "z": "279cd106c27bb38c",
+        "g": "0454a2fe3a4d794a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "iso",
+        "payloadType": "date",
+        "x": 470,
+        "y": 540,
+        "wires": [
+            [
+                "73f0f036b30ba302"
+            ]
+        ]
+    },
+    {
+        "id": "ce629674c8337414",
+        "type": "change",
+        "z": "279cd106c27bb38c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "vbat",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 200,
+        "y": 400,
+        "wires": [
+            [
+                "655dc6a8c80b5f66",
+                "58c46807f3c61ad7"
+            ]
+        ]
+    },
+    {
+        "id": "73f0f036b30ba302",
+        "type": "change",
+        "z": "279cd106c27bb38c",
+        "g": "0454a2fe3a4d794a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "time",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 540,
+        "wires": [
+            [
+                "62920ae2b5ed81e5"
+            ]
+        ]
+    },
+    {
+        "id": "c1afc984c34f7427",
+        "type": "debug",
+        "z": "279cd106c27bb38c",
+        "g": "0454a2fe3a4d794a",
+        "name": "debug 10",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "cdb9462078ca6f66",
+        "type": "debug",
+        "z": "279cd106c27bb38c",
+        "g": "0454a2fe3a4d794a",
+        "name": "debug 11",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "f82111dac2381be7",
+        "type": "ui-markdown",
+        "z": "279cd106c27bb38c",
+        "group": "70e65dde8740e563",
+        "name": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "content": "## Markdown template\nJe peux écrie du texte en MD  \nsans me farcir le HTMl  \nOn monitore la batterie\n\n| Donnée | Description |\n| ------- | ----------- |\n| {{msg.vbat}} V| tension de la batterie |\n| {{msg.localTime}} | Heure locale |\n| {{msg.statbat.vmoy}} V | tension moyenne |\n| {{msg.statbat.vmin}} V | à {{msg.statbat.vminTime}} |\n| {{msg.statbat.vmax}} V | à {{msg.statbat.vmaxTime}} |\n| {{msg.statbat.nRec}} | Nb d'enregistrement |\n",
+        "className": "",
+        "x": 870,
+        "y": 760,
+        "wires": [
+            [
+                "d30df63210f35e20"
+            ]
+        ]
+    },
+    {
+        "id": "58c46807f3c61ad7",
+        "type": "change",
+        "z": "279cd106c27bb38c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "time",
+                "pt": "msg",
+                "to": "object",
+                "tot": "date"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 760,
+        "wires": [
+            [
+                "2e973d4d5a834954"
+            ]
+        ]
+    },
+    {
+        "id": "2e973d4d5a834954",
+        "type": "function",
+        "z": "279cd106c27bb38c",
+        "name": "Transform Date",
+        "func": "// Supposons que msg.payload contient l'objet Date\nconst date = new Date(msg.time);\n// Formatage de la date\nconst formattedDate = date.toLocaleString();\n\n// Assignation du résultat à msg.payload ou une autre propriété\nmsg.localTime = formattedDate;\n\n// Retourner le message avec la date formatée\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 760,
+        "wires": [
+            [
+                "f82111dac2381be7"
+            ]
+        ]
+    },
+    {
+        "id": "212789e726799197",
+        "type": "link in",
+        "z": "279cd106c27bb38c",
+        "name": "link in 15",
+        "links": [
+            "792057e9dd7815d0"
+        ],
+        "x": 725,
+        "y": 680,
+        "wires": [
+            [
+                "655dc6a8c80b5f66",
+                "f82111dac2381be7"
+            ]
+        ]
+    },
+    {
+        "id": "a8494c6d1985f645",
+        "type": "ui-gauge",
+        "z": "279cd106c27bb38c",
+        "name": "",
+        "group": "b8105c76f9328173",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "VBat",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "Volt",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#ff4000",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "12.8",
+                "color": "#00ff2a",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "13.5",
+                "color": "#e0f000",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": "12",
+        "max": "14",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": "20",
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1030,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d87dce67cd69d261",
+        "type": "sqlite",
+        "z": "279cd106c27bb38c",
+        "mydb": "3fe5fb7649532109",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "Battery BDD",
+        "x": 930,
+        "y": 120,
+        "wires": [
+            [
+                "fa5685ab1fb2aeef"
+            ]
+        ]
+    },
+    {
+        "id": "fa5685ab1fb2aeef",
+        "type": "debug",
+        "z": "279cd106c27bb38c",
+        "name": "debug 15",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "e0081f47168c5073",
+        "type": "function",
+        "z": "279cd106c27bb38c",
+        "name": "insert vbat",
+        "func": "let v = msg.payload\nmsg.topic = `INSERT INTO tension (volt ) VALUES (${msg.payload});`\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 120,
+        "wires": [
+            [
+                "d87dce67cd69d261"
+            ]
+        ]
+    },
+    {
+        "id": "214dffbb46c5c34b",
+        "type": "inject",
+        "z": "279cd106c27bb38c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 580,
+        "y": 360,
+        "wires": [
+            [
+                "5fd71ed09c895c8f"
+            ]
+        ]
+    },
+    {
+        "id": "5fd71ed09c895c8f",
+        "type": "function",
+        "z": "279cd106c27bb38c",
+        "name": "Stat",
+        "func": "msg.topic = `SELECT \n    MIN(volt) AS vmin,\n    MAX(volt) AS vmax,\n    ROUND(AVG(volt), 2) AS vmoy,\n    COUNT(*) AS nRec,\n    (SELECT heure_mesure FROM tension WHERE volt = (SELECT MIN(volt) FROM tension)) AS vminTime,\n    (SELECT heure_mesure FROM tension WHERE volt = (SELECT MAX(volt) FROM tension)) AS vmaxTime\nFROM \n    tension;`\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 360,
+        "wires": [
+            [
+                "9c863d524bbd1a47"
+            ]
+        ]
+    },
+    {
+        "id": "9c863d524bbd1a47",
+        "type": "sqlite",
+        "z": "279cd106c27bb38c",
+        "mydb": "3fe5fb7649532109",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "Battery",
+        "x": 860,
+        "y": 360,
+        "wires": [
+            [
+                "3407c6949bf75746",
+                "c59a13e62c1908ea"
+            ]
+        ]
+    },
+    {
+        "id": "3407c6949bf75746",
+        "type": "debug",
+        "z": "279cd106c27bb38c",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "d30df63210f35e20",
+        "type": "debug",
+        "z": "279cd106c27bb38c",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1030,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "c59a13e62c1908ea",
+        "type": "change",
+        "z": "279cd106c27bb38c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "statbat.vmoy",
+                "pt": "msg",
+                "to": "payload[0].vmoy",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "statbat.vmin",
+                "pt": "msg",
+                "to": "payload[0].vmin",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "statbat.vminTime",
+                "pt": "msg",
+                "to": "payload[0].vminTime",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "statbat.vmax",
+                "pt": "msg",
+                "to": "payload[0].vmax",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "statbat.vmaxTime",
+                "pt": "msg",
+                "to": "payload[0].vmaxTime",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "statbat.nRec",
+                "pt": "msg",
+                "to": "payload[0].nRec",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 420,
+        "wires": [
+            [
+                "f82111dac2381be7"
+            ]
+        ]
+    },
+    {
+        "id": "310d9dead0ebb0dc",
+        "type": "debug",
+        "z": "279cd106c27bb38c",
+        "name": "debug 8",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "5ec74a92935ebafb",
+        "type": "change",
+        "z": "279cd106c27bb38c",
+        "name": "set Lum",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.svalue",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Lum",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 300,
+        "wires": [
+            [
+                "26cf74a98c9239d5"
+            ]
+        ]
+    },
+    {
+        "id": "e0dc3466eb7b5928",
+        "type": "debug",
+        "z": "279cd106c27bb38c",
+        "name": "debug 16",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1200,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "26cf74a98c9239d5",
+        "type": "function",
+        "z": "279cd106c27bb38c",
+        "name": "insert lum",
+        "func": "let v = msg.payload\nmsg.topic = `INSERT INTO luminosite (lux) VALUES (${msg.payload});`\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 300,
+        "wires": [
+            [
+                "3677927ed31a0237"
+            ]
+        ]
+    },
+    {
+        "id": "3677927ed31a0237",
+        "type": "sqlite",
+        "z": "279cd106c27bb38c",
+        "mydb": "123b1dc80c4a3b60",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "Luminosite",
+        "x": 1030,
+        "y": 300,
+        "wires": [
+            [
+                "e0dc3466eb7b5928"
             ]
         ]
     },
@@ -5232,7 +6160,8 @@
         "wires": [
             [
                 "457fea666f854e0a",
-                "256bf713bf6ae8cc"
+                "256bf713bf6ae8cc",
+                "6a95d32c7b3e69e7"
             ]
         ]
     },
@@ -5384,8 +6313,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 5,
-        "x": 220,
-        "y": 320,
+        "x": 400,
+        "y": 640,
         "wires": [
             [],
             [],
@@ -5400,7 +6329,7 @@
         "z": "d8be5e1f9ecfc822",
         "name": "",
         "group": "b8105c76f9328173",
-        "order": 0,
+        "order": 2,
         "value": "payload",
         "valueType": "msg",
         "width": 3,
@@ -5796,5 +6725,114 @@
             ]
         ],
         "l": false
+    },
+    {
+        "id": "99d392cac9817157",
+        "type": "catch",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 820,
+        "y": 80,
+        "wires": [
+            [
+                "0752a4292f1ec2e9"
+            ]
+        ]
+    },
+    {
+        "id": "0752a4292f1ec2e9",
+        "type": "debug",
+        "z": "d8be5e1f9ecfc822",
+        "name": "debug 9",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "6a95d32c7b3e69e7",
+        "type": "range",
+        "z": "d8be5e1f9ecfc822",
+        "minin": "0",
+        "maxin": "1024",
+        "minout": "0",
+        "maxout": "100",
+        "action": "scale",
+        "round": false,
+        "property": "payload",
+        "name": "Percent",
+        "x": 380,
+        "y": 800,
+        "wires": [
+            [
+                "5a8aa12857a44111",
+                "cfc1120f2c8a50a5"
+            ]
+        ]
+    },
+    {
+        "id": "5a8aa12857a44111",
+        "type": "debug",
+        "z": "d8be5e1f9ecfc822",
+        "name": "debug 13",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "792057e9dd7815d0",
+        "type": "link out",
+        "z": "d8be5e1f9ecfc822",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "212789e726799197"
+        ],
+        "x": 685,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "cfc1120f2c8a50a5",
+        "type": "change",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "vout",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 900,
+        "wires": [
+            [
+                "792057e9dd7815d0"
+            ]
+        ]
     }
 ]
