@@ -40,6 +40,14 @@
         "env": []
     },
     {
+        "id": "d7b000e00355b06e",
+        "type": "tab",
+        "label": "Fermentateur light",
+        "disabled": false,
+        "info": "on assemble des groupes de nodes pour simplifier le Proto",
+        "env": []
+    },
+    {
         "id": "8682ef25eb3579aa",
         "type": "subflow",
         "name": "Count Up Down",
@@ -227,11 +235,8 @@
             "5d143ecd939638ce",
             "5fd3c239cbd7a88f",
             "4f553bc541491401",
-            "018cf0f19f9134f4",
             "c3d7793156b912f6",
-            "01c12862244abe56",
             "b3948346c86a61b5",
-            "2565502f48565106",
             "986b9ee6a3d341e3",
             "374c440792846301",
             "85c34a61decc4677",
@@ -241,12 +246,13 @@
             "c064169b008f3b1a",
             "d995d1f04182037e",
             "e95a015ac99eccb4",
-            "92e17cabd5c37008"
+            "92e17cabd5c37008",
+            "4da45368d3e7c727"
         ],
-        "x": 444,
-        "y": 779,
-        "w": 1022,
-        "h": 362
+        "x": 464,
+        "y": 739,
+        "w": 1002,
+        "h": 402
     },
     {
         "id": "8282ca811ab4a572",
@@ -326,7 +332,7 @@
             "e260783e59486f55",
             "dc21d0cd7ad3591a"
         ],
-        "x": 444,
+        "x": 434,
         "y": 1599,
         "w": 782,
         "h": 222
@@ -569,12 +575,34 @@
             "9a7c234b1febe5d1",
             "6e7ed4af27ee2dd1",
             "3f5ee88e5de9007e",
-            "3ae6e088584e08b7"
+            "3ae6e088584e08b7",
+            "1bd795182f2fe0e4"
         ],
-        "x": 1334,
+        "x": 1314,
         "y": 1579,
         "w": 942,
         "h": 242,
+        "info": "Laisse passer les messages si le topic est true\nle topic prend la valeur du switch.\nle switch retourne un msg true|false et un topic sw\nla fonction capte les messages dont le topic == sw\net positionne dans le message d'entrée le topic à la valeur du switch"
+    },
+    {
+        "id": "72f493835088c713",
+        "type": "group",
+        "z": "d7b000e00355b06e",
+        "name": "Flux on/off",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "16bed4cf4c70b80f",
+            "6739792d7c1c5d34",
+            "a92069de472750bf",
+            "ab9b6e8d5f4b3b15",
+            "912619cbe5c8c299"
+        ],
+        "x": 194,
+        "y": 499,
+        "w": 692,
+        "h": 182,
         "info": "Laisse passer les messages si le topic est true\nle topic prend la valeur du switch.\nle switch retourne un msg true|false et un topic sw\nla fonction capte les messages dont le topic == sw\net positionne dans le message d'entrée le topic à la valeur du switch"
     },
     {
@@ -603,6 +631,20 @@
             [
                 "c1afc984c34f7427",
                 "655dc6a8c80b5f66"
+            ]
+        ]
+    },
+    {
+        "id": "ff4bd1c90924330a",
+        "type": "junction",
+        "z": "d7b000e00355b06e",
+        "x": 710,
+        "y": 360,
+        "wires": [
+            [
+                "b21009d5808562f8",
+                "957911d4cb0971ed",
+                "faad0ad57053e204"
             ]
         ]
     },
@@ -676,7 +718,7 @@
                 "cols": "2"
             }
         ],
-        "order": 1,
+        "order": 2,
         "className": "",
         "visible": true,
         "disabled": false
@@ -754,7 +796,7 @@
                 "cols": "12"
             }
         ],
-        "order": 2,
+        "order": 3,
         "className": "",
         "visible": "true",
         "disabled": "false"
@@ -786,28 +828,6 @@
         "visible": "true",
         "disabled": "false",
         "groupType": "default"
-    },
-    {
-        "id": "a9bb881556ef5246",
-        "type": "ui-spacer",
-        "group": "08d202d8d9c960d1",
-        "name": "spacer",
-        "tooltip": "",
-        "order": 1,
-        "width": "2",
-        "height": "1",
-        "className": ""
-    },
-    {
-        "id": "023450b17695d6a4",
-        "type": "ui-spacer",
-        "group": "08d202d8d9c960d1",
-        "name": "spacer",
-        "tooltip": "",
-        "order": 4,
-        "width": "1",
-        "height": "1",
-        "className": ""
     },
     {
         "id": "a2e603f3b7f50a2d",
@@ -842,7 +862,7 @@
         "type": "ui-group",
         "name": "on off",
         "page": "30c2e620df0674de",
-        "width": 6,
+        "width": "4",
         "height": 1,
         "order": 1,
         "showTitle": true,
@@ -985,6 +1005,67 @@
         "type": "sqlitedb",
         "db": ":memory:",
         "mode": "RWC"
+    },
+    {
+        "id": "b0ac91756170664c",
+        "type": "ui-page",
+        "name": "Fermenteur",
+        "ui": "3c225b7898348072",
+        "path": "/fermenteur",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "ef720b36dd8dde7b",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "af7a2f9471407871",
+        "type": "ui-group",
+        "name": "Live",
+        "page": "b0ac91756170664c",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "704bf5aca9bca882",
+        "type": "ui-spacer",
+        "group": "af7a2f9471407871",
+        "name": "spacer",
+        "tooltip": "",
+        "order": 7,
+        "width": 1,
+        "height": 1,
+        "className": ""
     },
     {
         "id": "d6e6623d888ea56c",
@@ -1146,7 +1227,8 @@
             "7a90ef62bcef860e",
             "5e79b81db35e4713",
             "60e77f7cbc023685",
-            "32a156f6ac960295"
+            "32a156f6ac960295",
+            "fc57fc76feabf8a0"
         ],
         "x": 705,
         "y": 60,
@@ -1702,7 +1784,9 @@
             "92e17cabd5c37008",
             "25b1466557ebce78",
             "5791e7cfabd1e582",
-            "3ae6e088584e08b7"
+            "3ae6e088584e08b7",
+            "4fdb80be18cebb4f",
+            "2ccd0bfee18435bb"
         ],
         "x": 985,
         "y": 60,
@@ -1941,12 +2025,13 @@
         "persistId": "",
         "humanizeLocale": "fr",
         "x": 1010,
-        "y": 860,
+        "y": 780,
         "wires": [
             [
-                "018cf0f19f9134f4",
                 "41ba3af850cdbb63",
-                "d995d1f04182037e"
+                "d995d1f04182037e",
+                "4da45368d3e7c727",
+                "9f9fdcb47f004f2d"
             ]
         ]
     },
@@ -1968,8 +2053,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 550,
-        "y": 860,
+        "x": 570,
+        "y": 780,
         "wires": [
             [
                 "cd3ad862f91fdf3e"
@@ -1994,8 +2079,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 550,
-        "y": 900,
+        "x": 570,
+        "y": 820,
         "wires": [
             [
                 "cd3ad862f91fdf3e"
@@ -2020,33 +2105,11 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 550,
-        "y": 940,
-        "wires": [
-            [
-                "cd3ad862f91fdf3e"
-            ]
-        ]
-    },
-    {
-        "id": "018cf0f19f9134f4",
-        "type": "function",
-        "z": "c53bc0b1cfdd92b9",
-        "d": true,
-        "g": "25d161091e4783d3",
-        "name": "function 1",
-        "func": "// Input JSON\nlet input = msg.elapsed.time;\n// Extract values\nlet days = input.days;\nlet hours = input.hours;\nlet minutes = input.minutes;\nlet seconds = Math.floor(input.seconds + (input.milliseconds / 1000)); // Convert milliseconds to seconds\n\n// Format the string DD:HH:MM:SS\nlet result = `${String(days).padStart(2, '0')}:${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;\n\n// Set the result back to the msg object\nmsg.payload = result;\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1170,
+        "x": 570,
         "y": 860,
         "wires": [
             [
-                "c3d7793156b912f6"
+                "cd3ad862f91fdf3e"
             ]
         ]
     },
@@ -2056,7 +2119,7 @@
         "z": "c53bc0b1cfdd92b9",
         "g": "25d161091e4783d3",
         "group": "08d202d8d9c960d1",
-        "order": 8,
+        "order": 4,
         "width": "3",
         "height": "1",
         "name": "Durée Chrono",
@@ -2072,49 +2135,8 @@
         "value": "payload",
         "valueType": "msg",
         "x": 1360,
-        "y": 860,
+        "y": 780,
         "wires": []
-    },
-    {
-        "id": "01c12862244abe56",
-        "type": "ui-button",
-        "z": "c53bc0b1cfdd92b9",
-        "d": true,
-        "g": "25d161091e4783d3",
-        "group": "08d202d8d9c960d1",
-        "name": "",
-        "label": "Start",
-        "order": 5,
-        "width": 0,
-        "height": 0,
-        "emulateClick": true,
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "iconPosition": "left",
-        "payload": "chrono",
-        "payloadType": "str",
-        "topic": "start",
-        "topicType": "msg",
-        "buttonColor": "",
-        "textColor": "",
-        "iconColor": "",
-        "enableClick": true,
-        "enablePointerdown": false,
-        "pointerdownPayload": "",
-        "pointerdownPayloadType": "str",
-        "enablePointerup": false,
-        "pointerupPayload": "",
-        "pointerupPayloadType": "str",
-        "x": 690,
-        "y": 960,
-        "wires": [
-            [
-                "b3948346c86a61b5"
-            ]
-        ]
     },
     {
         "id": "b3948346c86a61b5",
@@ -2137,51 +2159,10 @@
         "to": "",
         "reg": false,
         "x": 810,
-        "y": 960,
+        "y": 920,
         "wires": [
             [
                 "cd3ad862f91fdf3e"
-            ]
-        ]
-    },
-    {
-        "id": "2565502f48565106",
-        "type": "ui-button",
-        "z": "c53bc0b1cfdd92b9",
-        "d": true,
-        "g": "25d161091e4783d3",
-        "group": "08d202d8d9c960d1",
-        "name": "",
-        "label": "Stop",
-        "order": 7,
-        "width": 0,
-        "height": 0,
-        "emulateClick": true,
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "iconPosition": "left",
-        "payload": "chrono",
-        "payloadType": "str",
-        "topic": "start",
-        "topicType": "msg",
-        "buttonColor": "",
-        "textColor": "",
-        "iconColor": "",
-        "enableClick": true,
-        "enablePointerdown": false,
-        "pointerdownPayload": "",
-        "pointerdownPayloadType": "str",
-        "enablePointerup": false,
-        "pointerupPayload": "",
-        "pointerupPayloadType": "str",
-        "x": 690,
-        "y": 1000,
-        "wires": [
-            [
-                "986b9ee6a3d341e3"
             ]
         ]
     },
@@ -2198,6 +2179,13 @@
                 "pt": "msg",
                 "to": "stop",
                 "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "status",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
             }
         ],
         "action": "",
@@ -2206,7 +2194,7 @@
         "to": "",
         "reg": false,
         "x": 810,
-        "y": 1000,
+        "y": 960,
         "wires": [
             [
                 "cd3ad862f91fdf3e"
@@ -2220,8 +2208,8 @@
         "g": "25d161091e4783d3",
         "group": "08d202d8d9c960d1",
         "name": "",
-        "label": "status",
-        "order": 6,
+        "label": "reset",
+        "order": 3,
         "width": 0,
         "height": 0,
         "emulateClick": false,
@@ -2246,7 +2234,7 @@
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
         "x": 690,
-        "y": 1040,
+        "y": 1000,
         "wires": [
             [
                 "85c34a61decc4677"
@@ -2258,14 +2246,21 @@
         "type": "change",
         "z": "c53bc0b1cfdd92b9",
         "g": "25d161091e4783d3",
-        "name": "status",
+        "name": "reset",
         "rules": [
             {
                 "t": "set",
                 "p": "command",
                 "pt": "msg",
-                "to": "status",
+                "to": "reset",
                 "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "status",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
             }
         ],
         "action": "",
@@ -2274,7 +2269,7 @@
         "to": "",
         "reg": false,
         "x": 810,
-        "y": 1040,
+        "y": 1000,
         "wires": [
             [
                 "cd3ad862f91fdf3e"
@@ -2287,7 +2282,7 @@
         "z": "c53bc0b1cfdd92b9",
         "g": "25d161091e4783d3",
         "group": "08d202d8d9c960d1",
-        "order": 9,
+        "order": 5,
         "width": "3",
         "height": "1",
         "name": "Durée human",
@@ -2302,8 +2297,8 @@
         "className": "",
         "value": "elapsed.human",
         "valueType": "msg",
-        "x": 1180,
-        "y": 900,
+        "x": 1340,
+        "y": 820,
         "wires": []
     },
     {
@@ -2314,7 +2309,7 @@
         "name": "",
         "label": "",
         "group": "08d202d8d9c960d1",
-        "order": 2,
+        "order": 1,
         "width": "1",
         "height": "1",
         "passthru": false,
@@ -2333,12 +2328,13 @@
         "offvalueType": "bool",
         "officon": "",
         "offcolor": "",
-        "x": 690,
+        "x": 590,
         "y": 1100,
         "wires": [
             [
                 "47f169f674ded4d1",
-                "c064169b008f3b1a"
+                "c064169b008f3b1a",
+                "9f9fdcb47f004f2d"
             ]
         ]
     },
@@ -2349,7 +2345,7 @@
         "g": "25d161091e4783d3",
         "name": "",
         "group": "08d202d8d9c960d1",
-        "order": 3,
+        "order": 2,
         "width": "1",
         "height": "1",
         "label": "",
@@ -2394,15 +2390,13 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 530,
-        "y": 1000,
+        "x": 660,
+        "y": 940,
         "wires": [
             [
-                "01c12862244abe56",
                 "b3948346c86a61b5"
             ],
             [
-                "2565502f48565106",
                 "986b9ee6a3d341e3"
             ]
         ]
@@ -2418,8 +2412,8 @@
         "value": "payload",
         "valueType": "msg",
         "width": "1",
-        "height": "1",
-        "gtype": "gauge-tank",
+        "height": "5",
+        "gtype": "gauge-battery",
         "gstyle": "needle",
         "title": "Jauge",
         "alwaysShowTitle": false,
@@ -2625,8 +2619,8 @@
         "syntax": "mustache",
         "template": "{{elapsed.time.days}} J {{elapsed.time.hours}}:{{elapsed.time.minutes}}:{{elapsed.time.seconds}}",
         "output": "str",
-        "x": 1160,
-        "y": 820,
+        "x": 1180,
+        "y": 780,
         "wires": [
             [
                 "c3d7793156b912f6"
@@ -2659,7 +2653,7 @@
         "links": [
             "86b540c6db88487a"
         ],
-        "x": 545,
+        "x": 505,
         "y": 1100,
         "wires": [
             [
@@ -2744,7 +2738,7 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 860,
+        "x": 850,
         "y": 1720,
         "wires": [
             [
@@ -2770,7 +2764,7 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 1000,
+        "x": 990,
         "y": 1720,
         "wires": [
             [
@@ -2785,8 +2779,8 @@
         "g": "bdf852c716bcd0df",
         "name": "",
         "group": "14492619691773e2",
-        "order": 4,
-        "width": "3",
+        "order": 5,
+        "width": "2",
         "height": "1",
         "label": "",
         "labelPlacement": "left",
@@ -2807,7 +2801,7 @@
         "shape": "square",
         "showBorder": false,
         "showGlow": false,
-        "x": 1150,
+        "x": 1140,
         "y": 1640,
         "wires": []
     },
@@ -2819,8 +2813,8 @@
         "name": "",
         "label": "on / off",
         "group": "14492619691773e2",
-        "order": 3,
-        "width": "3",
+        "order": 4,
+        "width": "2",
         "height": "1",
         "passthru": false,
         "decouple": false,
@@ -2838,7 +2832,7 @@
         "offvalueType": "bool",
         "officon": "",
         "offcolor": "",
-        "x": 520,
+        "x": 510,
         "y": 1700,
         "wires": [
             [
@@ -2865,7 +2859,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 670,
+        "x": 660,
         "y": 1700,
         "wires": [
             [
@@ -2896,7 +2890,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 680,
+        "x": 670,
         "y": 1780,
         "wires": [
             [
@@ -2913,7 +2907,7 @@
         "links": [
             "86b540c6db88487a"
         ],
-        "x": 495,
+        "x": 485,
         "y": 1640,
         "wires": [
             [
@@ -2934,7 +2928,7 @@
         "valueType": "msg",
         "width": "2",
         "height": 3,
-        "gtype": "gauge-tank",
+        "gtype": "gauge-battery",
         "gstyle": "needle",
         "title": "milieu",
         "alwaysShowTitle": false,
@@ -2989,7 +2983,7 @@
         "valueType": "msg",
         "width": "2",
         "height": 3,
-        "gtype": "gauge-tank",
+        "gtype": "gauge-battery",
         "gstyle": "needle",
         "title": "déchet",
         "alwaysShowTitle": false,
@@ -3038,7 +3032,7 @@
         "valueType": "msg",
         "width": "2",
         "height": 3,
-        "gtype": "gauge-tank",
+        "gtype": "gauge-battery",
         "gstyle": "needle",
         "title": "fermenteur",
         "alwaysShowTitle": false,
@@ -4188,7 +4182,7 @@
         "links": [
             "11c827ee7d4ee251"
         ],
-        "x": 1425,
+        "x": 1405,
         "y": 1680,
         "wires": [
             [
@@ -4210,7 +4204,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "counter",
-        "x": 2035,
+        "x": 2015,
         "y": 1640,
         "wires": [],
         "l": false
@@ -4234,7 +4228,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1920,
+        "x": 1900,
         "y": 1680,
         "wires": [
             [
@@ -4254,8 +4248,8 @@
         "name": "",
         "label": "switch",
         "group": "14492619691773e2",
-        "order": 1,
-        "width": "3",
+        "order": 2,
+        "width": "2",
         "height": "1",
         "passthru": true,
         "decouple": false,
@@ -4263,7 +4257,7 @@
         "topicType": "str",
         "style": "",
         "className": "",
-        "layout": "row-spread",
+        "layout": "row-left",
         "clickableArea": "switch",
         "onvalue": "true",
         "onvalueType": "bool",
@@ -4273,11 +4267,12 @@
         "offvalueType": "bool",
         "officon": "",
         "offcolor": "",
-        "x": 1585,
+        "x": 1565,
         "y": 1760,
         "wires": [
             [
-                "a5761a8a511d07c7"
+                "a5761a8a511d07c7",
+                "1bd795182f2fe0e4"
             ]
         ],
         "l": false
@@ -4295,7 +4290,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1750,
+        "x": 1730,
         "y": 1680,
         "wires": [
             [
@@ -4313,7 +4308,7 @@
         "links": [
             "86b540c6db88487a"
         ],
-        "x": 1525,
+        "x": 1505,
         "y": 1720,
         "wires": [
             []
@@ -4333,7 +4328,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "counter",
-        "x": 2035,
+        "x": 2015,
         "y": 1720,
         "wires": [],
         "l": false
@@ -4360,7 +4355,7 @@
         "topic": "sw",
         "payload": "true",
         "payloadType": "bool",
-        "x": 1430,
+        "x": 1410,
         "y": 1740,
         "wires": [
             [
@@ -4390,7 +4385,7 @@
         "topic": "sw",
         "payload": "false",
         "payloadType": "bool",
-        "x": 1430,
+        "x": 1410,
         "y": 1780,
         "wires": [
             [
@@ -4412,7 +4407,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "counter",
-        "x": 1875,
+        "x": 1855,
         "y": 1640,
         "wires": [],
         "l": false
@@ -4435,7 +4430,7 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 2185,
+        "x": 2165,
         "y": 1680,
         "wires": [
             [
@@ -4451,8 +4446,8 @@
         "g": "df07a1238a55e5b5",
         "name": "flux",
         "group": "14492619691773e2",
-        "order": 2,
-        "width": "3",
+        "order": 3,
+        "width": "2",
         "height": "1",
         "label": "",
         "labelPlacement": "left",
@@ -4473,7 +4468,7 @@
         "shape": "circle",
         "showBorder": false,
         "showGlow": false,
-        "x": 2235,
+        "x": 2215,
         "y": 1680,
         "wires": [],
         "l": false
@@ -4487,11 +4482,291 @@
         "links": [
             "86b540c6db88487a"
         ],
-        "x": 2195,
+        "x": 2175,
         "y": 1620,
         "wires": [
             [
                 "9a7c234b1febe5d1"
+            ]
+        ]
+    },
+    {
+        "id": "1bd795182f2fe0e4",
+        "type": "ui-markdown",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "df07a1238a55e5b5",
+        "group": "14492619691773e2",
+        "name": "",
+        "order": 1,
+        "width": "4",
+        "height": "3",
+        "content": "# Marche Arrêt\n\n### Le message du SWITCH:   \n> **Topic** : {{msg.topic}}  \n> **Payload**: {{msg.payload}}  \n\nle Switch permet de controler le passage des messages dans le flow. \n\n - Quand il est sur **ON** le topic est **true** le switch laisse passer le message. Le voyant Jaune clignote.\n - Quand il est sur **OFF** le topic est positionné sur **false** et le noeud switch détourne le message.\n\n La fonction détecte l'état du switch en interceptant le message avec topic = sw.\n  Elle rajoute un topic dans le message lorque le switch change d'état. \n  La fonction bloque le message du switch (retourne null). ",
+        "className": "",
+        "x": 1810,
+        "y": 1780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cd1ccde0da6ac2a8",
+        "type": "hourglass",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "",
+        "persistId": "",
+        "humanizeLocale": "",
+        "x": 2050,
+        "y": 820,
+        "wires": [
+            [
+                "9756121d119b9360",
+                "e6ea94c7a2ce2189"
+            ]
+        ]
+    },
+    {
+        "id": "9756121d119b9360",
+        "type": "debug",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "full",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2210,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "4a119953cc8b6ee3",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "start",
+        "props": [
+            {
+                "p": "command",
+                "v": "start",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1790,
+        "y": 780,
+        "wires": [
+            [
+                "cd1ccde0da6ac2a8"
+            ]
+        ]
+    },
+    {
+        "id": "a8cd96085926a05b",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "stop",
+        "props": [
+            {
+                "p": "command",
+                "v": "stop",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1590,
+        "y": 820,
+        "wires": [
+            [
+                "790b81abe7a5f3a6"
+            ]
+        ]
+    },
+    {
+        "id": "dbd7ea83d791520d",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "status",
+        "props": [
+            {
+                "p": "command",
+                "v": "status",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1790,
+        "y": 860,
+        "wires": [
+            [
+                "cd1ccde0da6ac2a8"
+            ]
+        ]
+    },
+    {
+        "id": "e6ea94c7a2ce2189",
+        "type": "debug",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "debug 22",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "elapsed.time.seconds",
+        "targetType": "msg",
+        "statusVal": "elapsed.millis",
+        "statusType": "auto",
+        "x": 2210,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "57aa7ebe85fccc56",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "reset",
+        "props": [
+            {
+                "p": "command",
+                "v": "reset",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1790,
+        "y": 900,
+        "wires": [
+            [
+                "cd1ccde0da6ac2a8"
+            ]
+        ]
+    },
+    {
+        "id": "f3be6268759c1a63",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "status",
+        "props": [
+            {
+                "p": "status",
+                "v": "true",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1790,
+        "y": 740,
+        "wires": [
+            [
+                "cd1ccde0da6ac2a8"
+            ]
+        ]
+    },
+    {
+        "id": "790b81abe7a5f3a6",
+        "type": "change",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "status",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1770,
+        "y": 820,
+        "wires": [
+            [
+                "cd1ccde0da6ac2a8"
+            ]
+        ]
+    },
+    {
+        "id": "4da45368d3e7c727",
+        "type": "debug",
+        "z": "c53bc0b1cfdd92b9",
+        "g": "25d161091e4783d3",
+        "name": "full",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "9f9fdcb47f004f2d",
+        "type": "ui-markdown",
+        "z": "c53bc0b1cfdd92b9",
+        "group": "08d202d8d9c960d1",
+        "name": "",
+        "order": 6,
+        "width": "0",
+        "height": "0",
+        "content": "# Chrono \n\nCombien de temps le Switch est sur ON?\n\n_Le chrono démarre quand le swithc est sur ON et s'arrête en affichant le temps écoulé._\n\nl'état du SW : **{{msg.payload}}**  \n\n{{elapsed.human}}",
+        "className": "",
+        "x": 1225,
+        "y": 1003.3333129882812,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "decb07d988ea1f65",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "toggle",
+        "props": [
+            {
+                "p": "command",
+                "v": "toggle",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1790,
+        "y": 960,
+        "wires": [
+            [
+                "cd1ccde0da6ac2a8"
             ]
         ]
     },
@@ -4573,7 +4848,7 @@
         "z": "ab36a2f91b62fae8",
         "g": "1d42c5d5c534c807",
         "name": "debug 4",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -5581,7 +5856,7 @@
         "z": "f9450cebd9b8d8c5",
         "g": "7d477dfc29cb6057",
         "name": "debug 12",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -6509,7 +6784,8 @@
             [
                 "457fea666f854e0a",
                 "256bf713bf6ae8cc",
-                "6a95d32c7b3e69e7"
+                "6a95d32c7b3e69e7",
+                "11e9424639d3619c"
             ]
         ]
     },
@@ -6661,8 +6937,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 5,
-        "x": 400,
-        "y": 640,
+        "x": 380,
+        "y": 680,
         "wires": [
             [
                 "6f3afbcade3425b1"
@@ -6735,8 +7011,8 @@
         "styleRounded": true,
         "styleGlow": false,
         "className": "",
-        "x": 390,
-        "y": 720,
+        "x": 370,
+        "y": 740,
         "wires": [
             []
         ]
@@ -7097,7 +7373,7 @@
         "property": "payload",
         "name": "Percent",
         "x": 380,
-        "y": 800,
+        "y": 780,
         "wires": [
             [
                 "5a8aa12857a44111",
@@ -7350,5 +7626,528 @@
             ]
         ],
         "l": false
+    },
+    {
+        "id": "11e9424639d3619c",
+        "type": "link out",
+        "z": "d8be5e1f9ecfc822",
+        "name": "A0",
+        "mode": "link",
+        "links": [
+            "2c08af8820f60357"
+        ],
+        "x": 245,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "2c08af8820f60357",
+        "type": "link in",
+        "z": "d7b000e00355b06e",
+        "name": "PH in",
+        "links": [
+            "11e9424639d3619c"
+        ],
+        "x": 315,
+        "y": 260,
+        "wires": [
+            [
+                "03eb7edd6c8fc1d0",
+                "599a94dd8684d243",
+                "ea4c0fa6e4496040"
+            ]
+        ]
+    },
+    {
+        "id": "957911d4cb0971ed",
+        "type": "change",
+        "z": "d7b000e00355b06e",
+        "name": "PH",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "ph",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 785,
+        "y": 360,
+        "wires": [
+            [
+                "18441cd332eed35a",
+                "d38e1b6841895bcd"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "18441cd332eed35a",
+        "type": "ui-chart",
+        "z": "d7b000e00355b06e",
+        "group": "af7a2f9471407871",
+        "name": "Mesure",
+        "label": "PH",
+        "order": 6,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "PH",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "{HH}:{mm}",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "PH",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "0",
+        "ymax": "12",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "false",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "200",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "smooth",
+        "x": 910,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b21009d5808562f8",
+        "type": "ui-gauge",
+        "z": "d7b000e00355b06e",
+        "name": "",
+        "group": "af7a2f9471407871",
+        "order": 4,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "gauge",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "PH",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#ff0000",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "6",
+                "color": "#00ff40",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#5385ea",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "12",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 900,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "03eb7edd6c8fc1d0",
+        "type": "range",
+        "z": "d7b000e00355b06e",
+        "minin": "0",
+        "maxin": "1024",
+        "minout": "0",
+        "maxout": "12",
+        "action": "scale",
+        "round": false,
+        "property": "payload",
+        "name": "",
+        "x": 420,
+        "y": 360,
+        "wires": [
+            [
+                "f22879215303d9a8"
+            ]
+        ]
+    },
+    {
+        "id": "599a94dd8684d243",
+        "type": "ui-text",
+        "z": "d7b000e00355b06e",
+        "group": "af7a2f9471407871",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Brut",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 900,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "ea4c0fa6e4496040",
+        "type": "debug",
+        "z": "d7b000e00355b06e",
+        "name": "debug 17",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 385,
+        "y": 220,
+        "wires": [],
+        "l": false
+    },
+    {
+        "id": "f22879215303d9a8",
+        "type": "change",
+        "z": "d7b000e00355b06e",
+        "name": "arrondi",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$round(msg.payload, 1)\t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 550,
+        "y": 360,
+        "wires": [
+            [
+                "a92069de472750bf"
+            ]
+        ]
+    },
+    {
+        "id": "d38e1b6841895bcd",
+        "type": "debug",
+        "z": "d7b000e00355b06e",
+        "name": "debug 19",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 865,
+        "y": 420,
+        "wires": [],
+        "l": false
+    },
+    {
+        "id": "16bed4cf4c70b80f",
+        "type": "switch",
+        "z": "d7b000e00355b06e",
+        "g": "72f493835088c713",
+        "name": "Si topic = true",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 780,
+        "y": 540,
+        "wires": [
+            [
+                "ff4bd1c90924330a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6739792d7c1c5d34",
+        "type": "ui-switch",
+        "z": "d7b000e00355b06e",
+        "g": "72f493835088c713",
+        "name": "",
+        "label": "switch",
+        "group": "af7a2f9471407871",
+        "order": 5,
+        "width": "3",
+        "height": "1",
+        "passthru": true,
+        "decouple": false,
+        "topic": "sw",
+        "topicType": "str",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 445,
+        "y": 620,
+        "wires": [
+            [
+                "a92069de472750bf"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "a92069de472750bf",
+        "type": "function",
+        "z": "d7b000e00355b06e",
+        "g": "72f493835088c713",
+        "name": "pass",
+        "func": "// les messages avec un topic SW \n// contiennent la valeur du switch\n// et ne sont pas transmis\n// les autres messages passent et sont complétés avec la valeur du swithc\n\nlet I = context.get('I') || false\nif (msg.topic === 'sw') {\n    I = msg.payload\n    context.set('I',I)\n    return null\n}\nmsg.topic=I\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 540,
+        "wires": [
+            [
+                "16bed4cf4c70b80f"
+            ]
+        ]
+    },
+    {
+        "id": "ab9b6e8d5f4b3b15",
+        "type": "inject",
+        "z": "d7b000e00355b06e",
+        "g": "72f493835088c713",
+        "name": "ON",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "sw",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 290,
+        "y": 600,
+        "wires": [
+            [
+                "6739792d7c1c5d34"
+            ]
+        ]
+    },
+    {
+        "id": "912619cbe5c8c299",
+        "type": "inject",
+        "z": "d7b000e00355b06e",
+        "g": "72f493835088c713",
+        "name": "OFF",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "sw",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 290,
+        "y": 640,
+        "wires": [
+            [
+                "6739792d7c1c5d34"
+            ]
+        ]
+    },
+    {
+        "id": "58e2e02626ae4d8e",
+        "type": "debug",
+        "z": "d7b000e00355b06e",
+        "name": "debug 21",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "20449f3a52c4f5d4",
+        "type": "ui-markdown",
+        "z": "d7b000e00355b06e",
+        "group": "af7a2f9471407871",
+        "name": "",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "content": "# PH stat\nSur les 10 dernières mesures\n -  Max {{msg.stat.max}}\n -  Moy {{msg.stat.mean}}\n -  min {{msg.stat.min}} \n\nGoes here...",
+        "className": "",
+        "x": 1170,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "faad0ad57053e204",
+        "type": "hysteresis",
+        "z": "d7b000e00355b06e",
+        "name": "",
+        "ThresholdType": "fixed",
+        "ThresholdRising": "7",
+        "ThresholdFalling": "6",
+        "TopicThreshold": "",
+        "TopicCurrent": "",
+        "ThresholdDeltaRising": "",
+        "ThresholdDeltaFalling": "",
+        "InitialMessage": false,
+        "OutRisingType": "bool",
+        "OutRisingValue": "true",
+        "OutFallingType": "bool",
+        "OutFallingValue": "false",
+        "OutTopicType": "str",
+        "OutTopicValue": "wave",
+        "DynRaiseError": false,
+        "x": 820,
+        "y": 140,
+        "wires": [
+            [
+                "58e2e02626ae4d8e",
+                "869f898326812945"
+            ]
+        ]
+    },
+    {
+        "id": "869f898326812945",
+        "type": "ui-led",
+        "z": "d7b000e00355b06e",
+        "name": "",
+        "group": "af7a2f9471407871",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "states": [
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#ff0000"
+            },
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#00ff00"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "square",
+        "showBorder": false,
+        "showGlow": false,
+        "x": 960,
+        "y": 140,
+        "wires": []
     }
 ]
