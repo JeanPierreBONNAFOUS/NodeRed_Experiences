@@ -143,7 +143,7 @@
                 "y": 753.3333339691162,
                 "wires": [
                     {
-                        "id": "8b104ab32bca1735",
+                        "id": "42ae2b875a09be0e",
                         "port": 0
                     }
                 ]
@@ -235,7 +235,7 @@
             "wires": [
                 {
                     "id": "8b104ab32bca1735",
-                    "port": 0
+                    "port": 1
                 }
             ]
         }
@@ -1043,6 +1043,19 @@
         ]
     },
     {
+        "id": "42ae2b875a09be0e",
+        "type": "junction",
+        "z": "1ce5428eb51b28c0",
+        "x": 1280.0000112056732,
+        "y": 752.4285749197006,
+        "wires": [
+            [
+                "154b7193c9628a52",
+                "a35006453c06fb09"
+            ]
+        ]
+    },
+    {
         "id": "3c225b7898348072",
         "type": "ui-base",
         "name": "Dashboard Expe",
@@ -1706,16 +1719,20 @@
         "props": [
             {
                 "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
             }
         ],
         "repeat": "",
         "crontab": "",
         "once": true,
         "onceDelay": "0.5",
-        "topic": "",
+        "topic": "init",
         "payload": "false",
         "payloadType": "bool",
-        "x": 310,
+        "x": 320,
         "y": 600,
         "wires": [
             [
@@ -1742,8 +1759,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 718.8889007568359,
-        "y": 499.99999618530273,
+        "x": 736.888916015625,
+        "y": 498,
         "wires": [
             []
         ]
@@ -1769,8 +1786,8 @@
         "topic": "tic",
         "payload": "true",
         "payloadType": "bool",
-        "x": 770,
-        "y": 700,
+        "x": 768,
+        "y": 698,
         "wires": [
             [
                 "0628cf78f09ac343",
@@ -1898,7 +1915,7 @@
         "repair": false,
         "outputs": 2,
         "x": 990,
-        "y": 760,
+        "y": 766,
         "wires": [
             [
                 "8b104ab32bca1735"
@@ -1911,19 +1928,18 @@
         "type": "function",
         "z": "1ce5428eb51b28c0",
         "name": "compteur +1",
-        "func": "var count = context.get('count')||0;\ncount +=1;\ncontext.set('count',count)\nmsg.payload=count; \nvar msgStatus = {payload:\"out \" + count};\nreturn [msg,msgStatus];",
+        "func": "// Incrémente la valeur du compteur\n// retourne la valeur sur sortie 1\n// affiche la valeur sur le status du SubFlow\nvar count = context.get('count')||0;\ncount +=1;\ncontext.set('count',count)\nmsg.payload=count; \nvar msgStatus = {payload:\"out \" + count};\nreturn [msg,msgStatus];",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
         "initialize": "// Le code ajouté ici sera exécuté une fois\n// à chaque démarrage du noeud.\n//flow.set('count',11)",
         "finalize": "",
         "libs": [],
-        "x": 1190,
-        "y": 760,
+        "x": 1152,
+        "y": 758,
         "wires": [
             [
-                "154b7193c9628a52",
-                "a35006453c06fb09"
+                "42ae2b875a09be0e"
             ],
             []
         ]
@@ -2053,6 +2069,26 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "754cbae947c0941e",
+        "type": "comment",
+        "z": "1ce5428eb51b28c0",
+        "name": "V 1.0",
+        "info": "# Refact \n - On remplace context flow par objet switch dans le message",
+        "x": 478,
+        "y": 143,
+        "wires": []
+    },
+    {
+        "id": "c0ad7b151746da19",
+        "type": "comment",
+        "z": "1ce5428eb51b28c0",
+        "name": "Original",
+        "info": "",
+        "x": 1001,
+        "y": 300,
+        "wires": []
     },
     {
         "id": "6ea6e0f88371f50f",
@@ -7908,8 +7944,12 @@
                 "f48b015d956fb5b0",
                 "785cb78463451037"
             ],
-            [],
-            []
+            [
+                "224ca6687b334044"
+            ],
+            [
+                "b9fdbbff917c4c1a"
+            ]
         ]
     },
     {
@@ -8025,8 +8065,8 @@
         "shape": "circle",
         "showBorder": true,
         "showGlow": true,
-        "x": 346.6667175292969,
-        "y": 162.22221565246582,
+        "x": 347.6667175292969,
+        "y": 198.2222137451172,
         "wires": []
     },
     {
@@ -8197,6 +8237,40 @@
         "showGlow": true,
         "x": 365.5555877685547,
         "y": 458.88890075683594,
+        "wires": []
+    },
+    {
+        "id": "224ca6687b334044",
+        "type": "debug",
+        "z": "d8be5e1f9ecfc822",
+        "name": "full",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 329,
+        "y": 112,
+        "wires": []
+    },
+    {
+        "id": "b9fdbbff917c4c1a",
+        "type": "debug",
+        "z": "d8be5e1f9ecfc822",
+        "name": "full",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 327,
+        "y": 147,
         "wires": []
     },
     {
