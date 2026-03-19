@@ -119,8 +119,8 @@
         ],
         "out": [
             {
-                "x": 700,
-                "y": 540,
+                "x": 805,
+                "y": 573,
                 "wires": [
                     {
                         "id": "d927f191863f188d",
@@ -147,13 +147,44 @@
                         "port": 0
                     }
                 ]
+            },
+            {
+                "x": 1189,
+                "y": 485,
+                "wires": [
+                    {
+                        "id": "42e3152c74b49828",
+                        "port": 0
+                    }
+                ]
             }
         ],
         "env": [
             {
+                "name": "ledLabel",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            },
+            {
                 "name": "label",
                 "type": "str",
-                "value": ""
+                "value": "",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
             },
             {
                 "name": "group",
@@ -230,8 +261,8 @@
         "meta": {},
         "color": "#DDAA99",
         "status": {
-            "x": 1355.5556564331055,
-            "y": 801.1110820770264,
+            "x": 1358.5556640625,
+            "y": 807.111083984375,
             "wires": [
                 {
                     "id": "8b104ab32bca1735",
@@ -927,7 +958,7 @@
             "8e7ed4d6b60f88d8"
         ],
         "x": 595.111083984375,
-        "y": 503.4444580078125,
+        "y": 505.4444580078125,
         "w": 152,
         "h": 142
     },
@@ -1518,7 +1549,7 @@
         "page": "b0ac91756170664c",
         "width": 6,
         "height": 1,
-        "order": 4,
+        "order": 5,
         "showTitle": false,
         "className": "",
         "visible": "true",
@@ -1532,7 +1563,7 @@
         "page": "b0ac91756170664c",
         "width": 6,
         "height": 1,
-        "order": 5,
+        "order": 6,
         "showTitle": false,
         "className": "",
         "visible": "true",
@@ -1546,7 +1577,7 @@
         "page": "b0ac91756170664c",
         "width": 6,
         "height": 1,
-        "order": 6,
+        "order": 4,
         "showTitle": false,
         "className": "",
         "visible": "true",
@@ -1679,7 +1710,7 @@
         "id": "d927f191863f188d",
         "type": "ui-switch",
         "z": "1ce5428eb51b28c0",
-        "name": "",
+        "name": "ON/OFF",
         "label": "${label}",
         "group": "${group}",
         "order": "1",
@@ -1692,7 +1723,7 @@
         "style": "",
         "className": "",
         "layout": "row-spread",
-        "clickableArea": "switch",
+        "clickableArea": "label",
         "onvalue": "true",
         "onvalueType": "bool",
         "onicon": "",
@@ -1701,13 +1732,14 @@
         "offvalueType": "bool",
         "officon": "",
         "offcolor": "",
-        "x": 480,
-        "y": 540,
+        "x": 425,
+        "y": 538,
         "wires": [
             [
                 "7c66935535bd872b",
                 "6f26e47f79ca616b",
-                "0628cf78f09ac343"
+                "0628cf78f09ac343",
+                "69eb3f3edb8d0fce"
             ]
         ]
     },
@@ -1732,8 +1764,8 @@
         "topic": "init",
         "payload": "false",
         "payloadType": "bool",
-        "x": 320,
-        "y": 600,
+        "x": 321,
+        "y": 603,
         "wires": [
             [
                 "d927f191863f188d",
@@ -1760,10 +1792,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 736.888916015625,
-        "y": 498,
+        "x": 726.888916015625,
+        "y": 477,
         "wires": [
-            []
+            [
+                "42e3152c74b49828"
+            ]
         ]
     },
     {
@@ -1888,8 +1922,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 990,
-        "y": 766,
+        "x": 983,
+        "y": 764,
         "wires": [
             [
                 "8b104ab32bca1735"
@@ -1902,7 +1936,7 @@
         "type": "function",
         "z": "1ce5428eb51b28c0",
         "name": "compteur +1",
-        "func": "// Incrémente la valeur du compteur\n// retourne la valeur sur sortie 1\n// affiche la valeur sur le status du SubFlow\nvar count = context.get('count')|| flow.get(\"initialCount\");\ncount +=1;\ncontext.set('count',count)\nmsg.payload=count; \nvar msgStatus = {payload:\"out \" + count};\nreturn [msg,msgStatus];",
+        "func": "// Incrémente la valeur du compteur\n// retourne la valeur sur sortie 1\n// affiche la valeur sur le status du SubFlow\nlet count = null\nlet on = flow.get(\"ON\")\nif (msg.topic === \"reset\" && on === false) {\n    context.set('count',0);\n    count = 0;\n} \nif (msg.topic == \"tic\") {\n    //count = context.get('count') || flow.get(\"initialCount\");\n    count = context.get('count') !== undefined ? context.get('count') : flow.get(\"initialCount\");\n    count +=1;\n}\ncontext.set('count',count)\nmsg.payload=count; \nlet msgStatus = {payload:\"out \" + count};\nreturn [msg,msgStatus];",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -2050,8 +2084,8 @@
         "z": "1ce5428eb51b28c0",
         "name": "V 1.0",
         "info": "# Refact \n - On remplace context flow par objet switch dans le message",
-        "x": 478,
-        "y": 143,
+        "x": 479,
+        "y": 303,
         "wires": []
     },
     {
@@ -2060,8 +2094,8 @@
         "z": "1ce5428eb51b28c0",
         "name": "Original",
         "info": "",
-        "x": 1001,
-        "y": 300,
+        "x": 884,
+        "y": 261,
         "wires": []
     },
     {
@@ -2070,8 +2104,8 @@
         "z": "1ce5428eb51b28c0",
         "name": "Refact 1",
         "info": "# Simplification\nle topic du node ui-switch = value. \n\n# EVOL\nPB : lorsqu'on redémarre le flux, le compteur est remis à zero\n - Lors de l'init interroger le compteur du moteur\naffecter le résultat au compteur \n - Mettre le résultat dans une variable de context flow initialCount\n - Dans la fonction compteur\n     Récupérer la valeur du compteu dans le contexte du noeud si elle existe\n     Si elle n'existe pas (cas d'un redémarrage) récupérer la valeur dans initialCount au niveau du flow\n",
-        "x": 1135,
-        "y": 302,
+        "x": 885,
+        "y": 304,
         "wires": []
     },
     {
@@ -2158,6 +2192,112 @@
         "reg": false,
         "x": 1573,
         "y": 410,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "32efc725bbf9d56f",
+        "type": "ui-button",
+        "z": "1ce5428eb51b28c0",
+        "group": "${group}",
+        "name": "RAZ",
+        "label": "reset compteur",
+        "order": 0,
+        "width": "0",
+        "height": "0",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "reset",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 988,
+        "y": 698,
+        "wires": [
+            [
+                "8b104ab32bca1735"
+            ]
+        ]
+    },
+    {
+        "id": "3d0aa3fc3ab24136",
+        "type": "comment",
+        "z": "1ce5428eb51b28c0",
+        "name": "Refact 2",
+        "info": "BUT : Un bouton pour reset le compteur\nRAZ que lorsque le moteur est arrêté.\n! L'enregistrement en base ne se fait que lorsque le moteur s'arrête\n\n",
+        "x": 1064,
+        "y": 270,
+        "wires": []
+    },
+    {
+        "id": "69eb3f3edb8d0fce",
+        "type": "ui-led",
+        "z": "1ce5428eb51b28c0",
+        "name": "",
+        "group": "${group}",
+        "order": -1,
+        "width": 0,
+        "height": 0,
+        "label": "${ledLabel}",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "states": [
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#ff0000"
+            },
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#00ff00"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": false,
+        "showGlow": false,
+        "x": 825,
+        "y": 526,
+        "wires": []
+    },
+    {
+        "id": "42e3152c74b49828",
+        "type": "change",
+        "z": "1ce5428eb51b28c0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "ON",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 996,
+        "y": 482,
         "wires": [
             []
         ]
@@ -7783,7 +7923,7 @@
         "state": "OUTPUT",
         "arduino": "8683c29a9a878c47",
         "x": 671.111083984375,
-        "y": 544.4444580078125,
+        "y": 546.4444580078125,
         "wires": []
     },
     {
@@ -7796,7 +7936,7 @@
         "state": "OUTPUT",
         "arduino": "8683c29a9a878c47",
         "x": 671.111083984375,
-        "y": 604.4444580078125,
+        "y": 606.4444580078125,
         "wires": []
     },
     {
@@ -7970,10 +8110,10 @@
         "y": 613.3333606719971,
         "wires": [
             [
-                "8e7ed4d6b60f88d8",
                 "fcb76c65c91bdad2",
                 "0f596330f5de36d7",
-                "2b316e7addbb02a9"
+                "2b316e7addbb02a9",
+                "c199a9030a4317a2"
             ]
         ]
     },
@@ -7983,6 +8123,11 @@
         "z": "d8be5e1f9ecfc822",
         "name": "M1",
         "env": [
+            {
+                "name": "ledLabel",
+                "value": "Remplir",
+                "type": "str"
+            },
             {
                 "name": "label",
                 "value": "Moteur 1",
@@ -8005,7 +8150,7 @@
             },
             {
                 "key": "DB2_SF_ORDER",
-                "value": 2,
+                "value": "1",
                 "type": "str"
             }
         ],
@@ -8013,48 +8158,18 @@
         "y": 105.5555362701416,
         "wires": [
             [
-                "f48b015d956fb5b0",
-                "785cb78463451037"
+                "f48b015d956fb5b0"
             ],
             [
                 "224ca6687b334044"
             ],
             [
                 "b9fdbbff917c4c1a"
+            ],
+            [
+                "69d4f53c15a513d4"
             ]
         ]
-    },
-    {
-        "id": "785cb78463451037",
-        "type": "ui-led",
-        "z": "d8be5e1f9ecfc822",
-        "name": "Remplir",
-        "group": "7cdbf9de43c851da",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "label": "Remplir",
-        "labelPlacement": "left",
-        "labelAlignment": "center",
-        "states": [
-            {
-                "value": "false",
-                "valueType": "bool",
-                "color": "#ff0000"
-            },
-            {
-                "value": "true",
-                "valueType": "bool",
-                "color": "#00ff00"
-            }
-        ],
-        "allowColorForValueInMessage": false,
-        "shape": "circle",
-        "showBorder": true,
-        "showGlow": true,
-        "x": 362.2222595214844,
-        "y": 54.44442558288574,
-        "wires": []
     },
     {
         "id": "bfd8075cb0fe0f7d",
@@ -8062,6 +8177,11 @@
         "z": "d8be5e1f9ecfc822",
         "name": "M2",
         "env": [
+            {
+                "name": "ledLabel",
+                "value": "NaOH",
+                "type": "str"
+            },
             {
                 "name": "label",
                 "value": "Moteur 2",
@@ -8094,7 +8214,7 @@
             },
             {
                 "key": "DB2_SF_ORDER",
-                "value": 2,
+                "value": "1",
                 "type": "str"
             }
         ],
@@ -8102,44 +8222,12 @@
         "y": 320.44439697265625,
         "wires": [
             [
-                "c3ad2d0768457167",
-                "c6c15c970d5c27de"
+                "c3ad2d0768457167"
             ],
+            [],
             [],
             []
         ]
-    },
-    {
-        "id": "c6c15c970d5c27de",
-        "type": "ui-led",
-        "z": "d8be5e1f9ecfc822",
-        "name": "NaOH",
-        "group": "4bf442cefc1160ad",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "label": "NaOH",
-        "labelPlacement": "left",
-        "labelAlignment": "center",
-        "states": [
-            {
-                "value": "false",
-                "valueType": "bool",
-                "color": "#ff0000"
-            },
-            {
-                "value": "true",
-                "valueType": "bool",
-                "color": "#00ff00"
-            }
-        ],
-        "allowColorForValueInMessage": false,
-        "shape": "circle",
-        "showBorder": true,
-        "showGlow": true,
-        "x": 350.6667175292969,
-        "y": 256.22222900390625,
-        "wires": []
     },
     {
         "id": "d671a9330956ed3d",
@@ -8147,6 +8235,11 @@
         "z": "d8be5e1f9ecfc822",
         "name": "M3",
         "env": [
+            {
+                "name": "ledLabel",
+                "value": "HCl",
+                "type": "str"
+            },
             {
                 "name": "label",
                 "value": "Moteur 3",
@@ -8187,44 +8280,12 @@
         "y": 395.5555362701416,
         "wires": [
             [
-                "dd26589f0eb6fb37",
                 "b1be95b55d20eb09"
             ],
             [],
+            [],
             []
         ]
-    },
-    {
-        "id": "dd26589f0eb6fb37",
-        "type": "ui-led",
-        "z": "d8be5e1f9ecfc822",
-        "name": "HCl",
-        "group": "360ab0290a20b50b",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "label": "HCl",
-        "labelPlacement": "left",
-        "labelAlignment": "center",
-        "states": [
-            {
-                "value": "false",
-                "valueType": "bool",
-                "color": "#ff0000"
-            },
-            {
-                "value": "true",
-                "valueType": "bool",
-                "color": "#00ff00"
-            }
-        ],
-        "allowColorForValueInMessage": false,
-        "shape": "circle",
-        "showBorder": true,
-        "showGlow": true,
-        "x": 380.0000305175781,
-        "y": 358.888879776001,
-        "wires": []
     },
     {
         "id": "0c128f208b2166b7",
@@ -8232,6 +8293,11 @@
         "z": "d8be5e1f9ecfc822",
         "name": "M4",
         "env": [
+            {
+                "name": "ledLabel",
+                "value": "Vider",
+                "type": "str"
+            },
             {
                 "name": "label",
                 "value": "Moteur 4",
@@ -8272,44 +8338,12 @@
         "y": 556.666669845581,
         "wires": [
             [
-                "ca60fb2d9abc1716",
-                "c199a9030a4317a2"
+                "8e7ed4d6b60f88d8"
             ],
+            [],
             [],
             []
         ]
-    },
-    {
-        "id": "ca60fb2d9abc1716",
-        "type": "ui-led",
-        "z": "d8be5e1f9ecfc822",
-        "name": "Vider",
-        "group": "e906d44348ed95b4",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "label": "Vider",
-        "labelPlacement": "left",
-        "labelAlignment": "center",
-        "states": [
-            {
-                "value": "false",
-                "valueType": "bool",
-                "color": "#ff0000"
-            },
-            {
-                "value": "true",
-                "valueType": "bool",
-                "color": "#00ff00"
-            }
-        ],
-        "allowColorForValueInMessage": false,
-        "shape": "circle",
-        "showBorder": true,
-        "showGlow": true,
-        "x": 365.5555877685547,
-        "y": 458.88890075683594,
-        "wires": []
     },
     {
         "id": "224ca6687b334044",
@@ -8354,8 +8388,8 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 327,
