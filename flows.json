@@ -1687,7 +1687,7 @@
         "height": "0",
         "passthru": true,
         "decouple": false,
-        "topic": "clic",
+        "topic": "value",
         "topicType": "str",
         "style": "",
         "className": "",
@@ -1706,8 +1706,8 @@
         "wires": [
             [
                 "7c66935535bd872b",
-                "21881ffddba283d7",
-                "6f26e47f79ca616b"
+                "6f26e47f79ca616b",
+                "0628cf78f09ac343"
             ]
         ]
     },
@@ -1736,7 +1736,8 @@
         "y": 600,
         "wires": [
             [
-                "d927f191863f188d"
+                "d927f191863f188d",
+                "75f3aa7d200d478f"
             ]
         ]
     },
@@ -1792,33 +1793,6 @@
             [
                 "0628cf78f09ac343",
                 "fd66dfc4ab757b87"
-            ]
-        ]
-    },
-    {
-        "id": "21881ffddba283d7",
-        "type": "change",
-        "z": "1ce5428eb51b28c0",
-        "name": "switch change detection",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "value",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 750,
-        "y": 580,
-        "wires": [
-            [
-                "0628cf78f09ac343"
             ]
         ]
     },
@@ -1928,7 +1902,7 @@
         "type": "function",
         "z": "1ce5428eb51b28c0",
         "name": "compteur +1",
-        "func": "// Incrémente la valeur du compteur\n// retourne la valeur sur sortie 1\n// affiche la valeur sur le status du SubFlow\nvar count = context.get('count')||0;\ncount +=1;\ncontext.set('count',count)\nmsg.payload=count; \nvar msgStatus = {payload:\"out \" + count};\nreturn [msg,msgStatus];",
+        "func": "// Incrémente la valeur du compteur\n// retourne la valeur sur sortie 1\n// affiche la valeur sur le status du SubFlow\nvar count = context.get('count')|| flow.get(\"initialCount\");\ncount +=1;\ncontext.set('count',count)\nmsg.payload=count; \nvar msgStatus = {payload:\"out \" + count};\nreturn [msg,msgStatus];",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -2089,6 +2063,104 @@
         "x": 1001,
         "y": 300,
         "wires": []
+    },
+    {
+        "id": "a5c72668f06be292",
+        "type": "comment",
+        "z": "1ce5428eb51b28c0",
+        "name": "Refact 1",
+        "info": "# Simplification\nle topic du node ui-switch = value. \n\n# EVOL\nPB : lorsqu'on redémarre le flux, le compteur est remis à zero\n - Lors de l'init interroger le compteur du moteur\naffecter le résultat au compteur \n - Mettre le résultat dans une variable de context flow initialCount\n - Dans la fonction compteur\n     Récupérer la valeur du compteu dans le contexte du noeud si elle existe\n     Si elle n'existe pas (cas d'un redémarrage) récupérer la valeur dans initialCount au niveau du flow\n",
+        "x": 1135,
+        "y": 302,
+        "wires": []
+    },
+    {
+        "id": "75f3aa7d200d478f",
+        "type": "function",
+        "z": "1ce5428eb51b28c0",
+        "name": "function 1",
+        "func": "// récupérer la valeur du compteur\nlet id = env.get(\"ID\");\nmsg.topic = `select compteur from moteur where id = ${id};` \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 784,
+        "y": 409,
+        "wires": [
+            [
+                "f2dd4e2e71829934"
+            ]
+        ]
+    },
+    {
+        "id": "f2dd4e2e71829934",
+        "type": "sqlite",
+        "z": "1ce5428eb51b28c0",
+        "mydb": "43d9ae6d789c2ff1",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 1044,
+        "y": 409,
+        "wires": [
+            [
+                "5934d7602b96fd47"
+            ]
+        ]
+    },
+    {
+        "id": "5934d7602b96fd47",
+        "type": "change",
+        "z": "1ce5428eb51b28c0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "initialCount",
+                "pt": "flow",
+                "to": "payload[0].compteur",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1342,
+        "y": 409,
+        "wires": [
+            [
+                "3e6869c965c03445"
+            ]
+        ]
+    },
+    {
+        "id": "3e6869c965c03445",
+        "type": "change",
+        "z": "1ce5428eb51b28c0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "initialCount",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1573,
+        "y": 410,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "6ea6e0f88371f50f",
@@ -8026,8 +8098,8 @@
                 "type": "str"
             }
         ],
-        "x": 202.77777862548828,
-        "y": 254.44441986083984,
+        "x": 210.77777099609375,
+        "y": 320.44439697265625,
         "wires": [
             [
                 "c3ad2d0768457167",
@@ -8065,8 +8137,8 @@
         "shape": "circle",
         "showBorder": true,
         "showGlow": true,
-        "x": 347.6667175292969,
-        "y": 198.2222137451172,
+        "x": 350.6667175292969,
+        "y": 256.22222900390625,
         "wires": []
     },
     {
@@ -8261,7 +8333,7 @@
         "type": "debug",
         "z": "d8be5e1f9ecfc822",
         "name": "full",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8271,6 +8343,23 @@
         "statusType": "auto",
         "x": 327,
         "y": 147,
+        "wires": []
+    },
+    {
+        "id": "69d4f53c15a513d4",
+        "type": "debug",
+        "z": "d8be5e1f9ecfc822",
+        "name": "full",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 327,
+        "y": 185,
         "wires": []
     },
     {
