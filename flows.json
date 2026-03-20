@@ -883,12 +883,13 @@
         },
         "nodes": [
             "b28ab6d23eb994e2",
-            "88f7234f8a215404"
+            "88f7234f8a215404",
+            "1e30653901911680"
         ],
-        "x": 1293.9999542236328,
+        "x": 1275,
         "y": 350.66663646698,
-        "w": 195.33329010009766,
-        "h": 240.3334150314331
+        "w": 175.333251953125,
+        "h": 241.33342456817627
     },
     {
         "id": "bfc66264c134b7dc",
@@ -903,8 +904,8 @@
             "f48b015d956fb5b0",
             "2b316e7addbb02a9"
         ],
-        "x": 594,
-        "y": 51.22221374511719,
+        "x": 608,
+        "y": 50.22221374511719,
         "w": 152,
         "h": 142
     },
@@ -921,8 +922,8 @@
             "c3ad2d0768457167",
             "0f596330f5de36d7"
         ],
-        "x": 594,
-        "y": 199,
+        "x": 608,
+        "y": 198,
         "w": 152,
         "h": 142
     },
@@ -939,8 +940,8 @@
             "b1be95b55d20eb09",
             "fcb76c65c91bdad2"
         ],
-        "x": 594,
-        "y": 350.11114501953125,
+        "x": 608,
+        "y": 349.11114501953125,
         "w": 152,
         "h": 142
     },
@@ -957,10 +958,52 @@
             "c199a9030a4317a2",
             "8e7ed4d6b60f88d8"
         ],
-        "x": 595.111083984375,
-        "y": 505.4444580078125,
+        "x": 609.111083984375,
+        "y": 504.4444580078125,
         "w": 152,
         "h": 142
+    },
+    {
+        "id": "e82a3add22643d20",
+        "type": "group",
+        "z": "d8be5e1f9ecfc822",
+        "name": "Arrêt Urgence : commande",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "97f8d9060ec507da",
+            "f34f77d661bb1d0c",
+            "d64c0ce1e8e52d9b",
+            "dbeb70abcadbed6f",
+            "74899a99c8ed87da",
+            "d03a3c9942c776c7",
+            "2d58e92c836905f5",
+            "7ae6f63767e67991"
+        ],
+        "x": 786,
+        "y": 192,
+        "w": 619,
+        "h": 223.48980712890625
+    },
+    {
+        "id": "f1f4ed42dee40df3",
+        "type": "group",
+        "z": "d8be5e1f9ecfc822",
+        "name": "Arrêt urgence : actionneur",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "0f96d17a9570b376",
+            "624e9b9ae72ed0b2",
+            "b076d129d75996af",
+            "bce47b50c76b6d0e"
+        ],
+        "x": 341,
+        "y": 48,
+        "w": 207,
+        "h": 603
     },
     {
         "id": "6c5afa767ad7188a",
@@ -7826,8 +7869,8 @@
         "pin": "2",
         "state": "OUTPUT",
         "arduino": "8683c29a9a878c47",
-        "x": 670,
-        "y": 92.22221374511719,
+        "x": 684,
+        "y": 91.22221374511719,
         "wires": []
     },
     {
@@ -7857,8 +7900,8 @@
         "pin": "3",
         "state": "OUTPUT",
         "arduino": "8683c29a9a878c47",
-        "x": 670,
-        "y": 152.2222137451172,
+        "x": 684,
+        "y": 151.2222137451172,
         "wires": []
     },
     {
@@ -7870,8 +7913,8 @@
         "pin": "4",
         "state": "OUTPUT",
         "arduino": "8683c29a9a878c47",
-        "x": 670,
-        "y": 240,
+        "x": 684,
+        "y": 239,
         "wires": []
     },
     {
@@ -7883,8 +7926,8 @@
         "pin": "5",
         "state": "OUTPUT",
         "arduino": "8683c29a9a878c47",
-        "x": 670,
-        "y": 300,
+        "x": 684,
+        "y": 299,
         "wires": []
     },
     {
@@ -7896,8 +7939,8 @@
         "pin": "6",
         "state": "OUTPUT",
         "arduino": "8683c29a9a878c47",
-        "x": 670,
-        "y": 391.11114501953125,
+        "x": 684,
+        "y": 390.11114501953125,
         "wires": []
     },
     {
@@ -7909,8 +7952,8 @@
         "pin": "7",
         "state": "OUTPUT",
         "arduino": "8683c29a9a878c47",
-        "x": 670,
-        "y": 451.11114501953125,
+        "x": 684,
+        "y": 450.11114501953125,
         "wires": []
     },
     {
@@ -7922,8 +7965,8 @@
         "pin": "8",
         "state": "OUTPUT",
         "arduino": "8683c29a9a878c47",
-        "x": 671.111083984375,
-        "y": 546.4444580078125,
+        "x": 685.111083984375,
+        "y": 545.4444580078125,
         "wires": []
     },
     {
@@ -7935,8 +7978,8 @@
         "pin": "9",
         "state": "OUTPUT",
         "arduino": "8683c29a9a878c47",
-        "x": 671.111083984375,
-        "y": 606.4444580078125,
+        "x": 685.111083984375,
+        "y": 605.4444580078125,
         "wires": []
     },
     {
@@ -8106,8 +8149,8 @@
         "topic": "",
         "payload": "false",
         "payloadType": "bool",
-        "x": 501.1111488342285,
-        "y": 613.3333606719971,
+        "x": 507.11114501953125,
+        "y": 715.3333740234375,
         "wires": [
             [
                 "fcb76c65c91bdad2",
@@ -8154,21 +8197,15 @@
                 "type": "str"
             }
         ],
-        "x": 197.2222442626953,
-        "y": 105.5555362701416,
+        "x": 219.22222900390625,
+        "y": 107.5555419921875,
         "wires": [
             [
-                "f48b015d956fb5b0"
+                "0f96d17a9570b376"
             ],
-            [
-                "224ca6687b334044"
-            ],
-            [
-                "b9fdbbff917c4c1a"
-            ],
-            [
-                "69d4f53c15a513d4"
-            ]
+            [],
+            [],
+            []
         ]
     },
     {
@@ -8218,11 +8255,11 @@
                 "type": "str"
             }
         ],
-        "x": 210.77777099609375,
-        "y": 320.44439697265625,
+        "x": 209.77777099609375,
+        "y": 256.44439697265625,
         "wires": [
             [
-                "c3ad2d0768457167"
+                "624e9b9ae72ed0b2"
             ],
             [],
             [],
@@ -8276,11 +8313,11 @@
                 "type": "str"
             }
         ],
-        "x": 213.88890838623047,
-        "y": 395.5555362701416,
+        "x": 207.888916015625,
+        "y": 411.5555419921875,
         "wires": [
             [
-                "b1be95b55d20eb09"
+                "b076d129d75996af"
             ],
             [],
             [],
@@ -8334,11 +8371,11 @@
                 "type": "str"
             }
         ],
-        "x": 211.66668701171875,
-        "y": 556.666669845581,
+        "x": 210.66668701171875,
+        "y": 630.6666870117188,
         "wires": [
             [
-                "8e7ed4d6b60f88d8"
+                "bce47b50c76b6d0e"
             ],
             [],
             [],
@@ -8350,7 +8387,7 @@
         "type": "debug",
         "z": "d8be5e1f9ecfc822",
         "name": "full",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8358,8 +8395,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 329,
-        "y": 112,
+        "x": 132,
+        "y": 179,
         "wires": []
     },
     {
@@ -8375,26 +8412,395 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 327,
-        "y": 147,
+        "x": 124,
+        "y": 41,
         "wires": []
     },
     {
-        "id": "69d4f53c15a513d4",
-        "type": "debug",
+        "id": "0f96d17a9570b376",
+        "type": "switch",
         "z": "d8be5e1f9ecfc822",
-        "name": "full",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 327,
-        "y": 185,
+        "g": "f1f4ed42dee40df3",
+        "name": "URGENCE",
+        "property": "stop",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 452,
+        "y": 89,
+        "wires": [
+            [
+                "f48b015d956fb5b0"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "97f8d9060ec507da",
+        "type": "change",
+        "z": "d8be5e1f9ecfc822",
+        "g": "e82a3add22643d20",
+        "name": "URGENCE",
+        "rules": [
+            {
+                "t": "set",
+                "p": "stop",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1309,
+        "y": 343,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f34f77d661bb1d0c",
+        "type": "ui-button",
+        "z": "d8be5e1f9ecfc822",
+        "g": "e82a3add22643d20",
+        "group": "b7d90775ac46d990",
+        "name": "ARRET",
+        "label": "STOP",
+        "order": 1,
+        "width": "5",
+        "height": "3",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "stop",
+        "iconPosition": "left",
+        "payload": "false",
+        "payloadType": "bool",
+        "topic": "stop",
+        "topicType": "str",
+        "buttonColor": "red",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 872,
+        "y": 347,
+        "wires": [
+            [
+                "dbeb70abcadbed6f",
+                "d03a3c9942c776c7",
+                "7ae6f63767e67991",
+                "2d58e92c836905f5"
+            ]
+        ]
+    },
+    {
+        "id": "d64c0ce1e8e52d9b",
+        "type": "ui-button",
+        "z": "d8be5e1f9ecfc822",
+        "g": "e82a3add22643d20",
+        "group": "b7d90775ac46d990",
+        "name": "DESACTIVE",
+        "label": "REARM",
+        "order": 2,
+        "width": "1",
+        "height": "3",
+        "emulateClick": true,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "refresh",
+        "iconPosition": "left",
+        "payload": "false",
+        "payloadType": "bool",
+        "topic": "rearm",
+        "topicType": "str",
+        "buttonColor": "green",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 1132,
+        "y": 304,
+        "wires": [
+            [
+                "97f8d9060ec507da"
+            ]
+        ]
+    },
+    {
+        "id": "dbeb70abcadbed6f",
+        "type": "change",
+        "z": "d8be5e1f9ecfc822",
+        "g": "e82a3add22643d20",
+        "name": "déclenche",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1135,
+        "y": 344,
+        "wires": [
+            [
+                "97f8d9060ec507da"
+            ]
+        ]
+    },
+    {
+        "id": "624e9b9ae72ed0b2",
+        "type": "switch",
+        "z": "d8be5e1f9ecfc822",
+        "g": "f1f4ed42dee40df3",
+        "name": "URGENCE",
+        "property": "stop",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 445,
+        "y": 241,
+        "wires": [
+            [
+                "c3ad2d0768457167"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b076d129d75996af",
+        "type": "switch",
+        "z": "d8be5e1f9ecfc822",
+        "g": "f1f4ed42dee40df3",
+        "name": "URGENCE",
+        "property": "stop",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 443,
+        "y": 392,
+        "wires": [
+            [
+                "b1be95b55d20eb09"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "bce47b50c76b6d0e",
+        "type": "switch",
+        "z": "d8be5e1f9ecfc822",
+        "g": "f1f4ed42dee40df3",
+        "name": "URGENCE",
+        "property": "stop",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 437,
+        "y": 610,
+        "wires": [
+            [
+                "8e7ed4d6b60f88d8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "74899a99c8ed87da",
+        "type": "inject",
+        "z": "d8be5e1f9ecfc822",
+        "g": "e82a3add22643d20",
+        "name": "Init",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 963,
+        "y": 233,
+        "wires": [
+            [
+                "d64c0ce1e8e52d9b"
+            ]
+        ]
+    },
+    {
+        "id": "d03a3c9942c776c7",
+        "type": "link out",
+        "z": "d8be5e1f9ecfc822",
+        "g": "e82a3add22643d20",
+        "name": "link out 8",
+        "mode": "link",
+        "links": [
+            "9dd666286f92faca",
+            "b4d64299ff63a96d"
+        ],
+        "x": 1001,
+        "y": 326,
         "wires": []
+    },
+    {
+        "id": "9dd666286f92faca",
+        "type": "link in",
+        "z": "d8be5e1f9ecfc822",
+        "name": "link in 22",
+        "links": [
+            "d03a3c9942c776c7"
+        ],
+        "x": 557,
+        "y": 270,
+        "wires": [
+            [
+                "c3ad2d0768457167",
+                "bfd8075cb0fe0f7d"
+            ]
+        ]
+    },
+    {
+        "id": "b4d64299ff63a96d",
+        "type": "link in",
+        "z": "d8be5e1f9ecfc822",
+        "name": "link in 23",
+        "links": [
+            "d03a3c9942c776c7"
+        ],
+        "x": 559,
+        "y": 420.11114501953125,
+        "wires": [
+            [
+                "b1be95b55d20eb09",
+                "d671a9330956ed3d"
+            ]
+        ]
+    },
+    {
+        "id": "2d58e92c836905f5",
+        "type": "link out",
+        "z": "d8be5e1f9ecfc822",
+        "g": "e82a3add22643d20",
+        "name": "link out 9",
+        "mode": "link",
+        "links": [
+            "776731f3d9b87a15"
+        ],
+        "x": 1000.5101318359375,
+        "y": 374.48980712890625,
+        "wires": []
+    },
+    {
+        "id": "776731f3d9b87a15",
+        "type": "link in",
+        "z": "d8be5e1f9ecfc822",
+        "name": "link in 24",
+        "links": [
+            "2d58e92c836905f5"
+        ],
+        "x": 570.111083984375,
+        "y": 627.4444580078125,
+        "wires": [
+            [
+                "8e7ed4d6b60f88d8",
+                "0c128f208b2166b7"
+            ]
+        ]
+    },
+    {
+        "id": "7ae6f63767e67991",
+        "type": "link out",
+        "z": "d8be5e1f9ecfc822",
+        "g": "e82a3add22643d20",
+        "name": "link out 10",
+        "mode": "link",
+        "links": [
+            "37f4f812abdaddc7"
+        ],
+        "x": 998.2040405273438,
+        "y": 285.9795837402344,
+        "wires": []
+    },
+    {
+        "id": "37f4f812abdaddc7",
+        "type": "link in",
+        "z": "d8be5e1f9ecfc822",
+        "name": "link in 25",
+        "links": [
+            "7ae6f63767e67991"
+        ],
+        "x": 569,
+        "y": 128.2222137451172,
+        "wires": [
+            [
+                "f48b015d956fb5b0",
+                "f4d89ecd8ab43066"
+            ]
+        ]
     },
     {
         "id": "2c08af8820f60357",
@@ -8922,7 +9328,7 @@
         "name": "",
         "label": "Activer / Désactiver le flux",
         "group": "b7d90775ac46d990",
-        "order": 1,
+        "order": 3,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -9503,10 +9909,10 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "content": "# Double flux\nLa mesure de PH est scindé en 2. La version brute et la version amortie (smooth).  \nOn veut avoir ces 2 valeurs sur le graphique et on veut conserver les données brutes sur la jauge et l'alarme en amont du bypass.   \nOn stocke les deux mesures dans le même flux, dans des objets différents fluxa et fluxb.  \nLe payload original est conservé pour jauge et l'alarme sur le fluxa.\nLe Payload et le topic est supprimé après le bypass et avant d'arriver sur le graphique.  \nLe payload est remplacé par fluxa ou fluxb avec le topic associé pour avoir un graphique à 2 courbes.\n\n# Bypass\nUtilisation d'un icone explicite. SwitchElectric ouvert|fermé.  \nCe switch interromp le flux vers le graphique. Quand le switch est fermé, le flux alimente le graphique.  \nA l'opposé, quand le switch est ouvert, le flux ne passe plus et le grahique n'est plus alimenté. Il est en pause.\n\n# Lock\nUn switch sous forme de cadenas, active ou inhibe la partie live permettant d'agir sur le bypass du group.  \nPour agir sur un groupe de widget on utilise ui-control.  \nOn récupère l'ID du group que l'on veut controler dans la barre d'outil latérale droite. \n`Info > Noeuds de configuration globale > ui-groupe > af7a2f9471407871`\nOn capture l'id et on envoie au node ui-control le message : \n\n`{\"groups\":{\"enable\":[\"af7a2f9471407871\"]}}`\npour activer ou \n\n`{\"groups\":{\"disable\":[\"af7a2f9471407871\"]}}`\npour désactiver.  \n\nLe switch est False au démarrage. Le Groupe live est inactif au démarrage. \n\n# Compil data.\nLes données du flux sont regroupées dans un UI-Markdown. On capte des mesures à différents endroits du flux. Chaque messure est stocké dans une propriété d'un objet data.  \nComme les mesures n'arrivents pas toutes en même temps, un node fonction capte ces messages et conserve les données dans le contexte du node. \n\nChaque message en entrée est porteur d'une mesure. Cette mesure est stocké dans une variable de contexte.  \n\nLa fonction retourne un message avec un objet data qui remprend tous les attributs sotcké dans le context. \n\nLe node ui-markdown prend l'objet data et affiche chacune de ces propriétés à l'écran. ",
+        "content": "# Double flux\nLa mesure de PH est scindé en 2. La version brute et la version amortie (smooth).  \nOn veut avoir ces 2 valeurs sur le graphique et on veut conserver les données brutes sur la jauge et l'alarme en amont du bypass.   \nOn stocke les deux mesures dans le même flux, dans des objets différents fluxa et fluxb.  \nLe payload original est conservé pour jauge et l'alarme sur le fluxa.\nLe Payload et le topic est supprimé après le bypass et avant d'arriver sur le graphique.  \nLe payload est remplacé par fluxa ou fluxb avec le topic associé pour avoir un graphique à 2 courbes.\n\n# Bypass\nUtilisation d'un icone explicite. SwitchElectric ouvert|fermé.  \nCe switch interromp le flux vers le graphique. Quand le switch est fermé, le flux alimente le graphique.  \nA l'opposé, quand le switch est ouvert, le flux ne passe plus et le grahique n'est plus alimenté. Il est en pause.\n\n# Lock\nUn switch sous forme de cadenas, active ou inhibe la partie live permettant d'agir sur le bypass du group.  \nPour agir sur un groupe de widget on utilise ui-control.  \nOn récupère l'ID du group que l'on veut controler dans la barre d'outil latérale droite. \n`Info > Noeuds de configuration globale > ui-groupe > af7a2f9471407871`\nOn capture l'id et on envoie au node ui-control le message : \n\n`{\"groups\":{\"enable\":[\"af7a2f9471407871\"]}}`\npour activer ou \n\n`{\"groups\":{\"disable\":[\"af7a2f9471407871\"]}}`\npour désactiver.  \n\nLe switch est False au démarrage. Le Groupe live est inactif au démarrage. \n\n# Compil data.\nLes données du flux sont regroupées dans un UI-Markdown. On capte des mesures à différents endroits du flux. Chaque messure est stocké dans une propriété d'un objet data.  \nComme les mesures n'arrivents pas toutes en même temps, un node fonction capte ces messages et conserve les données dans le contexte du node. \n\nChaque message en entrée est porteur d'une mesure. Cette mesure est stocké dans une variable de contexte.  \n\nLa fonction retourne un message avec un objet data qui remprend tous les attributs sotcké dans le context. \n\nLe node ui-markdown prend l'objet data et affiche chacune de ces propriétés à l'écran. \n\n# Arrêt urgence\nDans le group Control, 2 boutons poussoirs pour arrêter tous les moteurs qq soit les commandes. \nPositionne une var de contexte flow URGENCE.  \nToutes les commandes de pilotages des pins arduino sont précédees d'un aiguillage basée sur cette variable.  \nL'aiguillage détourne les messages quand URGENCE est true et laisse passé les commandes quand false. \nEn déclenchant un AR urgence : \n- on arrête les moteurs\n- on arrête les commandes moteurs\n- on positionne le la variable à true.  \nUN bouton REARM remet la variable à false.\nLa variable est positionnée à false au démarrage. ",
         "className": "",
-        "x": 1403.3332443237305,
-        "y": 550.0000514984131,
+        "x": 1364.333251953125,
+        "y": 551.0000610351562,
         "wires": [
             []
         ]
@@ -9548,7 +9954,7 @@
         "type": "comment",
         "z": "d7b000e00355b06e",
         "g": "1d67b96eb2ecf9d3",
-        "name": "V 1.0.1",
+        "name": "V 1.2",
         "info": "Détail du flux dans le UI-MARDOWN",
         "x": 1369.9999542236328,
         "y": 391.66663646698,
@@ -9721,5 +10127,23 @@
         "x": 1651.6665725708008,
         "y": 748.3333721160889,
         "wires": []
+    },
+    {
+        "id": "1e30653901911680",
+        "type": "ui-markdown",
+        "z": "d7b000e00355b06e",
+        "g": "1d67b96eb2ecf9d3",
+        "group": "721aaae0c27f63c6",
+        "name": "Version ",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "content": "> Version 1.0.1",
+        "className": "",
+        "x": 1361,
+        "y": 482,
+        "wires": [
+            []
+        ]
     }
 ]
