@@ -302,8 +302,8 @@
             "ea56df877b232f1c",
             "90f3fa6c5c374060"
         ],
-        "x": 1084,
-        "y": 139,
+        "x": 998.4444580078125,
+        "y": 144.5555419921875,
         "w": 242,
         "h": 142
     },
@@ -557,9 +557,9 @@
             "99a7b70404ce4f9a",
             "e76eec8550c13709"
         ],
-        "x": 434,
+        "x": 424,
         "y": 1839,
-        "w": 1252,
+        "w": 1262,
         "h": 582
     },
     {
@@ -749,8 +749,8 @@
             "3ae6e088584e08b7",
             "1bd795182f2fe0e4"
         ],
-        "x": 1314,
-        "y": 1579,
+        "x": 1315.111083984375,
+        "y": 1581.22216796875,
         "w": 942,
         "h": 242,
         "info": "Laisse passer les messages si le topic est true\nle topic prend la valeur du switch.\nle switch retourne un msg true|false et un topic sw\nla fonction capte les messages dont le topic == sw\net positionne dans le message d'entrée le topic à la valeur du switch"
@@ -772,10 +772,10 @@
             "547ab46d7c9550a0",
             "ff4bd1c90924330a"
         ],
-        "x": 913.2776641845703,
-        "y": 1097.07872569561,
+        "x": 922.1665802001953,
+        "y": 1054.85655772686,
         "w": 584.3610382080078,
-        "h": 179.89355671405792,
+        "h": 199.89356434345245,
         "info": "Laisse passer les messages si le topic est true\nle topic prend la valeur du switch.\nle switch retourne un msg true|false et un topic sw\nla fonction capte les messages dont le topic == sw\net positionne dans le message d'entrée le topic à la valeur du switch"
     },
     {
@@ -795,8 +795,8 @@
             "6253047ab2ebf384",
             "cf9e72e4e8579b38"
         ],
-        "x": 172.33345413208008,
-        "y": 70.66666412353516,
+        "x": 224.55562210083008,
+        "y": 172.88890838623047,
         "w": 906.9166145324707,
         "h": 149.00001525878906
     },
@@ -905,9 +905,9 @@
             "2b316e7addbb02a9"
         ],
         "x": 608,
-        "y": 50.22221374511719,
-        "w": 152,
-        "h": 142
+        "y": 47.99999809265137,
+        "w": 154.2222023010254,
+        "h": 144.22221565246582
     },
     {
         "id": "173f466975bddad3",
@@ -981,12 +981,13 @@
             "2d58e92c836905f5",
             "7ae6f63767e67991",
             "4244acb6e25f03c7",
-            "6013c7cf61a85b89"
+            "6013c7cf61a85b89",
+            "ad1dc88352163a9e"
         ],
-        "x": 786,
-        "y": 192,
-        "w": 619,
-        "h": 364
+        "x": 944,
+        "y": 221.97958374023438,
+        "w": 695,
+        "h": 335.0204162597656
     },
     {
         "id": "f1f4ed42dee40df3",
@@ -1000,12 +1001,44 @@
             "0f96d17a9570b376",
             "624e9b9ae72ed0b2",
             "b076d129d75996af",
-            "bce47b50c76b6d0e"
+            "bce47b50c76b6d0e",
+            "37f4f812abdaddc7"
         ],
         "x": 341,
         "y": 48,
         "w": 207,
         "h": 603
+    },
+    {
+        "id": "35eb92742defc260",
+        "type": "group",
+        "z": "d8be5e1f9ecfc822",
+        "name": "Sequence",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "394c2f7cabd070a7",
+            "6d93979c0274b0f1",
+            "d45c556a9a437f45",
+            "801aac83877c2ab0",
+            "28c0f65c9bd43c7e",
+            "3646985592257225",
+            "b0282f46eae4388c",
+            "6e57db48e8dec154",
+            "bbf1cb0f8e441506"
+        ],
+        "env": [
+            {
+                "name": "t",
+                "value": "5000",
+                "type": "num"
+            }
+        ],
+        "x": 837,
+        "y": 910,
+        "w": 456.47954189777374,
+        "h": 325
     },
     {
         "id": "6c5afa767ad7188a",
@@ -1041,8 +1074,8 @@
         "type": "junction",
         "z": "d7b000e00355b06e",
         "g": "72f493835088c713",
-        "x": 1445.9814009666443,
-        "y": 1123.07872569561,
+        "x": 1454.8703169822693,
+        "y": 1080.85655772686,
         "wires": [
             [
                 "bce44fe34b4762d3"
@@ -1068,8 +1101,8 @@
         "type": "junction",
         "z": "d7b000e00355b06e",
         "g": "72f493835088c713",
-        "x": 1192.7777259349823,
-        "y": 1128.372893333435,
+        "x": 1201.6666419506073,
+        "y": 1086.150725364685,
         "wires": [
             [
                 "a92069de472750bf"
@@ -1128,6 +1161,44 @@
             [
                 "154b7193c9628a52",
                 "a35006453c06fb09"
+            ]
+        ]
+    },
+    {
+        "id": "e00a3582156e7ad3",
+        "type": "junction",
+        "z": "d8be5e1f9ecfc822",
+        "x": 809.9174723625183,
+        "y": 1039.8505791425705,
+        "wires": [
+            [
+                "3646985592257225"
+            ]
+        ]
+    },
+    {
+        "id": "d45c556a9a437f45",
+        "type": "junction",
+        "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
+        "x": 1255.8600437641144,
+        "y": 1193.854211449623,
+        "wires": [
+            [
+                "33a78e42a1a73cd0"
+            ]
+        ]
+    },
+    {
+        "id": "801aac83877c2ab0",
+        "type": "junction",
+        "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
+        "x": 1267.4795418977737,
+        "y": 1040.115889430046,
+        "wires": [
+            [
+                "3ed82d8409933915"
             ]
         ]
     },
@@ -1448,7 +1519,7 @@
         "id": "8683c29a9a878c47",
         "type": "arduino-board",
         "device": "/dev/ttyACM0",
-        "name": "FirmataDuinoLeur",
+        "name": "FirmataDuinoLeure",
         "samplingInt": "500",
         "log2consol": false
     },
@@ -1566,7 +1637,7 @@
         "page": "b0ac91756170664c",
         "width": 6,
         "height": 1,
-        "order": 7,
+        "order": 8,
         "showTitle": true,
         "className": "",
         "visible": "true",
@@ -1580,7 +1651,7 @@
         "page": "b0ac91756170664c",
         "width": 6,
         "height": 1,
-        "order": 3,
+        "order": 4,
         "showTitle": false,
         "className": "",
         "visible": "true",
@@ -1594,7 +1665,7 @@
         "page": "b0ac91756170664c",
         "width": 6,
         "height": 1,
-        "order": 5,
+        "order": 6,
         "showTitle": false,
         "className": "",
         "visible": "true",
@@ -1608,7 +1679,7 @@
         "page": "b0ac91756170664c",
         "width": 6,
         "height": 1,
-        "order": 6,
+        "order": 7,
         "showTitle": false,
         "className": "",
         "visible": "true",
@@ -1622,7 +1693,21 @@
         "page": "b0ac91756170664c",
         "width": 6,
         "height": 1,
-        "order": 4,
+        "order": 5,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "e85e4672761de268",
+        "type": "ui-group",
+        "name": "Recyclage",
+        "page": "b0ac91756170664c",
+        "width": 6,
+        "height": "4",
+        "order": 3,
         "showTitle": false,
         "className": "",
         "visible": "true",
@@ -2420,8 +2505,8 @@
         "shape": "circle",
         "showBorder": true,
         "showGlow": true,
-        "x": 1285,
-        "y": 240,
+        "x": 1199.4444580078125,
+        "y": 245.5555419921875,
         "wires": [],
         "l": false
     },
@@ -2434,8 +2519,8 @@
         "links": [
             "11c827ee7d4ee251"
         ],
-        "x": 1125,
-        "y": 240,
+        "x": 1039.4444580078125,
+        "y": 245.5555419921875,
         "wires": [
             [
                 "ea56df877b232f1c"
@@ -2460,8 +2545,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 1205,
-        "y": 200,
+        "x": 1119.4444580078125,
+        "y": 205.5555419921875,
         "wires": [
             [
                 "2fa95438cf7ec01a",
@@ -4983,8 +5068,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 510,
-        "y": 2120,
+        "x": 500,
+        "y": 2087,
         "wires": [
             [
                 "e51ce676f72f672e"
@@ -5324,8 +5409,8 @@
         "name": "link out 1",
         "mode": "link",
         "links": [],
-        "x": 1285,
-        "y": 180,
+        "x": 1199.4444580078125,
+        "y": 185.5555419921875,
         "wires": []
     },
     {
@@ -5337,8 +5422,8 @@
         "links": [
             "11c827ee7d4ee251"
         ],
-        "x": 1405,
-        "y": 1680,
+        "x": 1406.111083984375,
+        "y": 1682.22216796875,
         "wires": [
             [
                 "a5761a8a511d07c7"
@@ -5359,8 +5444,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "counter",
-        "x": 2015,
-        "y": 1640,
+        "x": 2016.111083984375,
+        "y": 1642.22216796875,
         "wires": [],
         "l": false
     },
@@ -5383,8 +5468,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1900,
-        "y": 1680,
+        "x": 1901.111083984375,
+        "y": 1682.22216796875,
         "wires": [
             [
                 "669f5011d11ebf87",
@@ -5422,8 +5507,8 @@
         "offvalueType": "bool",
         "officon": "",
         "offcolor": "",
-        "x": 1565,
-        "y": 1760,
+        "x": 1566.111083984375,
+        "y": 1762.22216796875,
         "wires": [
             [
                 "a5761a8a511d07c7",
@@ -5445,8 +5530,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1730,
-        "y": 1680,
+        "x": 1731.111083984375,
+        "y": 1682.22216796875,
         "wires": [
             [
                 "bad1e7f31a4c7073",
@@ -5463,8 +5548,8 @@
         "links": [
             "86b540c6db88487a"
         ],
-        "x": 1505,
-        "y": 1720,
+        "x": 1499.444489479065,
+        "y": 1637.777624130249,
         "wires": [
             []
         ]
@@ -5483,8 +5568,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "counter",
-        "x": 2015,
-        "y": 1720,
+        "x": 2016.111083984375,
+        "y": 1722.22216796875,
         "wires": [],
         "l": false
     },
@@ -5510,8 +5595,8 @@
         "topic": "sw",
         "payload": "true",
         "payloadType": "bool",
-        "x": 1410,
-        "y": 1740,
+        "x": 1411.111083984375,
+        "y": 1742.22216796875,
         "wires": [
             [
                 "c3e90e90b2cf3c5e"
@@ -5540,8 +5625,8 @@
         "topic": "sw",
         "payload": "false",
         "payloadType": "bool",
-        "x": 1410,
-        "y": 1780,
+        "x": 1411.111083984375,
+        "y": 1782.22216796875,
         "wires": [
             [
                 "c3e90e90b2cf3c5e"
@@ -5562,8 +5647,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "counter",
-        "x": 1855,
-        "y": 1640,
+        "x": 1856.111083984375,
+        "y": 1642.22216796875,
         "wires": [],
         "l": false
     },
@@ -5585,8 +5670,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 2165,
-        "y": 1680,
+        "x": 2156.1111240386963,
+        "y": 1718.888744354248,
         "wires": [
             [
                 "9a7c234b1febe5d1"
@@ -5623,8 +5708,8 @@
         "shape": "circle",
         "showBorder": false,
         "showGlow": false,
-        "x": 2215,
-        "y": 1680,
+        "x": 2216.111083984375,
+        "y": 1682.22216796875,
         "wires": [],
         "l": false
     },
@@ -5637,8 +5722,8 @@
         "links": [
             "86b540c6db88487a"
         ],
-        "x": 2175,
-        "y": 1620,
+        "x": 2176.111083984375,
+        "y": 1622.22216796875,
         "wires": [
             [
                 "9a7c234b1febe5d1"
@@ -5657,8 +5742,8 @@
         "height": "3",
         "content": "# Marche Arrêt\n\n### Le message du SWITCH:   \n> **Topic** : {{msg.topic}}  \n> **Payload**: {{msg.payload}}  \n\nle Switch permet de controler le passage des messages dans le flow. \n\n - Quand il est sur **ON** le topic est **true** le switch laisse passer le message. Le voyant Jaune clignote.\n - Quand il est sur **OFF** le topic est positionné sur **false** et le noeud switch détourne le message.\n\n La fonction détecte l'état du switch en interceptant le message avec topic = sw.\n  Elle rajoute un topic dans le message lorque le switch change d'état. \n  La fonction bloque le message du switch (retourne null). ",
         "className": "",
-        "x": 1810,
-        "y": 1780,
+        "x": 1811.111083984375,
+        "y": 1782.22216796875,
         "wires": [
             []
         ]
@@ -5922,6 +6007,568 @@
         "wires": [
             [
                 "cd1ccde0da6ac2a8"
+            ]
+        ]
+    },
+    {
+        "id": "aed76f7b927ca07e",
+        "type": "trigger",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "",
+        "op1": "",
+        "op2": "0",
+        "op1type": "date",
+        "op2type": "str",
+        "duration": "-1",
+        "extend": false,
+        "overrideDelay": true,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 934,
+        "y": 2703,
+        "wires": [
+            [
+                "3f0106bc6bfa6272",
+                "93dc56539ae30933"
+            ]
+        ]
+    },
+    {
+        "id": "f1aa495d8043275f",
+        "type": "debug",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "Time",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1370.2223091125488,
+        "y": 2705.888916015625,
+        "wires": []
+    },
+    {
+        "id": "413c86024fd561a7",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "100",
+        "props": [
+            {
+                "p": "delay",
+                "v": "100",
+                "vt": "num"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "TICK",
+        "payloadType": "str",
+        "x": 470.66662216186523,
+        "y": 2516.3333597183228,
+        "wires": [
+            [
+                "d85ce9a329bf65c5"
+            ]
+        ]
+    },
+    {
+        "id": "320231a8a94f104f",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "1s",
+        "props": [
+            {
+                "p": "delay",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 478.4444770812988,
+        "y": 2673.0000104904175,
+        "wires": [
+            [
+                "1f6293cf77bd9e85"
+            ]
+        ]
+    },
+    {
+        "id": "1f6293cf77bd9e85",
+        "type": "change",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "En sec",
+        "rules": [
+            {
+                "t": "set",
+                "p": "delay",
+                "pt": "msg",
+                "to": "delay * 1000",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 639.5555725097656,
+        "y": 2744.1110343933105,
+        "wires": [
+            [
+                "aed76f7b927ca07e",
+                "5ce994ab2d0fc96f"
+            ]
+        ],
+        "info": "Pour transformer en H\ndelay * 60 * 60 * 1000\nEn Min\ndelay * 60 * 1000\nEn Sec\ndelay * 1000"
+    },
+    {
+        "id": "ede470280d5d2d17",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "5s",
+        "props": [
+            {
+                "p": "delay",
+                "v": "5",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 479.55553817749023,
+        "y": 2714.1111125946045,
+        "wires": [
+            [
+                "1f6293cf77bd9e85"
+            ]
+        ]
+    },
+    {
+        "id": "84c553ebf7702016",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "10s",
+        "props": [
+            {
+                "p": "delay",
+                "v": "10",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 480.66666412353516,
+        "y": 2760.7777938842773,
+        "wires": [
+            [
+                "1f6293cf77bd9e85"
+            ]
+        ]
+    },
+    {
+        "id": "1c66f01b849d3617",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "",
+        "props": [
+            {
+                "p": "reset",
+                "v": "true",
+                "vt": "bool"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "STOP",
+        "payloadType": "str",
+        "x": 658.4444122314453,
+        "y": 2524.11106300354,
+        "wires": [
+            [
+                "aed76f7b927ca07e",
+                "a83f1ac136b25958"
+            ]
+        ]
+    },
+    {
+        "id": "c5d68c630c3fee1e",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "1min",
+        "props": [
+            {
+                "p": "delay",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 480.1111640930176,
+        "y": 2827.4444580078125,
+        "wires": [
+            [
+                "5b58de3d22b68cb0"
+            ]
+        ]
+    },
+    {
+        "id": "5b58de3d22b68cb0",
+        "type": "change",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "En min",
+        "rules": [
+            {
+                "t": "set",
+                "p": "delay",
+                "pt": "msg",
+                "to": "delay * 60 * 1000",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 637.8889350891113,
+        "y": 2826.3333740234375,
+        "wires": [
+            [
+                "aed76f7b927ca07e",
+                "5ce994ab2d0fc96f"
+            ]
+        ],
+        "info": "Pour transformer en H\ndelay * 60 * 60 * 1000\nEn Min\ndelay * 60 * 1000\nEn Sec\ndelay * 1000"
+    },
+    {
+        "id": "a79d5a4382fda9d8",
+        "type": "change",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "En heure",
+        "rules": [
+            {
+                "t": "set",
+                "p": "delay",
+                "pt": "msg",
+                "to": "delay * 60 * 60 * 1000",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 639.000072479248,
+        "y": 2961.888900756836,
+        "wires": [
+            [
+                "aed76f7b927ca07e",
+                "5ce994ab2d0fc96f"
+            ]
+        ],
+        "info": "Pour transformer en H\ndelay * 60 * 60 * 1000\nEn Min\ndelay * 60 * 1000\nEn Sec\ndelay * 1000"
+    },
+    {
+        "id": "f9ab13a436af629a",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "15 min",
+        "props": [
+            {
+                "p": "delay",
+                "v": "15",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 482.3333930969238,
+        "y": 2881.888916015625,
+        "wires": [
+            [
+                "5b58de3d22b68cb0"
+            ]
+        ]
+    },
+    {
+        "id": "c3e7052171bd06b3",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "1h",
+        "props": [
+            {
+                "p": "delay",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 492.3333930969238,
+        "y": 2961.888916015625,
+        "wires": [
+            [
+                "a79d5a4382fda9d8"
+            ]
+        ]
+    },
+    {
+        "id": "795dc155924797da",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "5h",
+        "props": [
+            {
+                "p": "delay",
+                "v": "5",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 494.5556221008301,
+        "y": 3015.2222900390625,
+        "wires": [
+            [
+                "a79d5a4382fda9d8"
+            ]
+        ]
+    },
+    {
+        "id": "3a632f9350b95d8d",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "12h",
+        "props": [
+            {
+                "p": "delay",
+                "v": "12",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 498.6667366027832,
+        "y": 3094.77783203125,
+        "wires": [
+            [
+                "a79d5a4382fda9d8"
+            ]
+        ]
+    },
+    {
+        "id": "5ce994ab2d0fc96f",
+        "type": "debug",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "Delay",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "\"Délai \" &  delay / 1000 & \" secondes.\"",
+        "targetType": "jsonata",
+        "statusVal": "delay",
+        "statusType": "auto",
+        "x": 905.4445381164551,
+        "y": 2829.888916015625,
+        "wires": []
+    },
+    {
+        "id": "ec1ac28236f57d3c",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "START",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 659.0000801086426,
+        "y": 2586.3333740234375,
+        "wires": [
+            [
+                "aed76f7b927ca07e"
+            ]
+        ]
+    },
+    {
+        "id": "d85ce9a329bf65c5",
+        "type": "change",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "En ms",
+        "rules": [
+            {
+                "t": "set",
+                "p": "delay",
+                "pt": "msg",
+                "to": "delay ",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 636.7778511047363,
+        "y": 2658.5555419921875,
+        "wires": [
+            [
+                "aed76f7b927ca07e",
+                "5ce994ab2d0fc96f"
+            ]
+        ],
+        "info": "Pour transformer en H\ndelay * 60 * 60 * 1000\nEn Min\ndelay * 60 * 1000\nEn Sec\ndelay * 1000"
+    },
+    {
+        "id": "34a10d544afbaf9f",
+        "type": "inject",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "500",
+        "props": [
+            {
+                "p": "delay",
+                "v": "500",
+                "vt": "num"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "TICK",
+        "payloadType": "str",
+        "x": 472.3333930969238,
+        "y": 2575.22216796875,
+        "wires": [
+            [
+                "d85ce9a329bf65c5"
+            ]
+        ]
+    },
+    {
+        "id": "a83f1ac136b25958",
+        "type": "debug",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "debug 24",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 847.8889846801758,
+        "y": 2525.2221717834473,
+        "wires": []
+    },
+    {
+        "id": "3f0106bc6bfa6272",
+        "type": "change",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "\"Top à \" & $floor(payload / 1000) & \" durée += \" & delay & \" ms.\"",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1145.4444770812988,
+        "y": 2704.22216796875,
+        "wires": [
+            [
+                "f1aa495d8043275f"
+            ]
+        ]
+    },
+    {
+        "id": "93dc56539ae30933",
+        "type": "change",
+        "z": "c53bc0b1cfdd92b9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1176.4444770812988,
+        "y": 2596.22216796875,
+        "wires": [
+            [
+                "e51ce676f72f672e"
             ]
         ]
     },
@@ -7871,8 +8518,8 @@
         "pin": "2",
         "state": "OUTPUT",
         "arduino": "8683c29a9a878c47",
-        "x": 684,
-        "y": 91.22221374511719,
+        "x": 686.2222023010254,
+        "y": 88.99999809265137,
         "wires": []
     },
     {
@@ -8380,7 +9027,10 @@
                 "bce47b50c76b6d0e"
             ],
             [],
-            [],
+            [
+                "32ccc77db4c53cd9",
+                "c8fc2ba490244292"
+            ],
             []
         ]
     },
@@ -8466,8 +9116,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1309,
-        "y": 343,
+        "x": 1543,
+        "y": 333,
         "wires": [
             []
         ]
@@ -8504,15 +9154,13 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 872,
-        "y": 347,
+        "x": 1030,
+        "y": 337,
         "wires": [
             [
                 "dbeb70abcadbed6f",
-                "d03a3c9942c776c7",
-                "7ae6f63767e67991",
-                "2d58e92c836905f5",
-                "4244acb6e25f03c7"
+                "4244acb6e25f03c7",
+                "ad1dc88352163a9e"
             ]
         ]
     },
@@ -8548,8 +9196,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 1134,
-        "y": 385,
+        "x": 1368,
+        "y": 375,
         "wires": [
             [
                 "97f8d9060ec507da",
@@ -8562,7 +9210,7 @@
         "type": "change",
         "z": "d8be5e1f9ecfc822",
         "g": "e82a3add22643d20",
-        "name": "déclenche",
+        "name": "ENCLENCHE",
         "rules": [
             {
                 "t": "set",
@@ -8577,8 +9225,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1135,
-        "y": 344,
+        "x": 1379,
+        "y": 334,
         "wires": [
             [
                 "97f8d9060ec507da"
@@ -8687,8 +9335,8 @@
         "topic": "",
         "payload": "true",
         "payloadType": "bool",
-        "x": 963,
-        "y": 233,
+        "x": 1222,
+        "y": 376,
         "wires": [
             [
                 "d64c0ce1e8e52d9b"
@@ -8706,8 +9354,8 @@
             "9dd666286f92faca",
             "b4d64299ff63a96d"
         ],
-        "x": 1001,
-        "y": 326,
+        "x": 1234,
+        "y": 284,
         "wires": []
     },
     {
@@ -8754,8 +9402,8 @@
         "links": [
             "776731f3d9b87a15"
         ],
-        "x": 1000.5101318359375,
-        "y": 374.48980712890625,
+        "x": 1188.5101318359375,
+        "y": 304.48980712890625,
         "wires": []
     },
     {
@@ -8785,20 +9433,21 @@
         "links": [
             "37f4f812abdaddc7"
         ],
-        "x": 998.2040405273438,
-        "y": 285.9795837402344,
+        "x": 1191.2041015625,
+        "y": 262.9795837402344,
         "wires": []
     },
     {
         "id": "37f4f812abdaddc7",
         "type": "link in",
         "z": "d8be5e1f9ecfc822",
+        "g": "f1f4ed42dee40df3",
         "name": "link in 25",
         "links": [
             "7ae6f63767e67991"
         ],
-        "x": 569,
-        "y": 128.2222137451172,
+        "x": 483,
+        "y": 158.2222137451172,
         "wires": [
             [
                 "f48b015d956fb5b0",
@@ -8833,8 +9482,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 987,
-        "y": 481,
+        "x": 1238,
+        "y": 482,
         "wires": [
             [
                 "f34f77d661bb1d0c"
@@ -8868,11 +9517,1054 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1009,
-        "y": 515,
+        "x": 1260,
+        "y": 516,
         "wires": [
             [
                 "f34f77d661bb1d0c"
+            ]
+        ]
+    },
+    {
+        "id": "f2ae3dd1f5151a73",
+        "type": "trigger",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "op1": "",
+        "op2": "0",
+        "op1type": "date",
+        "op2type": "str",
+        "duration": "-10",
+        "extend": false,
+        "overrideDelay": true,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 699,
+        "y": 1384,
+        "wires": [
+            [
+                "873ebd426ea1dd0f",
+                "a2a59e4f67cd9ae1"
+            ]
+        ]
+    },
+    {
+        "id": "582ffc78a007831f",
+        "type": "change",
+        "z": "d8be5e1f9ecfc822",
+        "name": "set Delay",
+        "rules": [
+            {
+                "t": "set",
+                "p": "delay",
+                "pt": "msg",
+                "to": "frequence",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 409.5555419921875,
+        "y": 1378.111083984375,
+        "wires": [
+            [
+                "f2ae3dd1f5151a73"
+            ]
+        ],
+        "info": "Pour transformer en H\ndelay * 60 * 60 * 1000\nEn Min\ndelay * 60 * 1000\nEn Sec\ndelay * 1000"
+    },
+    {
+        "id": "240d056c775129e7",
+        "type": "inject",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "props": [
+            {
+                "p": "reset",
+                "v": "true",
+                "vt": "bool"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "STOP",
+        "payloadType": "str",
+        "x": 385.44439697265625,
+        "y": 1144.111083984375,
+        "wires": [
+            [
+                "f2ae3dd1f5151a73",
+                "dc5f9cdf001920e1"
+            ]
+        ]
+    },
+    {
+        "id": "83075ad1220b9df1",
+        "type": "change",
+        "z": "d8be5e1f9ecfc822",
+        "d": true,
+        "name": "En min",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload * 60 * 1000",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 336.888916015625,
+        "y": 1521.3333740234375,
+        "wires": [
+            [
+                "f2f5a453e4d519c3"
+            ]
+        ],
+        "info": "Pour transformer en H\ndelay * 60 * 60 * 1000\nEn Min\ndelay * 60 * 1000\nEn Sec\ndelay * 1000"
+    },
+    {
+        "id": "7586b8a934b14dd9",
+        "type": "change",
+        "z": "d8be5e1f9ecfc822",
+        "name": "En heure",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload * 60 * 60 * 1000",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 344.00006103515625,
+        "y": 1586.888916015625,
+        "wires": [
+            [
+                "f2f5a453e4d519c3"
+            ]
+        ],
+        "info": "Pour transformer en H\ndelay * 60 * 60 * 1000\nEn Min\ndelay * 60 * 1000\nEn Sec\ndelay * 1000"
+    },
+    {
+        "id": "873ebd426ea1dd0f",
+        "type": "debug",
+        "z": "d8be5e1f9ecfc822",
+        "name": "Delay calculé",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "\"Délai \" &  delay / 1000 & \" secondes.\"",
+        "targetType": "jsonata",
+        "statusVal": "delay",
+        "statusType": "auto",
+        "x": 927.444580078125,
+        "y": 1429.888916015625,
+        "wires": []
+    },
+    {
+        "id": "dc5f9cdf001920e1",
+        "type": "debug",
+        "z": "d8be5e1f9ecfc822",
+        "name": "debug 25",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 573.8889770507812,
+        "y": 1171.22216796875,
+        "wires": []
+    },
+    {
+        "id": "4ae16b9c700d22a2",
+        "type": "ui-button",
+        "z": "d8be5e1f9ecfc822",
+        "group": "e85e4672761de268",
+        "name": "Arret",
+        "label": "Arrêt recyclage",
+        "order": 2,
+        "width": "3",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 107,
+        "y": 1168,
+        "wires": [
+            [
+                "caba2e081442ca12"
+            ]
+        ]
+    },
+    {
+        "id": "caba2e081442ca12",
+        "type": "change",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "STOP",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 218,
+        "y": 1168,
+        "wires": [
+            [
+                "f2ae3dd1f5151a73",
+                "dc5f9cdf001920e1"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "394c2f7cabd070a7",
+        "type": "trigger",
+        "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
+        "name": "Declencheur",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": true,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 2,
+        "x": 1118,
+        "y": 1040,
+        "wires": [
+            [
+                "801aac83877c2ab0"
+            ],
+            [
+                "801aac83877c2ab0",
+                "28c0f65c9bd43c7e"
+            ]
+        ]
+    },
+    {
+        "id": "6d93979c0274b0f1",
+        "type": "trigger",
+        "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
+        "name": "Déclencheur",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": true,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 2,
+        "x": 1011,
+        "y": 1194,
+        "wires": [
+            [
+                "d45c556a9a437f45"
+            ],
+            [
+                "d45c556a9a437f45"
+            ]
+        ]
+    },
+    {
+        "id": "ad1dc88352163a9e",
+        "type": "change",
+        "z": "d8be5e1f9ecfc822",
+        "g": "e82a3add22643d20",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "ui_update",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1118,
+        "y": 283,
+        "wires": [
+            [
+                "7ae6f63767e67991",
+                "d03a3c9942c776c7",
+                "2d58e92c836905f5"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "33a78e42a1a73cd0",
+        "type": "link out",
+        "z": "d8be5e1f9ecfc822",
+        "name": "link out 12",
+        "mode": "link",
+        "links": [
+            "d875ada3320c2796"
+        ],
+        "x": 1337.2041015625,
+        "y": 1196.7958984375,
+        "wires": []
+    },
+    {
+        "id": "d875ada3320c2796",
+        "type": "link in",
+        "z": "d8be5e1f9ecfc822",
+        "name": "link in 26",
+        "links": [
+            "33a78e42a1a73cd0"
+        ],
+        "x": 111.66668701171875,
+        "y": 629.6666870117188,
+        "wires": [
+            [
+                "0c128f208b2166b7"
+            ]
+        ]
+    },
+    {
+        "id": "3ed82d8409933915",
+        "type": "link out",
+        "z": "d8be5e1f9ecfc822",
+        "name": "link out 13",
+        "mode": "link",
+        "links": [
+            "f4272072f91054cb"
+        ],
+        "x": 1331.93994140625,
+        "y": 1042.787109375,
+        "wires": []
+    },
+    {
+        "id": "f4272072f91054cb",
+        "type": "link in",
+        "z": "d8be5e1f9ecfc822",
+        "name": "link in 27",
+        "links": [
+            "3ed82d8409933915"
+        ],
+        "x": 134.22222900390625,
+        "y": 107.5555419921875,
+        "wires": [
+            [
+                "f4d89ecd8ab43066"
+            ]
+        ]
+    },
+    {
+        "id": "c265af76db8b707b",
+        "type": "inject",
+        "z": "d8be5e1f9ecfc822",
+        "name": "init",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "10",
+        "payloadType": "num",
+        "x": 95,
+        "y": 1290,
+        "wires": [
+            [
+                "9eb7d8593247cd4d"
+            ]
+        ]
+    },
+    {
+        "id": "28c0f65c9bd43c7e",
+        "type": "change",
+        "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
+        "name": "set delay",
+        "rules": [
+            {
+                "t": "set",
+                "p": "delay",
+                "pt": "msg",
+                "to": "duree",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1002,
+        "y": 1133,
+        "wires": [
+            [
+                "6d93979c0274b0f1"
+            ]
+        ],
+        "info": "Pour transformer en H\ndelay * 60 * 60 * 1000\nEn Min\ndelay * 60 * 1000\nEn Sec\ndelay * 1000"
+    },
+    {
+        "id": "3646985592257225",
+        "type": "change",
+        "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
+        "name": "set delay",
+        "rules": [
+            {
+                "t": "set",
+                "p": "delay",
+                "pt": "msg",
+                "to": "duree",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 952,
+        "y": 1039,
+        "wires": [
+            [
+                "394c2f7cabd070a7"
+            ]
+        ],
+        "info": "Pour transformer en H\ndelay * 60 * 60 * 1000\nEn Min\ndelay * 60 * 1000\nEn Sec\ndelay * 1000"
+    },
+    {
+        "id": "b0282f46eae4388c",
+        "type": "ui-number-input",
+        "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
+        "group": "e85e4672761de268",
+        "name": "Durée",
+        "label": "Durée en seconde",
+        "order": 3,
+        "width": "3",
+        "height": "1",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "1",
+        "max": "56",
+        "step": 1,
+        "tooltip": "Le temps en sec pour vider le fermenteur",
+        "delay": 300,
+        "passthru": true,
+        "sendOnDelay": false,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": true,
+        "icon": "iimer-outline",
+        "iconPosition": "right",
+        "iconInnerPosition": "inside",
+        "spinner": "default",
+        "x": 941.5,
+        "y": 991,
+        "wires": [
+            [
+                "bbf1cb0f8e441506",
+                "3cf155ead545817e"
+            ]
+        ]
+    },
+    {
+        "id": "9eb7d8593247cd4d",
+        "type": "ui-number-input",
+        "z": "d8be5e1f9ecfc822",
+        "group": "e85e4672761de268",
+        "name": "Fréquence",
+        "label": "Durée en heure",
+        "order": 4,
+        "width": "3",
+        "height": "1",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "1",
+        "max": "24",
+        "step": 1,
+        "tooltip": "Le temps, en heure, entre deux cycles de recyclage.",
+        "delay": 300,
+        "passthru": true,
+        "sendOnDelay": false,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": true,
+        "icon": "",
+        "iconPosition": "right",
+        "iconInnerPosition": "inside",
+        "spinner": "default",
+        "x": 121,
+        "y": 1445,
+        "wires": [
+            [
+                "b6c7292860d3f254",
+                "83075ad1220b9df1",
+                "7586b8a934b14dd9",
+                "32f75ae09ba83ccf"
+            ]
+        ]
+    },
+    {
+        "id": "6e57db48e8dec154",
+        "type": "inject",
+        "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
+        "name": "init",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "2",
+        "payloadType": "num",
+        "x": 933,
+        "y": 951,
+        "wires": [
+            [
+                "b0282f46eae4388c"
+            ]
+        ]
+    },
+    {
+        "id": "bbf1cb0f8e441506",
+        "type": "change",
+        "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
+        "name": "Set Flow duree",
+        "rules": [
+            {
+                "t": "set",
+                "p": "duree",
+                "pt": "flow",
+                "to": "payload * 1000",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1118,
+        "y": 991,
+        "wires": [
+            []
+        ],
+        "info": "Pour transformer en H\ndelay * 60 * 60 * 1000\nEn Min\ndelay * 60 * 1000\nEn Sec\ndelay * 1000"
+    },
+    {
+        "id": "1e65a99a79355e5a",
+        "type": "ui-button",
+        "z": "d8be5e1f9ecfc822",
+        "group": "e85e4672761de268",
+        "name": "start",
+        "label": "start recyclage",
+        "order": 1,
+        "width": "3",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 200,
+        "y": 1377,
+        "wires": [
+            [
+                "582ffc78a007831f"
+            ]
+        ]
+    },
+    {
+        "id": "f2f5a453e4d519c3",
+        "type": "change",
+        "z": "d8be5e1f9ecfc822",
+        "name": "Set Flow frequence",
+        "rules": [
+            {
+                "t": "set",
+                "p": "frequence",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 541,
+        "y": 1446,
+        "wires": [
+            [
+                "7ef41d07751ed40e"
+            ]
+        ],
+        "info": "Pour transformer en H\ndelay * 60 * 60 * 1000\nEn Min\ndelay * 60 * 1000\nEn Sec\ndelay * 1000"
+    },
+    {
+        "id": "b6c7292860d3f254",
+        "type": "change",
+        "z": "d8be5e1f9ecfc822",
+        "d": true,
+        "name": "En sec",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload * 1000",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 333,
+        "y": 1446,
+        "wires": [
+            [
+                "f2f5a453e4d519c3"
+            ]
+        ],
+        "info": "Pour transformer en H\ndelay * 60 * 60 * 1000\nEn Min\ndelay * 60 * 1000\nEn Sec\ndelay * 1000"
+    },
+    {
+        "id": "32ccc77db4c53cd9",
+        "type": "debug",
+        "z": "d8be5e1f9ecfc822",
+        "name": "debug 26",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 712,
+        "wires": []
+    },
+    {
+        "id": "02fe44df43ceab0b",
+        "type": "ui-progress",
+        "z": "d8be5e1f9ecfc822",
+        "group": "e85e4672761de268",
+        "name": "remplissage",
+        "label": "fill",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "color": "green",
+        "className": "",
+        "x": 1718,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "c8fc2ba490244292",
+        "type": "range",
+        "z": "d8be5e1f9ecfc822",
+        "minin": "0",
+        "maxin": "500",
+        "minout": "0",
+        "maxout": "100",
+        "action": "scale",
+        "round": true,
+        "property": "payload",
+        "name": "Taux de remplissage",
+        "x": 968.5,
+        "y": 1319,
+        "wires": [
+            [
+                "02fe44df43ceab0b",
+                "db8e86c3f75d559c",
+                "3fa7600cbf630f15"
+            ]
+        ]
+    },
+    {
+        "id": "db8e86c3f75d559c",
+        "type": "switch",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "75",
+                "vt": "num"
+            },
+            {
+                "t": "gte",
+                "v": "75",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1194,
+        "y": 1321,
+        "wires": [
+            [
+                "4adc71ab4303b94a"
+            ],
+            [
+                "5dfed6f884287588"
+            ]
+        ]
+    },
+    {
+        "id": "4adc71ab4303b94a",
+        "type": "change",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "msg.ui_update.color",
+                "pt": "msg",
+                "to": "green",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1435,
+        "y": 1293,
+        "wires": [
+            [
+                "02fe44df43ceab0b"
+            ]
+        ]
+    },
+    {
+        "id": "5dfed6f884287588",
+        "type": "change",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "msg.ui_update.color",
+                "pt": "msg",
+                "to": "orange",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1442,
+        "y": 1345,
+        "wires": [
+            [
+                "02fe44df43ceab0b"
+            ]
+        ]
+    },
+    {
+        "id": "3fa7600cbf630f15",
+        "type": "ui-chart",
+        "z": "d8be5e1f9ecfc822",
+        "group": "e85e4672761de268",
+        "name": "Vitesse de remplissage",
+        "label": "Moteur 4 ",
+        "order": 7,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "0",
+        "ymax": "100",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 1268,
+        "y": 1435,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a2a59e4f67cd9ae1",
+        "type": "change",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "reset",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 956,
+        "y": 1383,
+        "wires": [
+            [
+                "e00a3582156e7ad3"
+            ]
+        ]
+    },
+    {
+        "id": "506dcee70e29d1b0",
+        "type": "ui-markdown",
+        "z": "d8be5e1f9ecfc822",
+        "group": "e85e4672761de268",
+        "name": "",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "content": "# Actuellement\nUn cycle de {{msg.duree}} secondes toutes les {{msg.frequence}} heures.",
+        "className": "",
+        "x": 770,
+        "y": 1664,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "27996d2222de9a9a",
+        "type": "inject",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "x": 1028,
+        "y": 1519,
+        "wires": [
+            [
+                "3fa7600cbf630f15"
+            ]
+        ]
+    },
+    {
+        "id": "7ef41d07751ed40e",
+        "type": "debug",
+        "z": "d8be5e1f9ecfc822",
+        "name": "debug 27",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 953,
+        "y": 1623,
+        "wires": []
+    },
+    {
+        "id": "32f75ae09ba83ccf",
+        "type": "change",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "frequence",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 364,
+        "y": 1661,
+        "wires": [
+            [
+                "506dcee70e29d1b0"
+            ]
+        ]
+    },
+    {
+        "id": "3cf155ead545817e",
+        "type": "change",
+        "z": "d8be5e1f9ecfc822",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "duree",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 579,
+        "y": 1579,
+        "wires": [
+            [
+                "506dcee70e29d1b0"
             ]
         ]
     },
@@ -9187,8 +10879,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1411.6387023925781,
-        "y": 1216.3889274597168,
+        "x": 1420.5276184082031,
+        "y": 1174.1667594909668,
         "wires": [
             [
                 "ff4bd1c90924330a"
@@ -9223,8 +10915,8 @@
         "offvalueType": "bool",
         "officon": "electric-switch",
         "offcolor": "red",
-        "x": 1164.2776641845703,
-        "y": 1215.972282409668,
+        "x": 1173.1665802001953,
+        "y": 1173.750114440918,
         "wires": [
             [
                 "a92069de472750bf"
@@ -9245,8 +10937,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1279.277675628662,
-        "y": 1217.0833263397217,
+        "x": 1288.166591644287,
+        "y": 1174.8611583709717,
         "wires": [
             [
                 "16bed4cf4c70b80f"
@@ -9275,8 +10967,8 @@
         "topic": "sw",
         "payload": "true",
         "payloadType": "bool",
-        "x": 1009.2776641845703,
-        "y": 1195.972282409668,
+        "x": 1018.1665802001953,
+        "y": 1153.750114440918,
         "wires": [
             [
                 "6739792d7c1c5d34"
@@ -9305,8 +10997,8 @@
         "topic": "sw",
         "payload": "false",
         "payloadType": "bool",
-        "x": 1009.2776641845703,
-        "y": 1235.972282409668,
+        "x": 1018.1666259765625,
+        "y": 1213.7501220703125,
         "wires": [
             [
                 "6739792d7c1c5d34"
@@ -9421,8 +11113,8 @@
         "offvalueType": "bool",
         "officon": "lock",
         "offcolor": "green",
-        "x": 450.33355712890625,
-        "y": 141.66665267944336,
+        "x": 502.55572509765625,
+        "y": 243.88889694213867,
         "wires": [
             [
                 "a0b74e3946b3cabd"
@@ -9437,8 +11129,8 @@
         "name": "",
         "ui": "3c225b7898348072",
         "events": "all",
-        "x": 993.2500686645508,
-        "y": 144.6666374206543,
+        "x": 1045.4722366333008,
+        "y": 246.8888816833496,
         "wires": [
             []
         ]
@@ -9462,8 +11154,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 651.0001602172852,
-        "y": 140.99999618530273,
+        "x": 703.2223281860352,
+        "y": 243.22224044799805,
         "wires": [
             [
                 "601a8d08f324dd15"
@@ -9493,8 +11185,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 799.3334579467773,
-        "y": 120.9999885559082,
+        "x": 851.5556259155273,
+        "y": 223.22223281860352,
         "wires": [
             [
                 "98acef0807848e5c"
@@ -9521,8 +11213,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 812.3334999084473,
-        "y": 176.33334350585938,
+        "x": 864.5556678771973,
+        "y": 278.5555877685547,
         "wires": [
             [
                 "98acef0807848e5c"
@@ -9547,8 +11239,8 @@
         "topic": "",
         "payload": "false",
         "payloadType": "bool",
-        "x": 268.3334541320801,
-        "y": 178.66667938232422,
+        "x": 320.5556221008301,
+        "y": 280.88892364501953,
         "wires": [
             [
                 "d5918d3dcc1c3175",
@@ -9965,8 +11657,8 @@
         "topic": "",
         "payload": "true",
         "payloadType": "bool",
-        "x": 271.6666488647461,
-        "y": 111.66666412353516,
+        "x": 323.8888168334961,
+        "y": 213.88890838623047,
         "wires": [
             [
                 "d656d0397e111e07"
@@ -10219,5 +11911,578 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "fc9b6663372a52dc",
+        "type": "trigger",
+        "z": "d7b000e00355b06e",
+        "name": "",
+        "op1": "",
+        "op2": "0",
+        "op1type": "date",
+        "op2type": "str",
+        "duration": "-1",
+        "extend": false,
+        "overrideDelay": true,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 838.5555419921875,
+        "y": 1495.77783203125,
+        "wires": [
+            [
+                "361614f99ce2c0b1",
+                "a7394e518c3c41f8"
+            ]
+        ]
+    },
+    {
+        "id": "0f1cd950892aa4a3",
+        "type": "debug",
+        "z": "d7b000e00355b06e",
+        "name": "Time",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1274.7778511047363,
+        "y": 1498.666748046875,
+        "wires": []
+    },
+    {
+        "id": "600e91792a8a9d6c",
+        "type": "inject",
+        "z": "d7b000e00355b06e",
+        "name": "100",
+        "props": [
+            {
+                "p": "delay",
+                "v": "100",
+                "vt": "num"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "TICK",
+        "payloadType": "str",
+        "x": 375.22216415405273,
+        "y": 1309.1111917495728,
+        "wires": [
+            [
+                "4ceebc81634bfd18"
+            ]
+        ]
+    },
+    {
+        "id": "fa8fce688273fe7a",
+        "type": "inject",
+        "z": "d7b000e00355b06e",
+        "name": "1s",
+        "props": [
+            {
+                "p": "delay",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 383.0000190734863,
+        "y": 1465.7778425216675,
+        "wires": [
+            [
+                "032fb5803f188499"
+            ]
+        ]
+    },
+    {
+        "id": "032fb5803f188499",
+        "type": "change",
+        "z": "d7b000e00355b06e",
+        "name": "En sec",
+        "rules": [
+            {
+                "t": "set",
+                "p": "delay",
+                "pt": "msg",
+                "to": "delay * 1000",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 544.1111145019531,
+        "y": 1536.8888664245605,
+        "wires": [
+            [
+                "fc9b6663372a52dc",
+                "6c601a3b4c1c662f"
+            ]
+        ],
+        "info": "Pour transformer en H\ndelay * 60 * 60 * 1000\nEn Min\ndelay * 60 * 1000\nEn Sec\ndelay * 1000"
+    },
+    {
+        "id": "5586731e933fcb51",
+        "type": "inject",
+        "z": "d7b000e00355b06e",
+        "name": "5s",
+        "props": [
+            {
+                "p": "delay",
+                "v": "5",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 384.11108016967773,
+        "y": 1506.8889446258545,
+        "wires": [
+            [
+                "032fb5803f188499"
+            ]
+        ]
+    },
+    {
+        "id": "315d07096a333201",
+        "type": "inject",
+        "z": "d7b000e00355b06e",
+        "name": "10s",
+        "props": [
+            {
+                "p": "delay",
+                "v": "10",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 385.22220611572266,
+        "y": 1553.5556259155273,
+        "wires": [
+            [
+                "032fb5803f188499"
+            ]
+        ]
+    },
+    {
+        "id": "589d17d361bf91ee",
+        "type": "inject",
+        "z": "d7b000e00355b06e",
+        "name": "",
+        "props": [
+            {
+                "p": "reset",
+                "v": "true",
+                "vt": "bool"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "STOP",
+        "payloadType": "str",
+        "x": 562.9999542236328,
+        "y": 1316.88889503479,
+        "wires": [
+            [
+                "fc9b6663372a52dc",
+                "bc658a65a2f1c0ef"
+            ]
+        ]
+    },
+    {
+        "id": "c243793dd97f28b3",
+        "type": "inject",
+        "z": "d7b000e00355b06e",
+        "name": "1min",
+        "props": [
+            {
+                "p": "delay",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 384.6667060852051,
+        "y": 1620.2222900390625,
+        "wires": [
+            [
+                "d95ae8e7d7111699"
+            ]
+        ]
+    },
+    {
+        "id": "d95ae8e7d7111699",
+        "type": "change",
+        "z": "d7b000e00355b06e",
+        "name": "En min",
+        "rules": [
+            {
+                "t": "set",
+                "p": "delay",
+                "pt": "msg",
+                "to": "delay * 60 * 1000",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 542.4444770812988,
+        "y": 1619.1112060546875,
+        "wires": [
+            [
+                "fc9b6663372a52dc",
+                "6c601a3b4c1c662f"
+            ]
+        ],
+        "info": "Pour transformer en H\ndelay * 60 * 60 * 1000\nEn Min\ndelay * 60 * 1000\nEn Sec\ndelay * 1000"
+    },
+    {
+        "id": "e4529965ef9aba7d",
+        "type": "change",
+        "z": "d7b000e00355b06e",
+        "name": "En heure",
+        "rules": [
+            {
+                "t": "set",
+                "p": "delay",
+                "pt": "msg",
+                "to": "delay * 60 * 60 * 1000",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 543.5556144714355,
+        "y": 1754.666732788086,
+        "wires": [
+            [
+                "fc9b6663372a52dc",
+                "6c601a3b4c1c662f"
+            ]
+        ],
+        "info": "Pour transformer en H\ndelay * 60 * 60 * 1000\nEn Min\ndelay * 60 * 1000\nEn Sec\ndelay * 1000"
+    },
+    {
+        "id": "996fd62462c85799",
+        "type": "inject",
+        "z": "d7b000e00355b06e",
+        "name": "15 min",
+        "props": [
+            {
+                "p": "delay",
+                "v": "15",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 386.8889350891113,
+        "y": 1674.666748046875,
+        "wires": [
+            [
+                "d95ae8e7d7111699"
+            ]
+        ]
+    },
+    {
+        "id": "dc4934f95f3d2be5",
+        "type": "inject",
+        "z": "d7b000e00355b06e",
+        "name": "1h",
+        "props": [
+            {
+                "p": "delay",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 396.8889350891113,
+        "y": 1754.666748046875,
+        "wires": [
+            [
+                "e4529965ef9aba7d"
+            ]
+        ]
+    },
+    {
+        "id": "0352b307dcf97ed9",
+        "type": "inject",
+        "z": "d7b000e00355b06e",
+        "name": "5h",
+        "props": [
+            {
+                "p": "delay",
+                "v": "5",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 399.1111640930176,
+        "y": 1808.0001220703125,
+        "wires": [
+            [
+                "e4529965ef9aba7d"
+            ]
+        ]
+    },
+    {
+        "id": "0e0a2e9633f719d8",
+        "type": "inject",
+        "z": "d7b000e00355b06e",
+        "name": "12h",
+        "props": [
+            {
+                "p": "delay",
+                "v": "12",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 403.2222785949707,
+        "y": 1887.5556640625,
+        "wires": [
+            [
+                "e4529965ef9aba7d"
+            ]
+        ]
+    },
+    {
+        "id": "6c601a3b4c1c662f",
+        "type": "debug",
+        "z": "d7b000e00355b06e",
+        "name": "Delay",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "\"Délai \" &  delay / 1000 & \" secondes.\"",
+        "targetType": "jsonata",
+        "statusVal": "delay",
+        "statusType": "auto",
+        "x": 810.0000801086426,
+        "y": 1622.666748046875,
+        "wires": []
+    },
+    {
+        "id": "e15285b6d7ac49f2",
+        "type": "inject",
+        "z": "d7b000e00355b06e",
+        "name": "START",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 563.5556221008301,
+        "y": 1379.1112060546875,
+        "wires": [
+            [
+                "fc9b6663372a52dc"
+            ]
+        ]
+    },
+    {
+        "id": "4ceebc81634bfd18",
+        "type": "change",
+        "z": "d7b000e00355b06e",
+        "name": "En ms",
+        "rules": [
+            {
+                "t": "set",
+                "p": "delay",
+                "pt": "msg",
+                "to": "delay ",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 541.3333930969238,
+        "y": 1451.3333740234375,
+        "wires": [
+            [
+                "fc9b6663372a52dc",
+                "6c601a3b4c1c662f"
+            ]
+        ],
+        "info": "Pour transformer en H\ndelay * 60 * 60 * 1000\nEn Min\ndelay * 60 * 1000\nEn Sec\ndelay * 1000"
+    },
+    {
+        "id": "3a7619d159263d46",
+        "type": "inject",
+        "z": "d7b000e00355b06e",
+        "name": "500",
+        "props": [
+            {
+                "p": "delay",
+                "v": "500",
+                "vt": "num"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "TICK",
+        "payloadType": "str",
+        "x": 376.8889350891113,
+        "y": 1368,
+        "wires": [
+            [
+                "4ceebc81634bfd18"
+            ]
+        ]
+    },
+    {
+        "id": "bc658a65a2f1c0ef",
+        "type": "debug",
+        "z": "d7b000e00355b06e",
+        "name": "debug 21",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 752.4445266723633,
+        "y": 1318.0000038146973,
+        "wires": []
+    },
+    {
+        "id": "361614f99ce2c0b1",
+        "type": "change",
+        "z": "d7b000e00355b06e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "\"Top à \" & $floor(payload / 1000) & \" durée += \" & delay & \" ms.\"",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1050.0000190734863,
+        "y": 1497,
+        "wires": [
+            [
+                "0f1cd950892aa4a3"
+            ]
+        ]
+    },
+    {
+        "id": "a7394e518c3c41f8",
+        "type": "change",
+        "z": "d7b000e00355b06e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1081.0000190734863,
+        "y": 1389,
+        "wires": [
+            [
+                "ef6fc0aec2114a1c"
+            ]
+        ]
+    },
+    {
+        "id": "ef6fc0aec2114a1c",
+        "type": "link out",
+        "z": "d7b000e00355b06e",
+        "name": "link out 11",
+        "mode": "link",
+        "links": [],
+        "x": 1225.0000190734863,
+        "y": 1393,
+        "wires": []
     }
 ]
