@@ -1026,7 +1026,27 @@
             "3646985592257225",
             "b0282f46eae4388c",
             "6e57db48e8dec154",
-            "bbf1cb0f8e441506"
+            "bbf1cb0f8e441506",
+            "a2a59e4f67cd9ae1",
+            "3cf155ead545817e",
+            "506dcee70e29d1b0",
+            "32f75ae09ba83ccf",
+            "33a78e42a1a73cd0",
+            "3ed82d8409933915",
+            "9eb7d8593247cd4d",
+            "c265af76db8b707b",
+            "f2f5a453e4d519c3",
+            "7586b8a934b14dd9",
+            "f2ae3dd1f5151a73",
+            "caba2e081442ca12",
+            "582ffc78a007831f",
+            "4ae16b9c700d22a2",
+            "1e65a99a79355e5a",
+            "83075ad1220b9df1",
+            "b6c7292860d3f254",
+            "c0f823a68717a76a",
+            "c7c5929f32846eb7",
+            "2d04eb0b54106808"
         ],
         "env": [
             {
@@ -1035,10 +1055,33 @@
                 "type": "num"
             }
         ],
-        "x": 837,
-        "y": 910,
-        "w": 456.47954189777374,
-        "h": 325
+        "x": 82,
+        "y": 1017,
+        "w": 1355,
+        "h": 474
+    },
+    {
+        "id": "759c9b2e6741705b",
+        "type": "group",
+        "z": "d8be5e1f9ecfc822",
+        "name": "Taux de remplissage",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "c8fc2ba490244292",
+            "02fe44df43ceab0b",
+            "db8e86c3f75d559c",
+            "4adc71ab4303b94a",
+            "5dfed6f884287588",
+            "3fa7600cbf630f15",
+            "27996d2222de9a9a",
+            "b1d85d8e954e5343"
+        ],
+        "x": 83.5,
+        "y": 1512,
+        "w": 1059.5,
+        "h": 157
     },
     {
         "id": "6c5afa767ad7188a",
@@ -1165,24 +1208,12 @@
         ]
     },
     {
-        "id": "e00a3582156e7ad3",
-        "type": "junction",
-        "z": "d8be5e1f9ecfc822",
-        "x": 809.9174723625183,
-        "y": 1039.8505791425705,
-        "wires": [
-            [
-                "3646985592257225"
-            ]
-        ]
-    },
-    {
         "id": "d45c556a9a437f45",
         "type": "junction",
         "z": "d8be5e1f9ecfc822",
         "g": "35eb92742defc260",
-        "x": 1255.8600437641144,
-        "y": 1193.854211449623,
+        "x": 1261.6142659187317,
+        "y": 1207.1816049814224,
         "wires": [
             [
                 "33a78e42a1a73cd0"
@@ -1194,8 +1225,8 @@
         "type": "junction",
         "z": "d8be5e1f9ecfc822",
         "g": "35eb92742defc260",
-        "x": 1267.4795418977737,
-        "y": 1040.115889430046,
+        "x": 1271.4795418977737,
+        "y": 1061.115889430046,
         "wires": [
             [
                 "3ed82d8409933915"
@@ -1703,12 +1734,12 @@
     {
         "id": "e85e4672761de268",
         "type": "ui-group",
-        "name": "Recyclage",
+        "name": "Renouveler le milieu",
         "page": "b0ac91756170664c",
         "width": 6,
         "height": "4",
         "order": 3,
-        "showTitle": false,
+        "showTitle": true,
         "className": "",
         "visible": "true",
         "disabled": "false",
@@ -9029,7 +9060,7 @@
             [],
             [
                 "32ccc77db4c53cd9",
-                "c8fc2ba490244292"
+                "2b3876740dcae9e5"
             ],
             []
         ]
@@ -9529,7 +9560,8 @@
         "id": "f2ae3dd1f5151a73",
         "type": "trigger",
         "z": "d8be5e1f9ecfc822",
-        "name": "",
+        "g": "35eb92742defc260",
+        "name": "Déclenchement toutes les X heures",
         "op1": "",
         "op2": "0",
         "op1type": "date",
@@ -9542,20 +9574,21 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 699,
-        "y": 1384,
+        "x": 613,
+        "y": 1058,
         "wires": [
             [
-                "873ebd426ea1dd0f",
                 "a2a59e4f67cd9ae1"
             ]
-        ]
+        ],
+        "l": false
     },
     {
         "id": "582ffc78a007831f",
         "type": "change",
         "z": "d8be5e1f9ecfc822",
-        "name": "set Delay",
+        "g": "35eb92742defc260",
+        "name": "Définir le temps entre deux cycles",
         "rules": [
             {
                 "t": "set",
@@ -9570,51 +9603,22 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 409.5555419921875,
-        "y": 1378.111083984375,
+        "x": 441.5555419921875,
+        "y": 1143.111083984375,
         "wires": [
             [
                 "f2ae3dd1f5151a73"
             ]
         ],
+        "l": false,
         "info": "Pour transformer en H\ndelay * 60 * 60 * 1000\nEn Min\ndelay * 60 * 1000\nEn Sec\ndelay * 1000"
-    },
-    {
-        "id": "240d056c775129e7",
-        "type": "inject",
-        "z": "d8be5e1f9ecfc822",
-        "name": "",
-        "props": [
-            {
-                "p": "reset",
-                "v": "true",
-                "vt": "bool"
-            },
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "STOP",
-        "payloadType": "str",
-        "x": 385.44439697265625,
-        "y": 1144.111083984375,
-        "wires": [
-            [
-                "f2ae3dd1f5151a73",
-                "dc5f9cdf001920e1"
-            ]
-        ]
     },
     {
         "id": "83075ad1220b9df1",
         "type": "change",
         "z": "d8be5e1f9ecfc822",
         "d": true,
+        "g": "35eb92742defc260",
         "name": "En min",
         "rules": [
             {
@@ -9630,8 +9634,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 336.888916015625,
-        "y": 1521.3333740234375,
+        "x": 940.888916015625,
+        "y": 1349.3333740234375,
         "wires": [
             [
                 "f2f5a453e4d519c3"
@@ -9643,6 +9647,7 @@
         "id": "7586b8a934b14dd9",
         "type": "change",
         "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
         "name": "En heure",
         "rules": [
             {
@@ -9658,8 +9663,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 344.00006103515625,
-        "y": 1586.888916015625,
+        "x": 939.0000610351562,
+        "y": 1309.888916015625,
         "wires": [
             [
                 "f2f5a453e4d519c3"
@@ -9680,30 +9685,15 @@
         "targetType": "jsonata",
         "statusVal": "delay",
         "statusType": "auto",
-        "x": 927.444580078125,
-        "y": 1429.888916015625,
-        "wires": []
-    },
-    {
-        "id": "dc5f9cdf001920e1",
-        "type": "debug",
-        "z": "d8be5e1f9ecfc822",
-        "name": "debug 25",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 573.8889770507812,
-        "y": 1171.22216796875,
+        "x": 1080.444580078125,
+        "y": 1776.888916015625,
         "wires": []
     },
     {
         "id": "4ae16b9c700d22a2",
         "type": "ui-button",
         "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
         "group": "e85e4672761de268",
         "name": "Arret",
         "label": "Arrêt recyclage",
@@ -9731,11 +9721,12 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 107,
-        "y": 1168,
+        "x": 226,
+        "y": 1060,
         "wires": [
             [
-                "caba2e081442ca12"
+                "caba2e081442ca12",
+                "2d04eb0b54106808"
             ]
         ]
     },
@@ -9743,7 +9734,8 @@
         "id": "caba2e081442ca12",
         "type": "change",
         "z": "d8be5e1f9ecfc822",
-        "name": "",
+        "g": "35eb92742defc260",
+        "name": "reset",
         "rules": [
             {
                 "t": "set",
@@ -9765,12 +9757,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 218,
-        "y": 1168,
+        "x": 344,
+        "y": 1059,
         "wires": [
             [
-                "f2ae3dd1f5151a73",
-                "dc5f9cdf001920e1"
+                "f2ae3dd1f5151a73"
             ]
         ],
         "l": false
@@ -9793,8 +9784,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 2,
-        "x": 1118,
-        "y": 1040,
+        "x": 1122,
+        "y": 1061,
         "wires": [
             [
                 "801aac83877c2ab0"
@@ -9823,8 +9814,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 2,
-        "x": 1011,
-        "y": 1194,
+        "x": 1135,
+        "y": 1202,
         "wires": [
             [
                 "d45c556a9a437f45"
@@ -9867,13 +9858,14 @@
         "id": "33a78e42a1a73cd0",
         "type": "link out",
         "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
         "name": "link out 12",
         "mode": "link",
         "links": [
             "d875ada3320c2796"
         ],
-        "x": 1337.2041015625,
-        "y": 1196.7958984375,
+        "x": 1375.2041015625,
+        "y": 1208.7958984375,
         "wires": []
     },
     {
@@ -9896,13 +9888,14 @@
         "id": "3ed82d8409933915",
         "type": "link out",
         "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
         "name": "link out 13",
         "mode": "link",
         "links": [
             "f4272072f91054cb"
         ],
-        "x": 1331.93994140625,
-        "y": 1042.787109375,
+        "x": 1377.93994140625,
+        "y": 1062.787109375,
         "wires": []
     },
     {
@@ -9925,6 +9918,7 @@
         "id": "c265af76db8b707b",
         "type": "inject",
         "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
         "name": "init",
         "props": [
             {
@@ -9938,8 +9932,8 @@
         "topic": "",
         "payload": "10",
         "payloadType": "num",
-        "x": 95,
-        "y": 1290,
+        "x": 803,
+        "y": 1225,
         "wires": [
             [
                 "9eb7d8593247cd4d"
@@ -9966,8 +9960,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1002,
-        "y": 1133,
+        "x": 1128,
+        "y": 1154,
         "wires": [
             [
                 "6d93979c0274b0f1"
@@ -9995,8 +9989,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 952,
-        "y": 1039,
+        "x": 956,
+        "y": 1060,
         "wires": [
             [
                 "394c2f7cabd070a7"
@@ -10020,7 +10014,7 @@
         "min": "1",
         "max": "56",
         "step": 1,
-        "tooltip": "Le temps en sec pour vider le fermenteur",
+        "tooltip": "Le temps en seconde pour vider le fermenteur",
         "delay": 300,
         "passthru": true,
         "sendOnDelay": false,
@@ -10032,8 +10026,8 @@
         "iconPosition": "right",
         "iconInnerPosition": "inside",
         "spinner": "default",
-        "x": 941.5,
-        "y": 991,
+        "x": 797.5,
+        "y": 1418,
         "wires": [
             [
                 "bbf1cb0f8e441506",
@@ -10045,6 +10039,7 @@
         "id": "9eb7d8593247cd4d",
         "type": "ui-number-input",
         "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
         "group": "e85e4672761de268",
         "name": "Fréquence",
         "label": "Durée en heure",
@@ -10056,7 +10051,7 @@
         "min": "1",
         "max": "24",
         "step": 1,
-        "tooltip": "Le temps, en heure, entre deux cycles de recyclage.",
+        "tooltip": "Le temps, en heure, entre deux renouvellement du milieu",
         "delay": 300,
         "passthru": true,
         "sendOnDelay": false,
@@ -10068,8 +10063,8 @@
         "iconPosition": "right",
         "iconInnerPosition": "inside",
         "spinner": "default",
-        "x": 121,
-        "y": 1445,
+        "x": 797,
+        "y": 1265,
         "wires": [
             [
                 "b6c7292860d3f254",
@@ -10097,8 +10092,8 @@
         "topic": "",
         "payload": "2",
         "payloadType": "num",
-        "x": 933,
-        "y": 951,
+        "x": 789,
+        "y": 1369,
         "wires": [
             [
                 "b0282f46eae4388c"
@@ -10125,8 +10120,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1118,
-        "y": 991,
+        "x": 1108,
+        "y": 1450,
         "wires": [
             []
         ],
@@ -10136,6 +10131,7 @@
         "id": "1e65a99a79355e5a",
         "type": "ui-button",
         "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
         "group": "e85e4672761de268",
         "name": "start",
         "label": "start recyclage",
@@ -10163,11 +10159,12 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 200,
-        "y": 1377,
+        "x": 234,
+        "y": 1152,
         "wires": [
             [
-                "582ffc78a007831f"
+                "582ffc78a007831f",
+                "c7c5929f32846eb7"
             ]
         ]
     },
@@ -10175,6 +10172,7 @@
         "id": "f2f5a453e4d519c3",
         "type": "change",
         "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
         "name": "Set Flow frequence",
         "rules": [
             {
@@ -10190,12 +10188,10 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 541,
-        "y": 1446,
+        "x": 1114,
+        "y": 1310,
         "wires": [
-            [
-                "7ef41d07751ed40e"
-            ]
+            []
         ],
         "info": "Pour transformer en H\ndelay * 60 * 60 * 1000\nEn Min\ndelay * 60 * 1000\nEn Sec\ndelay * 1000"
     },
@@ -10204,6 +10200,7 @@
         "type": "change",
         "z": "d8be5e1f9ecfc822",
         "d": true,
+        "g": "35eb92742defc260",
         "name": "En sec",
         "rules": [
             {
@@ -10219,8 +10216,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 333,
-        "y": 1446,
+        "x": 942,
+        "y": 1386,
         "wires": [
             [
                 "f2f5a453e4d519c3"
@@ -10248,6 +10245,7 @@
         "id": "02fe44df43ceab0b",
         "type": "ui-progress",
         "z": "d8be5e1f9ecfc822",
+        "g": "759c9b2e6741705b",
         "group": "e85e4672761de268",
         "name": "remplissage",
         "label": "fill",
@@ -10256,14 +10254,15 @@
         "height": 0,
         "color": "green",
         "className": "",
-        "x": 1718,
-        "y": 1320,
+        "x": 1047,
+        "y": 1568,
         "wires": []
     },
     {
         "id": "c8fc2ba490244292",
         "type": "range",
         "z": "d8be5e1f9ecfc822",
+        "g": "759c9b2e6741705b",
         "minin": "0",
         "maxin": "500",
         "minout": "0",
@@ -10272,8 +10271,8 @@
         "round": true,
         "property": "payload",
         "name": "Taux de remplissage",
-        "x": 968.5,
-        "y": 1319,
+        "x": 272.5,
+        "y": 1580,
         "wires": [
             [
                 "02fe44df43ceab0b",
@@ -10286,6 +10285,7 @@
         "id": "db8e86c3f75d559c",
         "type": "switch",
         "z": "d8be5e1f9ecfc822",
+        "g": "759c9b2e6741705b",
         "name": "",
         "property": "payload",
         "propertyType": "msg",
@@ -10304,8 +10304,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1194,
-        "y": 1321,
+        "x": 559,
+        "y": 1578,
         "wires": [
             [
                 "4adc71ab4303b94a"
@@ -10319,6 +10319,7 @@
         "id": "4adc71ab4303b94a",
         "type": "change",
         "z": "d8be5e1f9ecfc822",
+        "g": "759c9b2e6741705b",
         "name": "",
         "rules": [
             {
@@ -10334,8 +10335,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1435,
-        "y": 1293,
+        "x": 784,
+        "y": 1553,
         "wires": [
             [
                 "02fe44df43ceab0b"
@@ -10346,6 +10347,7 @@
         "id": "5dfed6f884287588",
         "type": "change",
         "z": "d8be5e1f9ecfc822",
+        "g": "759c9b2e6741705b",
         "name": "",
         "rules": [
             {
@@ -10361,8 +10363,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1442,
-        "y": 1345,
+        "x": 780,
+        "y": 1590,
         "wires": [
             [
                 "02fe44df43ceab0b"
@@ -10373,6 +10375,7 @@
         "id": "3fa7600cbf630f15",
         "type": "ui-chart",
         "z": "d8be5e1f9ecfc822",
+        "g": "759c9b2e6741705b",
         "group": "e85e4672761de268",
         "name": "Vitesse de remplissage",
         "label": "Moteur 4 ",
@@ -10425,8 +10428,8 @@
         "height": 8,
         "className": "",
         "interpolation": "linear",
-        "x": 1268,
-        "y": 1435,
+        "x": 583,
+        "y": 1627,
         "wires": [
             []
         ]
@@ -10435,7 +10438,8 @@
         "id": "a2a59e4f67cd9ae1",
         "type": "change",
         "z": "d8be5e1f9ecfc822",
-        "name": "",
+        "g": "35eb92742defc260",
+        "name": "Suprime msg.reset",
         "rules": [
             {
                 "t": "delete",
@@ -10448,18 +10452,20 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 956,
-        "y": 1383,
+        "x": 683,
+        "y": 1059,
         "wires": [
             [
-                "e00a3582156e7ad3"
+                "3646985592257225"
             ]
-        ]
+        ],
+        "l": false
     },
     {
         "id": "506dcee70e29d1b0",
         "type": "ui-markdown",
         "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
         "group": "e85e4672761de268",
         "name": "",
         "order": 5,
@@ -10467,8 +10473,8 @@
         "height": 0,
         "content": "# Actuellement\nUn cycle de {{msg.duree}} secondes toutes les {{msg.frequence}} heures.",
         "className": "",
-        "x": 770,
-        "y": 1664,
+        "x": 1341,
+        "y": 1336,
         "wires": [
             []
         ]
@@ -10477,6 +10483,7 @@
         "id": "27996d2222de9a9a",
         "type": "inject",
         "z": "d8be5e1f9ecfc822",
+        "g": "759c9b2e6741705b",
         "name": "",
         "props": [
             {
@@ -10490,8 +10497,8 @@
         "topic": "",
         "payload": "[]",
         "payloadType": "json",
-        "x": 1028,
-        "y": 1519,
+        "x": 363,
+        "y": 1628,
         "wires": [
             [
                 "3fa7600cbf630f15"
@@ -10499,25 +10506,10 @@
         ]
     },
     {
-        "id": "7ef41d07751ed40e",
-        "type": "debug",
-        "z": "d8be5e1f9ecfc822",
-        "name": "debug 27",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 953,
-        "y": 1623,
-        "wires": []
-    },
-    {
         "id": "32f75ae09ba83ccf",
         "type": "change",
         "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
         "name": "",
         "rules": [
             {
@@ -10533,8 +10525,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 364,
-        "y": 1661,
+        "x": 1108,
+        "y": 1265,
         "wires": [
             [
                 "506dcee70e29d1b0"
@@ -10545,6 +10537,7 @@
         "id": "3cf155ead545817e",
         "type": "change",
         "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
         "name": "",
         "rules": [
             {
@@ -10560,11 +10553,138 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 579,
-        "y": 1579,
+        "x": 1119,
+        "y": 1414,
         "wires": [
             [
                 "506dcee70e29d1b0"
+            ]
+        ]
+    },
+    {
+        "id": "c0f823a68717a76a",
+        "type": "change",
+        "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ui_update.label",
+                "pt": "msg",
+                "to": "en marche",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "ui_update.buttonColor",
+                "pt": "msg",
+                "to": "red",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 214,
+        "y": 1252,
+        "wires": [
+            [
+                "1e65a99a79355e5a"
+            ]
+        ]
+    },
+    {
+        "id": "c7c5929f32846eb7",
+        "type": "change",
+        "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
+        "name": "Sup m",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "ui_update",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 162,
+        "y": 1209,
+        "wires": [
+            [
+                "c0f823a68717a76a"
+            ]
+        ]
+    },
+    {
+        "id": "2d04eb0b54106808",
+        "type": "change",
+        "z": "d8be5e1f9ecfc822",
+        "g": "35eb92742defc260",
+        "name": "Set Label & color",
+        "rules": [
+            {
+                "t": "set",
+                "p": "msg.ui_update.label",
+                "pt": "msg",
+                "to": "start",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "msg.ui_update.buttonColor",
+                "pt": "msg",
+                "to": "green",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 123,
+        "y": 1152,
+        "wires": [
+            [
+                "1e65a99a79355e5a"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "2b3876740dcae9e5",
+        "type": "link out",
+        "z": "d8be5e1f9ecfc822",
+        "name": "link out 14",
+        "mode": "link",
+        "links": [
+            "b1d85d8e954e5343"
+        ],
+        "x": 295.66668701171875,
+        "y": 650.6666870117188,
+        "wires": []
+    },
+    {
+        "id": "b1d85d8e954e5343",
+        "type": "link in",
+        "z": "d8be5e1f9ecfc822",
+        "g": "759c9b2e6741705b",
+        "name": "link in 28",
+        "links": [
+            "2b3876740dcae9e5"
+        ],
+        "x": 124.5,
+        "y": 1581,
+        "wires": [
+            [
+                "c8fc2ba490244292"
             ]
         ]
     },
@@ -11675,7 +11795,7 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "content": "# Double flux\nLa mesure de PH est scindé en 2. La version brute et la version amortie (smooth).  \nOn veut avoir ces 2 valeurs sur le graphique et on veut conserver les données brutes sur la jauge et l'alarme en amont du bypass.   \nOn stocke les deux mesures dans le même flux, dans des objets différents fluxa et fluxb.  \nLe payload original est conservé pour jauge et l'alarme sur le fluxa.\nLe Payload et le topic est supprimé après le bypass et avant d'arriver sur le graphique.  \nLe payload est remplacé par fluxa ou fluxb avec le topic associé pour avoir un graphique à 2 courbes.\n\n# Bypass\nUtilisation d'un icone explicite. SwitchElectric ouvert|fermé.  \nCe switch interromp le flux vers le graphique. Quand le switch est fermé, le flux alimente le graphique.  \nA l'opposé, quand le switch est ouvert, le flux ne passe plus et le grahique n'est plus alimenté. Il est en pause.\n\n# Lock\nUn switch sous forme de cadenas, active ou inhibe la partie live permettant d'agir sur le bypass du group.  \nPour agir sur un groupe de widget on utilise ui-control.  \nOn récupère l'ID du group que l'on veut controler dans la barre d'outil latérale droite. \n`Info > Noeuds de configuration globale > ui-groupe > af7a2f9471407871`\nOn capture l'id et on envoie au node ui-control le message : \n\n`{\"groups\":{\"enable\":[\"af7a2f9471407871\"]}}`\npour activer ou \n\n`{\"groups\":{\"disable\":[\"af7a2f9471407871\"]}}`\npour désactiver.  \n\nLe switch est False au démarrage. Le Groupe live est inactif au démarrage. \n\n# Compil data.\nLes données du flux sont regroupées dans un UI-Markdown. On capte des mesures à différents endroits du flux. Chaque messure est stocké dans une propriété d'un objet data.  \nComme les mesures n'arrivents pas toutes en même temps, un node fonction capte ces messages et conserve les données dans le contexte du node. \n\nChaque message en entrée est porteur d'une mesure. Cette mesure est stocké dans une variable de contexte.  \n\nLa fonction retourne un message avec un objet data qui remprend tous les attributs sotcké dans le context. \n\nLe node ui-markdown prend l'objet data et affiche chacune de ces propriétés à l'écran. \n\n# Arrêt urgence\nDans le group Control, 2 boutons poussoirs pour arrêter tous les moteurs qq soit les commandes. \nPositionne une var de contexte flow URGENCE.  \nToutes les commandes de pilotages des pins arduino sont précédees d'un aiguillage basée sur cette variable.  \nL'aiguillage détourne les messages quand URGENCE est true et laisse passé les commandes quand false. \nEn déclenchant un AR urgence : \n- on arrête les moteurs\n- on arrête les commandes moteurs\n- on positionne le la variable à true.  \nUN bouton REARM remet la variable à false.\nLa variable est positionnée à false au démarrage. ",
+        "content": "# Double flux\nLa mesure de PH est scindé en 2. La version brute et la version amortie (smooth).  \nOn veut avoir ces 2 valeurs sur le graphique et on veut conserver les données brutes sur la jauge et l'alarme en amont du bypass.   \nOn stocke les deux mesures dans le même flux, dans des objets différents fluxa et fluxb.  \nLe payload original est conservé pour jauge et l'alarme sur le fluxa.\nLe Payload et le topic est supprimé après le bypass et avant d'arriver sur le graphique.  \nLe payload est remplacé par fluxa ou fluxb avec le topic associé pour avoir un graphique à 2 courbes.\n\n# Bypass\nUtilisation d'un icone explicite. SwitchElectric ouvert|fermé.  \nCe switch interromp le flux vers le graphique. Quand le switch est fermé, le flux alimente le graphique.  \nA l'opposé, quand le switch est ouvert, le flux ne passe plus et le grahique n'est plus alimenté. Il est en pause.\n\n# Lock\nUn switch sous forme de cadenas, active ou inhibe la partie live permettant d'agir sur le bypass du group.  \nPour agir sur un groupe de widget on utilise ui-control.  \nOn récupère l'ID du group que l'on veut controler dans la barre d'outil latérale droite. \n`Info > Noeuds de configuration globale > ui-groupe > af7a2f9471407871`\nOn capture l'id et on envoie au node ui-control le message : \n\n`{\"groups\":{\"enable\":[\"af7a2f9471407871\"]}}`\npour activer ou \n\n`{\"groups\":{\"disable\":[\"af7a2f9471407871\"]}}`\npour désactiver.  \n\nLe switch est False au démarrage. Le Groupe live est inactif au démarrage. \n\n# Compil data.\nLes données du flux sont regroupées dans un UI-Markdown. On capte des mesures à différents endroits du flux. Chaque messure est stocké dans une propriété d'un objet data.  \nComme les mesures n'arrivents pas toutes en même temps, un node fonction capte ces messages et conserve les données dans le contexte du node. \n\nChaque message en entrée est porteur d'une mesure. Cette mesure est stocké dans une variable de contexte.  \n\nLa fonction retourne un message avec un objet data qui remprend tous les attributs sotcké dans le context. \n\nLe node ui-markdown prend l'objet data et affiche chacune de ces propriétés à l'écran. \n\n# Arrêt urgence\nDans le group Control, 2 boutons poussoirs pour arrêter tous les moteurs qq soit les commandes. \nPositionne une var de contexte flow URGENCE.  \nToutes les commandes de pilotages des pins arduino sont précédees d'un aiguillage basée sur cette variable.  \nL'aiguillage détourne les messages quand URGENCE est true et laisse passé les commandes quand false. \nEn déclenchant un AR urgence : \n- on arrête les moteurs\n- on arrête les commandes moteurs\n- on positionne le la variable à true.  \nUN bouton REARM remet la variable à false.\nLa variable est positionnée à false au démarrage. \n\n\n# Horloge pour renouveler le milieu\nDeux variable de flow contexte : duree et frequence\n- duree pour le temps de fonctionnement du moteur vidange et remplissage\n- frequence le temps entre deux cylce de renouvellement du milieu en heure\n2 boutons pour Démarrer / arrêter l'Horloge\n2 champs pour définir la duree et la frequence de l'horloge\n\n# Mesure du taux de remplissage\nA valider\n\n\n# Graphique vitesse de remplissage \nA valider",
         "className": "",
         "x": 1364.333251953125,
         "y": 551.0000610351562,
@@ -11720,7 +11840,7 @@
         "type": "comment",
         "z": "d7b000e00355b06e",
         "g": "1d67b96eb2ecf9d3",
-        "name": "V 1.2.a",
+        "name": "V 1.3",
         "info": "Détail du flux dans le UI-MARDOWN",
         "x": 1369.9999542236328,
         "y": 391.66663646698,
@@ -11904,7 +12024,7 @@
         "order": 2,
         "width": 0,
         "height": 0,
-        "content": "> Version 1.2.a : corrige issue#8",
+        "content": "> Version 1.3 : Horloge longue durée pour le séquenceur.\n",
         "className": "",
         "x": 1361,
         "y": 482,
